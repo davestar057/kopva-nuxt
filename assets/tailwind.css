@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    /*color-scheme: light;   !* force light UA styling *!*/
+}
+html, body {
+    color: #111827; /* Tailwind gray-900 */
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+[x-cloak] {
+    display: none;
+}
+

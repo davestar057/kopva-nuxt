@@ -759,14 +759,21 @@ useHead({
 }
 
 /* Add subtle texture so the colour feels intentional (optional) */
-./* Base layer (size/position/texture) */
+/* Base layer (size/position/texture) */
 .hero-bg{
-  position: absolute; left: 0; right: 0; top: 0;
+  position: absolute;
+  left: 0; right: 0; top: 0;
   height: clamp(760px, 95vh, 1000px);
-  z-index: 0; pointer-events: none;
-  /* neutral base in case a modifier is missing */
-  background: linear-gradient(180deg, #F5F8F9 0%, #FFFFFF 70%);
+  z-index: 0;
+  pointer-events: none;
+
+  /* Variant-driven background: falls back to a soft sky if no variant class is present */
+  background: var(--hero-bg,
+  linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%)
+  );
 }
+
+/* subtle grid texture */
 .hero-bg::after{
   content:""; position:absolute; inset:0; pointer-events:none;
   opacity:.18;
@@ -774,39 +781,34 @@ useHead({
       repeating-linear-gradient(0deg,  rgba(0,16,17,0.03) 0 1px, transparent 1px 26px),
       repeating-linear-gradient(90deg, rgba(0,16,17,0.03) 0 1px, transparent 1px 26px);
 }
+
 @supports (mask-image: linear-gradient(black, transparent)){
   .hero-bg{ mask-image: linear-gradient(#000 0%, #000 82%, transparent 100%); }
 }
 
-/* === Variant A: Emerald Mono (greens only) === */
-.hero-bg--emerald{
-  background:
-      radial-gradient(80% 55% at 15% 12%, rgba(84,177,107,0.38), rgba(84,177,107,0) 60%),
-      radial-gradient(70% 45% at 85% 8%,  rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
-      linear-gradient(180deg, #F2FFF6 0%, #FFFFFF 65%);
-}
+/* === Variants set the CSS custom property so they always win === */
 
-/* === Variant B: Ink Vignette + Primary Bloom (no blue) === */
-.hero-bg--ink{
-  background:
-      radial-gradient(110% 70% at 50% -25%, rgba(84,177,107,0.24), rgba(84,177,107,0) 60%),
-      radial-gradient(100% 80% at 50% 8%,   rgba(0,16,17,0.18),   rgba(0,16,17,0) 60%),
-      linear-gradient(180deg, #F8FBFC 0%, #FFFFFF 65%);
-}
-
-/* === Variant C: Ice Blue Only (if you want blue sans green) === */
+/* Ice Blue (your pick) */
 .hero-bg--ice{
-  background:
+  --hero-bg:
       radial-gradient(80% 55% at 14% 16%, rgba(151,200,235,0.48), rgba(151,200,235,0) 60%),
       radial-gradient(70% 45% at 86% 6%,  rgba(151,200,235,0.26), rgba(151,200,235,0) 60%),
       linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%);
 }
 
-/* === Variant D: Underlight (subtle green glow from the bottom) === */
-.hero-bg--underlight{
-  background:
-      radial-gradient(140% 80% at 50% 105%, rgba(84,177,107,0.32), rgba(84,177,107,0) 60%),
-      linear-gradient(180deg, #F7FBFF 0%, #FFFFFF 65%);
+/* (Optional) Other variants if you ever switch) */
+.hero-bg--emerald{
+  --hero-bg:
+      radial-gradient(80% 55% at 15% 12%, rgba(84,177,107,0.38), rgba(84,177,107,0) 60%),
+      radial-gradient(70% 45% at 85% 8%,  rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
+      linear-gradient(180deg, #F2FFF6 0%, #FFFFFF 65%);
+}
+
+.hero-bg--ink{
+  --hero-bg:
+      radial-gradient(110% 70% at 50% -25%, rgba(84,177,107,0.24), rgba(84,177,107,0) 60%),
+      radial-gradient(100% 80% at 50% 8%,   rgba(0,16,17,0.18),   rgba(0,16,17,0) 60%),
+      linear-gradient(180deg, #F8FBFC 0%, #FFFFFF 65%);
 }
 
 .dot{ background: #54B16B; }

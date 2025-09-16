@@ -6,7 +6,7 @@
         <div class="flex items-center gap-3">
 <!--          <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center font-black">K</div>-->
 <!--          <span class="font-semibold tracking-tight">KOPVA</span>-->
-          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 200px;">
+          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 140px;">
         </div>
 
         <!-- Desktop nav -->

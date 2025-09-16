@@ -5,7 +5,7 @@
     <header class="bg-secondary text-white sticky top-0 z-50">
       <div class="container mx-auto px-4 h-14 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <img src="/kopva-logo-full-white.png" alt="Kopva" class="max-w-[200px]" />
+          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 140px;">
         </div>
 
         <!-- Desktop nav -->

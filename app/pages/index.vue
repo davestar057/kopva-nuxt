@@ -6,7 +6,7 @@
         <div class="flex items-center gap-3">
           <!--          <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center font-black">K</div>-->
           <!--          <span class="font-semibold tracking-tight">KOPVA</span>-->
-          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 200px;">
+          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 140px;">
         </div>
 
         <!-- Desktop nav -->
@@ -220,7 +220,7 @@
                 <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
                   <img
                       class="w-full h-full object-cover aspect-[4/3]"
-                      src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop"
+                      src="/pipbudi-wall.jpg"
                       alt="Automatic water shut-off"
                       loading="lazy"
                   />
@@ -238,7 +238,7 @@
                 <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
                   <img
                       class="w-full h-full object-cover aspect-[4/3]"
-                      src="https://images.unsplash.com/photo-1505744386214-51dba16a26fc?q=80&w=1200&auto=format&fit=crop"
+                      src="/kopva-ipad-prod.jpg"
                       alt="24/7 monitoring"
                       loading="lazy"
                   />
@@ -272,7 +272,7 @@
                 <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
                   <img
                       class="w-full h-full object-cover aspect-[4/3]"
-                      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop"
+                      src="/frozen-pipe.jpg"
                       alt="Winter frost protection"
                       loading="lazy"
                   />
@@ -290,7 +290,7 @@
                 <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
                   <img
                       class="w-full h-full object-cover aspect-[4/3]"
-                      src="https://images.unsplash.com/photo-1557825835-70d97c4aa567?q=80&w=1200&auto=format&fit=crop"
+                      src="/away-from-home.jpg"
                       alt="Remote control from the app"
                       loading="lazy"
                   />
@@ -383,47 +383,75 @@
         </section>
       </div>
     </section>
+    <PricingBox
+        product-name="Kopva Smart Water Valve"
+        subtitle="Leak & freeze protection with automatic shut-off"
+        image-src="/boxed-product.jpg"
+        :price="239"
+        :compare-at="299"
+        currency="£"
+        rating="4.9"
+        :reviews="124"
+        :bullets="[
+    'Auto shut-off within minutes of a leak',
+    'Freeze Guard closes at 3 °C',
+    'Control from the app anywhere',
+    'Easy self-install'
+  ]"
+        :includes="[
+    'Kopva Pipebudi smart valve',
+    'Mounting hardware',
+    'Power adaptor',
+    'Quick-start guide'
+  ]"
+        discount-code="LAUNCH20"
+        discount-label="Launch offer"
+        buy-href="/checkout"
+        learn-href="/#how-it-works"
+        :in-stock="true"
+        badge-text="Launch pricing"
+    />
 
 
-    <section class="bg-[#f7fbff] py-14">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-secondary text-center">Trusted in real homes</h2>
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-            <div class="flex items-center gap-3">
-              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=68" alt=""/>
-              <figcaption>
-                <p class="font-semibold text-secondary">Ava M.</p>
-                <p class="text-secondary/60 text-sm">Manchester</p>
-              </figcaption>
-            </div>
-            <blockquote class="mt-3 text-secondary/80">“Kopva shut the water within seconds and saved our kitchen. App made it effortless.”</blockquote>
-          </figure>
+<!--    <section class="bg-[#f7fbff] py-14">-->
+<!--      <div class="container mx-auto px-4">-->
+<!--        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-secondary text-center">Trusted in real homes</h2>-->
+<!--        <div class="mt-8 grid md:grid-cols-3 gap-6">-->
+<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
+<!--            <div class="flex items-center gap-3">-->
+<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=68" alt=""/>-->
+<!--              <figcaption>-->
+<!--                <p class="font-semibold text-secondary">Ava M.</p>-->
+<!--                <p class="text-secondary/60 text-sm">Manchester</p>-->
+<!--              </figcaption>-->
+<!--            </div>-->
+<!--            <blockquote class="mt-3 text-secondary/80">“Kopva shut the water within seconds and saved our kitchen. App made it effortless.”</blockquote>-->
+<!--          </figure>-->
 
-          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-            <div class="flex items-center gap-3">
-              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=12" alt=""/>
-              <figcaption>
-                <p class="font-semibold text-secondary">Ben M.</p>
-                <p class="text-secondary/60 text-sm">Bristol</p>
-              </figcaption>
-            </div>
-            <blockquote class="mt-3 text-secondary/80">“Installed in 10 minutes. Peace of mind when we’re away.”</blockquote>
-          </figure>
+<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
+<!--            <div class="flex items-center gap-3">-->
+<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=12" alt=""/>-->
+<!--              <figcaption>-->
+<!--                <p class="font-semibold text-secondary">Ben M.</p>-->
+<!--                <p class="text-secondary/60 text-sm">Bristol</p>-->
+<!--              </figcaption>-->
+<!--            </div>-->
+<!--            <blockquote class="mt-3 text-secondary/80">“Installed in 10 minutes. Peace of mind when we’re away.”</blockquote>-->
+<!--          </figure>-->
 
-          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-            <div class="flex items-center gap-3">
-              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=33" alt=""/>
-              <figcaption>
-                <p class="font-semibold text-secondary">Sophie K.</p>
-                <p class="text-secondary/60 text-sm">Leeds</p>
-              </figcaption>
-            </div>
-            <blockquote class="mt-3 text-secondary/80">“Freeze guard saved our rental during the cold snap. Worth it.”</blockquote>
-          </figure>
-        </div>
-      </div>
-    </section>
+<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
+<!--            <div class="flex items-center gap-3">-->
+<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=33" alt=""/>-->
+<!--              <figcaption>-->
+<!--                <p class="font-semibold text-secondary">Sophie K.</p>-->
+<!--                <p class="text-secondary/60 text-sm">Leeds</p>-->
+<!--              </figcaption>-->
+<!--            </div>-->
+<!--            <blockquote class="mt-3 text-secondary/80">“Freeze guard saved our rental during the cold snap. Worth it.”</blockquote>-->
+<!--          </figure>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
 
 <!--    <section class="bg-white py-14">-->
 <!--      <div class="container mx-auto px-4">-->
@@ -467,27 +495,7 @@
 
 <!--    <DamageCostCalculator class="mt-10" />-->
     <!-- Sticky Buy Bar -->
-    <div class="fixed inset-x-0 bottom-0 z-40">
-      <div class="mx-auto max-w-6xl px-4 pb-4">
-        <div class="rounded-2xl bg-secondary text-white shadow-[0_20px_50px_-28px_rgba(0,16,17,.45)]">
-          <div class="flex items-center justify-between gap-3 px-4 py-3 md:px-6">
-            <div class="flex items-center gap-3">
-              <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center">💧</div>
-              <div>
-                <p class="text-sm text-white/70">Kopva • Smart leak & freeze protection</p>
-                <p class="text-base font-semibold">Launch price <span class="text-primary">20% off</span></p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="hidden sm:inline text-white/75 text-sm mr-2">Use code <code class="px-2 py-1 rounded-lg bg-white/10">LAUNCH20</code></span>
-              <a href="/checkout" class="inline-flex items-center justify-center rounded-xl bg-primary text-secondary font-bold px-5 py-3 hover:brightness-95 active:translate-y-px">
-                Buy now
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <StickyBar></StickyBar>
     <LeakCostVisual :average-cost="4200" currency="£" />
 
     <!-- FOOTER -->
@@ -499,9 +507,9 @@
             <span class="font-semibold tracking-tight">KOPVA</span>
           </div>
           <nav class="flex gap-6 text-white/80 text-sm">
-            <a href="#" class="hover:text-white">Privacy</a>
-            <a href="#" class="hover:text-white">Terms</a>
-            <a href="#" class="hover:text-white">Support</a>
+            <a href="/privacy" class="hover:text-white">Privacy</a>
+            <a href="/terms" class="hover:text-white">Terms</a>
+            <a href="/support" class="hover:text-white">Support</a>
           </nav>
         </div>
         <ClientOnly>
@@ -513,7 +521,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount} from 'vue'
+import StickyBar from "~/components/StickyBar.vue";
+import Privacy from "~/pages/privacy.vue";
 
 const mobileOpen = ref(false)
 
@@ -658,6 +668,66 @@ const vReveal = {
     io.observe(el)
   }
 }
+
+const url = useRequestURL()
+const canonical = `${url.origin}/` // adjust if homepage lives elsewhere
+
+// ==== SEO meta (Open Graph + Twitter) ====
+useSeoMeta({
+  title: 'Kopva — Smart Leak & Freeze Protection Valve',
+  description:
+      'Kopva automatically shuts off your water when a leak is detected and protects against frozen pipes. 24/7 monitoring, app control, and a quick ~10-minute install.',
+  // Open Graph
+  ogTitle: 'Kopva — Smart Leak & Freeze Protection Valve',
+  ogDescription:
+      'Stop water damage before it starts. Auto shut-off on leaks, Freeze Guard at 3 °C, real-time alerts, and full app control.',
+  ogType: 'website',
+  ogUrl: canonical,
+  ogSiteName: 'Kopva',
+  ogImage: 'http://localhost:3000/pipbudi-wall.jpg',          // <-- point to your real OG image (1200×630)
+  // Twitter
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Kopva — Smart Leak & Freeze Protection Valve',
+  twitterDescription:
+      'Auto shut-off for leaks, Freeze Guard, and app control. Protect your home with Copva’s smart water valve.',
+  twitterImage: 'http://localhost:3000/pipbudi-wall.jpg',
+  // Misc
+  robots: 'index,follow,max-image-preview:large',
+  themeColor: '#54B16B',
+  // (optional) keywords aren’t used much anymore, but harmless:
+  keywords:
+      'smart water valve, leak detector, automatic shut off, frozen pipes, freeze protection, water leak alarm, Pipebudi, Kopva, UK'
+})
+
+// ==== Canonical + JSON-LD Product (edit placeholders) ====
+useHead({
+  link: [
+    { rel: 'canonical', href: canonical }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Kopva Smart Water Valve',
+        brand: { '@type': 'Brand', name: 'Kopva' },
+        description:
+            'Smart water valve with automatic leak shut-off, Freeze Guard (3 °C), 24/7 monitoring, and app control.',
+        image: [`${url.origin}/og/kopva-og.jpg`], // or your transparent hero PNG
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'GBP',
+          price: '299.00',                // <-- set your real price
+          url: `${url.origin}/checkout`,
+          availability: 'https://schema.org/InStock'
+        }
+        // If/when you have real review data, you can add:
+        // aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: 124 }
+      })
+    }
+  ]
+})
 </script>
 
 <style scoped>
@@ -745,7 +815,7 @@ const vReveal = {
 /* Headline & kicker */
 .headline{
   font-family: "Inter", ui-sans-serif, system-ui;
-  font-weight: 900; letter-spacing: -0.02em; line-height: .9;
+  font-weight: 900; letter-spacing: -0.02em; line-height: 1;
   font-size: clamp(3rem, 6.8vw, 5.4rem);
 }
 .kicker{ margin-top: .75rem; font-size: clamp(.95rem, 1.4vw, 1.1rem); }

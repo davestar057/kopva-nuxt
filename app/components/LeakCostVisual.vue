@@ -98,7 +98,14 @@
               Get Kopva
             </a>
           </div>
+
         </article>
+
+      </div>
+      <div class="text-center">
+        <DisclaimerNote
+            :text="`All features described are targets under normal conditions. Actual performance varies. Product is an aid to risk management and not a guarantee against leaks, freezing, or water damage. For full details see Terms & Warranty.`"
+        />
       </div>
     </div>
   </section>
@@ -121,7 +128,14 @@ const didCelebrate = ref(false)
 const confettiHost = ref<HTMLElement | null>(null)
 const leftCard = ref<HTMLElement | null>(null)
 const rightCard = ref<HTMLElement | null>(null)
-
+const DisclaimerNote = (props: { text: string }) => h(
+    'p',
+    {
+      class:
+          'mt-2 text-[11px] leading-snug text-secondary/55 italic [&_a]:underline [&_a]:hover:no-underline'
+    },
+    props.text
+)
 const pretty = (n: number) =>
     new Intl.NumberFormat('en-GB', { maximumFractionDigits: 0 }).format(n)
 

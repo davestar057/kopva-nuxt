@@ -12,7 +12,7 @@
           <div class="flex items-center gap-3">
             <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center">💧</div>
             <div>
-              <p class="text-sm text-white/70">Kopva • Smart leak &amp; freeze protection</p>
+              <p class="text-sm text-white/70">Pipebudi • Smart leak &amp; freeze protection</p>
               <p class="text-base font-semibold">Launch price <span class="text-primary">20% off</span></p>
             </div>
           </div>

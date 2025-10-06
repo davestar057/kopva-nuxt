@@ -8,7 +8,7 @@
             Leak Damage Cost Calculator
           </h2>
           <p class="mt-3 text-secondary/70 max-w-2xl mx-auto">
-            Estimate potential water and repair costs from a leak — and see how much Kopva could help you save.
+            Estimate potential water and repair costs from a leak — and see how much Pipebudi could help you save.
           </p>
         </header>
 
@@ -103,7 +103,7 @@
 
               <!-- Kopva response slider -->
               <div class="mt-6 pt-6 border-t border-black/5">
-                <h4 class="font-extrabold text-secondary text-base mb-2">With Kopva shut-off</h4>
+                <h4 class="font-extrabold text-secondary text-base mb-2">With Pipebudi shut-off</h4>
                 <label class="block">
                   <span class="block text-sm font-medium text-secondary/80 mb-1">
                     Shut-off time: <span class="font-semibold text-secondary">{{ responseMins }}</span> min
@@ -124,13 +124,13 @@
                 <!-- Totals -->
                 <div class="rounded-xl bg-[#f7fbff] p-4 ring-1 ring-black/5">
                   <div class="flex items-center justify-between">
-                    <span class="text-secondary/70">Without Kopva</span>
+                    <span class="text-secondary/70">Without Pipebudi</span>
                     <span class="font-extrabold text-secondary text-xl">{{ gbp(totalRaw) }}</span>
                   </div>
                 </div>
                 <div class="rounded-xl bg-primary/10 p-4 ring-1 ring-primary/20">
                   <div class="flex items-center justify-between">
-                    <span class="text-secondary/80">With Kopva ({{ responseMins }} min)</span>
+                    <span class="text-secondary/80">With Pipebudi ({{ responseMins }} min)</span>
                     <span class="font-extrabold text-secondary text-xl">{{ gbp(totalWith) }}</span>
                   </div>
                 </div>
@@ -178,7 +178,7 @@
               <!-- CTA -->
               <div class="mt-6">
                 <a href="/checkout" class="inline-flex items-center justify-center rounded-xl bg-primary text-secondary font-bold px-5 py-3 shadow-[0_12px_30px_-12px_rgba(84,177,107,.55)] hover:brightness-95 active:translate-y-px">
-                  Protect with Kopva
+                  Protect with Pipebudi
                 </a>
               </div>
 

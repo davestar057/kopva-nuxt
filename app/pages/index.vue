@@ -129,23 +129,27 @@
 
             <p class="mt-5 text-lg md:text-xl text-secondary/80 leading-relaxed max-w-prose">
               Kopva sits on your main water valve and watches for abnormal flow and freezing conditions.
-              If something’s wrong, it alerts you and can automatically close the valve—so small issues
-              never turn into disasters.
+              If something’s wrong, it alerts you and can automatically close the valve to preventing a large scale disaster.
             </p>
 
             <div class="mt-8 flex flex-wrap items-center gap-3">
-              <a id="buy" href="/checkout" class="btn-primary">Get Kopva</a>
+              <a id="buy" href="/checkout" class="btn-primary">Get Pipebudi</a>
               <a href="#how-it-works" class="btn-ghost">How it works</a>
             </div>
-
+            <!-- HERO DISCLAIMER -->
+            <DisclaimerNote
+                :text="`*Kopva reduces risk but cannot prevent all leaks or damage in all scenarios. Performance depends on correct installation, valve/pipeline compatibility, power and Wi-Fi availability, and user settings. Not a substitute for home insurance.`"
+            />
             <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-secondary/60">
               <span class="inline-flex items-center gap-2">
                 <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span> 24/7 monitoring
               </span>
               <span class="hidden sm:inline">•</span>
-              <span>iOS & Android app</span>
+              <span><NuxtImg src="/google-store.png" class="max-w-[120px]"/></span>
               <span class="hidden sm:inline">•</span>
-              <span>Easy self-install</span>
+              <span><NuxtImg src="/apple-store.png" class="max-w-[120px]"/></span>
+              <span class="hidden sm:inline">•</span>
+              <span>Easy install</span>
             </div>
           </div>
         </div>
@@ -167,6 +171,11 @@
               <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
               <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">App control</span> anywhere</p>
             </div>
+          </div>
+          <div class="text-center">
+          <DisclaimerNote
+              :text="`Auto shut-off and install times are typical under test conditions and may vary. Remote control and notifications require power and connectivity.`"
+          />
           </div>
         </div>
       </div>
@@ -211,8 +220,7 @@
               <div class="lg:pr-16">
                 <h3 class="text-2xl font-extrabold text-secondary">Automatically shuts off</h3>
                 <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Automatically shuts off when a leak in your home is detected. Get peace of mind:
-                  Pipebudi closes your water supply the moment a leak is found.
+                  Automatically shuts off your water when a catastrophic leak is detected. Get peace of mind. Pipebudi closes your water supply when a leak is heard.
                 </p>
               </div>
 
@@ -264,7 +272,9 @@
                 <h3 class="text-2xl font-extrabold text-secondary">Protects your pipes in winter</h3>
                 <p class="mt-3 text-secondary/75 leading-relaxed">
                   Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature
-                  drops below <span class="font-semibold">3 °C</span>, Pipebudi will automatically turn off your water supply.
+                  reaches <span class="font-semibold">close to freezing</span>,Pipebudi will notify you and
+                  can automatically turn off your water supply to
+                  further protect your property.
                 </p>
               </div>
 
@@ -300,8 +310,10 @@
               <div class="order-1 lg:order-2 lg:pl-16">
                 <h3 class="text-2xl font-extrabold text-secondary">Away from home?</h3>
                 <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Whether you’re on holiday or staying away a little longer, you can remotely instruct
-                  Pipebudi to turn off the water supply—so you can protect your peace of mind.
+                  Whether you’re on holiday or staying away a little
+                  longer, you can remotely instruct Pipebudi to turn
+                  off the water supply or switch to Away mode —
+                  so you can relax knowing you are protected.
                 </p>
               </div>
             </article>
@@ -366,7 +378,7 @@
                   Ready to protect your home?
                 </h3>
                 <p class="mt-1 text-white/80">
-                  Get Kopva with 20% off today and start preventing costly leaks.
+                  Get Pipebudi with 20% off today and protect your home from costly leaks.
                 </p>
               </div>
 
@@ -394,9 +406,9 @@
         :reviews="124"
         :bullets="[
     'Auto shut-off within minutes of a leak',
-    'Freeze Guard closes at 3 °C',
+    'Freeze Guard closes when there is danger of frozen pipes',
     'Control from the app anywhere',
-    'Easy self-install'
+    'Easy install'
   ]"
         :includes="[
     'Kopva Pipebudi smart valve',
@@ -495,6 +507,7 @@
 
 <!--    <DamageCostCalculator class="mt-10" />-->
     <!-- Sticky Buy Bar -->
+
     <StickyBar></StickyBar>
     <LeakCostVisual :average-cost="4200" currency="£" />
 
@@ -552,10 +565,10 @@ type Feature = { id: string; title: string; desc: string; long: string; angleDeg
 const STAGE = 601, CX = STAGE / 2, CY = STAGE / 2
 
 const features = ref<Feature[]>([
-  { id: 'leak',   title: 'Leak Detection', desc: 'Instant alerts',      long: 'Detects abnormal flow and can shut off water automatically.', angleDeg: 18,  radius: 206 },
-  { id: 'freeze', title: 'Freeze Guard',   desc: 'Cold-snap safe',       long: 'Monitors pipe temperature and warns before freezing occurs.', angleDeg: 128, radius: 198 },
-  { id: 'app',    title: 'App Control',    desc: 'Anywhere access',      long: 'Control your water and get alerts from the Kopva mobile app.', angleDeg: 320, radius: 205 },
-  { id: 'install',title: 'Easy Install',   desc: 'Fits common valves',   long: 'Compact design mounts on standard isolation valves in minutes.', angleDeg: 210, radius: 202 }
+  { id: 'leak',   title: 'Leak Detection', desc: 'Instant alerts', long: 'Detects abnormal flow and can shut off water automatically. May not detect slow drips, intermittent use, or micro-leaks. Thresholds and schedules affect behaviour.', angleDeg: 18,  radius: 206 },
+  { id: 'freeze', title: 'Freeze Guard',   desc: 'Cold-snap safe',  long: 'Monitors pipe temperature and warns before freezing occurs. Action depends on sensor placement and ambient conditions; cannot guarantee prevention of all freeze events.', angleDeg: 128, radius: 198 },
+  { id: 'app',    title: 'App Control',    desc: 'Anywhere access', long: 'Control your water and get alerts from the Kopva mobile app. Requires reliable Wi-Fi and internet; mobile alerts depend on OS settings and connectivity.', angleDeg: 320, radius: 205 },
+  { id: 'install',title: 'Easy Install',   desc: 'Fits standard pipes sizes', long: 'Compact design mounts on common isolation valves in minutes. Compatibility varies by valve type/size/orientation; professional fitting may be required.', angleDeg: 210, radius: 202 }
 ])
 
 /** Percent-based positions for responsive stage (desktop/tablet) */
@@ -671,7 +684,14 @@ const vReveal = {
 
 const url = useRequestURL()
 const canonical = `${url.origin}/` // adjust if homepage lives elsewhere
-
+const DisclaimerNote = (props: { text: string }) => h(
+    'p',
+    {
+      class:
+          'mt-2 text-[11px] leading-snug text-secondary/55 italic [&_a]:underline [&_a]:hover:no-underline'
+    },
+    props.text
+)
 // ==== SEO meta (Open Graph + Twitter) ====
 useSeoMeta({
   title: 'Kopva — Smart Leak & Freeze Protection Valve',
@@ -680,7 +700,7 @@ useSeoMeta({
   // Open Graph
   ogTitle: 'Kopva — Smart Leak & Freeze Protection Valve',
   ogDescription:
-      'Stop water damage before it starts. Auto shut-off on leaks, Freeze Guard at 3 °C, real-time alerts, and full app control.',
+      'Stop water damage before it starts. Auto shut-off on leaks, Freeze Guard when near freezing , real-time alerts, and full app control.',
   ogType: 'website',
   ogUrl: canonical,
   ogSiteName: 'Kopva',
@@ -713,7 +733,7 @@ useHead({
         name: 'Kopva Smart Water Valve',
         brand: { '@type': 'Brand', name: 'Kopva' },
         description:
-            'Smart water valve with automatic leak shut-off, Freeze Guard (3 °C), 24/7 monitoring, and app control.',
+            'Smart water valve with automatic leak shut-off, Freeze Guard (near freezing), 24/7 monitoring, and app control.',
         image: [`${url.origin}/og/kopva-og.jpg`], // or your transparent hero PNG
         offers: {
           '@type': 'Offer',

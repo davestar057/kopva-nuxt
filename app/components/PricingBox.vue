@@ -182,10 +182,10 @@ const props = withDefaults(defineProps<{
   rating: '4.9',
   reviews: 124,
   bullets: () => [
-    'Auto shut-off within minutes of a leak',
-    'Freeze Guard closes at 3 °C',
-    'App control from anywhere',
-    'Installs in about 10 minutes'
+    'Auto shut-off when catastrophic leaks are detected',
+    'Protection from frozen pipes',
+    'Control from the app anywhere',
+    'Easy to install'
   ],
   includes: () => [
     'Kopva Pipebudi smart valve',

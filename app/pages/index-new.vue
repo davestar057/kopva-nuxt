@@ -258,17 +258,17 @@
           <article
             v-for="(card, index) in mosaicCards"
             :key="card.title"
-            class="group relative overflow-hidden rounded-[34px] border border-white/80 bg-white/80 p-6 shadow-[0_32px_80px_-60px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.7)] dark:hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.75)]"
+            class="group relative overflow-hidden rounded-[34px] border border-white/80 bg-white/80 p-6 shadow-[0_32px_80px_-60px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-950/70 dark:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.7)] dark:hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.75)]"
             :class="card.span"
             data-animate="fade"
             :style="{ '--delay': `${index * 90}ms` }"
           >
-            <div class="absolute inset-0 bg-gradient-to-br opacity-80" :class="card.color"></div>
+            <div class="absolute inset-0 bg-gradient-to-br opacity-80 transition-opacity duration-500 dark:opacity-95" :class="card.color"></div>
             <div class="relative z-10 flex h-full flex-col gap-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-600/80 dark:text-slate-300/80">{{ card.tag }}</p>
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-600/80 dark:text-slate-200/80">{{ card.tag }}</p>
               <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">{{ card.title }}</h3>
-              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ card.copy }}</p>
-              <div v-if="card.image" class="mt-auto overflow-hidden rounded-3xl border border-white/60 bg-white/60 p-2 dark:border-white/10 dark:bg-slate-900/70">
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-200">{{ card.copy }}</p>
+              <div v-if="card.image" class="mt-auto overflow-hidden rounded-3xl border border-white/60 bg-white/60 p-2 dark:border-white/10 dark:bg-slate-950/70">
                 <img :src="card.image" :alt="`${card.title} visual`" class="h-full w-full rounded-2xl object-cover" />
               </div>
             </div>
@@ -500,7 +500,7 @@ const mosaicCards = [
     tag: 'Intelligence',
     title: 'Adaptive leak defense',
     copy: 'Smart sensors compare normal water patterns to new anomalies and trigger instant shut-off when something changes.',
-    color: 'from-sky-100 via-white/90 to-blue-100',
+    color: 'from-sky-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-sky-950/40 dark:to-blue-900/40',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
     image: 'https://images.unsplash.com/photo-1603791452906-9cd6f7b1df90?auto=format&fit=crop&w=900&q=80',
   },
@@ -508,7 +508,7 @@ const mosaicCards = [
     tag: 'Design',
     title: 'Featherlight finish',
     copy: 'Sculpted aluminum edges and a breathable knit loop feel like modern jewelry while protecting your space.',
-    color: 'from-rose-100 via-white/90 to-amber-100',
+    color: 'from-rose-100 via-white/90 to-amber-100 dark:from-slate-950 dark:via-rose-950/30 dark:to-amber-900/30',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
     image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=900&q=80',
   },
@@ -516,14 +516,14 @@ const mosaicCards = [
     tag: 'Automation',
     title: 'Quiet background checks',
     copy: 'PulsePro surveys for freeze risks and hidden drips hourly, sending gentle taps and app alerts only when needed.',
-    color: 'from-emerald-100 via-white/90 to-sky-100',
+    color: 'from-emerald-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-emerald-950/40 dark:to-sky-900/30',
     span: 'md:col-span-2 lg:col-span-2 xl:col-span-2',
   },
   {
     tag: 'Lifestyle',
     title: 'Always-on awareness',
     copy: 'Glance at the watch to see valve status, water usage, and freeze guard readiness with minimalist complications.',
-    color: 'from-purple-100 via-white/90 to-blue-100',
+    color: 'from-purple-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-purple-950/40 dark:to-blue-900/40',
     span: 'md:col-span-4 lg:col-span-4 xl:col-span-4',
     image: 'https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=900&q=80',
   },
@@ -531,14 +531,14 @@ const mosaicCards = [
     tag: 'Support',
     title: 'Concierge onboarding',
     copy: 'Schedule a remote walkthrough with Kopva experts to verify installation and set up automations in minutes.',
-    color: 'from-slate-100 via-white/90 to-sky-100',
+    color: 'from-slate-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-slate-900/70 dark:to-sky-900/30',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
   },
   {
     tag: 'Coverage',
     title: 'Whole-home command center',
     copy: 'Pair the watch with the Kopva hub to orchestrate multiple valves, freeze guards, and leak sensors from a single tap.',
-    color: 'from-indigo-100 via-white/90 to-purple-100',
+    color: 'from-indigo-100 via-white/90 to-purple-100 dark:from-slate-950 dark:via-indigo-950/40 dark:to-purple-900/40',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
     image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
   },

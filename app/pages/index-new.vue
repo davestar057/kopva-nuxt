@@ -266,27 +266,67 @@
       </section>
 
       <section id="pricing" class="bg-white/80 py-24">
-        <div class="mx-auto max-w-5xl px-6" data-animate="fade">
-          <div class="rounded-[38px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-12 shadow-[0_50px_140px_-90px_rgba(15,23,42,0.55)]">
-            <div class="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500">PulsePro global price</p>
-                <h3 class="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Smart protection without compromise</h3>
-                <p class="mt-4 max-w-xl text-base text-slate-600">
-                  Includes the watch, valve controller, freeze guard sensors, and lifetime access to core automations. Concierge onboarding ensures everything works from day one.
+        <div class="mx-auto max-w-6xl px-6">
+          <div
+            class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)]"
+            data-animate="fade"
+          >
+            <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl"></div>
+            <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl"></div>
+            <div class="relative grid gap-12 p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+                  Launch pricing
+                </div>
+                <h3 class="text-4xl font-semibold text-slate-900 sm:text-5xl">Smart protection without compromise</h3>
+                <p class="max-w-xl text-lg leading-relaxed text-slate-600">
+                  PulsePro bundles the watch, valve controller, Freeze Guard sensors, and always-on app automations so you can monitor, detect, and shut off leaks automatically.
                 </p>
+                <ul class="grid gap-3 text-sm leading-relaxed text-slate-600 sm:grid-cols-2">
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    Auto shut-off when catastrophic leaks are detected
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    Freeze Guard closes valves before pipes burst
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    Control everything from the Kopva app anywhere
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    Concierge onboarding with optional pro install
+                  </li>
+                </ul>
               </div>
-              <div class="rounded-[32px] border border-white/70 bg-white/80 p-10 text-center shadow-[0_30px_90px_-70px_rgba(15,23,42,0.55)]">
-                <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500">Starting at</p>
-                <p class="mt-4 text-5xl font-semibold text-slate-900">$299</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.4em] text-slate-400">Pre-order bundle</p>
-                <a
-                  href="/checkout"
-                  class="mt-6 inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5"
-                >
-                  Reserve yours
-                </a>
-                <p class="mt-4 text-xs text-slate-500">+ optional professional install</p>
+              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/85 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)]">
+                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+                  Use code
+                  <code class="rounded-full bg-slate-900 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white">LAUNCH20</code>
+                </div>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">20% off launch offer</p>
+                <p class="mt-5 text-6xl font-semibold text-slate-900">$239</p>
+                <p class="mt-2 text-sm text-slate-500">Usually $299</p>
+                <div class="mt-8 flex flex-col gap-3">
+                  <a
+                    href="/checkout"
+                    class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5"
+                  >
+                    Buy now
+                  </a>
+                  <a href="#experience" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900">See what&apos;s included</a>
+                </div>
+                <div class="mt-8 rounded-3xl border border-slate-200/60 bg-slate-50/80 p-6 text-left text-xs leading-relaxed text-slate-500">
+                  <p class="font-semibold uppercase tracking-[0.35em] text-slate-400">Bundle includes</p>
+                  <ul class="mt-4 grid gap-2 text-slate-600">
+                    <li>Kopva PulsePro smartwatch</li>
+                    <li>Valve controller + mounting kit</li>
+                    <li>Freeze Guard sensors</li>
+                    <li>Fast-start concierge onboarding</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -345,9 +385,9 @@
             </div>
           </div>
         </div>
-        <div class="mx-auto mt-12 flex max-w-6xl flex-col gap-4 px-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between" data-animate="fade" style="--delay: 120ms">
-          <p>&copy; {{ currentYear }} Kopva. All rights reserved.</p>
-          <div class="flex flex-wrap gap-4">
+        <div class="mx-auto mt-12 flex max-w-6xl flex-col gap-4 px-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p data-animate="fade" style="--delay: 120ms">&copy; {{ currentYear }} Kopva. All rights reserved.</p>
+          <div class="flex flex-wrap gap-4" data-animate="fade" style="--delay: 180ms">
             <a href="/privacy" class="transition hover:text-slate-600">Privacy</a>
             <a href="/terms" class="transition hover:text-slate-600">Terms</a>
             <a href="/status" class="transition hover:text-slate-600">System status</a>
@@ -435,14 +475,22 @@ onMounted(() => {
   }
 
   observer = new IntersectionObserver(handleIntersect, {
-    rootMargin: '0px 0px -10% 0px',
+    rootMargin: '0px 0px 0px 0px',
     threshold: 0.1,
   });
 
-  document.querySelectorAll('[data-animate]').forEach((element) => {
-    element.classList.add('animate-element');
-    observer?.observe(element);
-  });
+  const register = () => {
+    document.querySelectorAll('[data-animate]').forEach((element) => {
+      element.classList.add('animate-element');
+      observer?.observe(element);
+    });
+  };
+
+  if (typeof window !== 'undefined' && 'requestAnimationFrame' in window) {
+    window.requestAnimationFrame(register);
+  } else {
+    register();
+  }
 });
 
 onBeforeUnmount(() => {

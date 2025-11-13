@@ -355,7 +355,11 @@
       </section>
 
       <section id="pricing" class="relative overflow-hidden bg-white/80 py-24 dark:bg-slate-950">
-        <div class="pricing-pattern" aria-hidden="true"></div>
+        <div
+          class="pricing-pattern"
+          :class="{ 'pricing-pattern--dark': theme === 'dark' }"
+          aria-hidden="true"
+        ></div>
         <div class="relative z-10 mx-auto max-w-6xl px-6">
           <div
             class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.75)]"
@@ -678,7 +682,7 @@ useHead({
   pointer-events: none;
 }
 
-:global(.dark) .pricing-pattern {
+.pricing-pattern--dark {
   opacity: 0.12;
   filter: hue-rotate(180deg) brightness(1.2) saturate(140%);
 }

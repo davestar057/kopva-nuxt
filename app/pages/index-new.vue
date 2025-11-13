@@ -362,14 +362,14 @@
         ></div>
         <div class="relative z-10 mx-auto max-w-6xl px-6">
           <div
-            class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.75)]"
+            class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)] dark:border-white/10 dark:from-slate-950 dark:via-slate-900/95 dark:to-slate-950 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.9)]"
             data-animate="fade"
           >
-            <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl"></div>
-            <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl"></div>
+            <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl dark:bg-sky-500/15"></div>
+            <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl dark:bg-violet-500/20"></div>
             <div class="relative grid gap-12 p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
               <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-300">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-200">
                   Launch pricing
                 </div>
                 <h3 class="text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl">Smart protection without compromise</h3>
@@ -378,31 +378,31 @@
                 </p>
                 <ul class="grid gap-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:grid-cols-2">
                   <li class="flex items-start gap-2">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
                     Auto shut-off when catastrophic leaks are detected
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
                     Freeze Guard closes valves before pipes burst
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
                     Control everything from the Kopva app anywhere
                   </li>
                   <li class="flex items-start gap-2">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60"></span>
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
                     Concierge onboarding with optional pro install
                   </li>
                 </ul>
               </div>
-              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/90 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_40px_120px_-90px_rgba(15,23,42,0.75)]">
-                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-200/70 bg-emerald-50/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600 shadow-[0_16px_36px_-28px_rgba(16,185,129,0.9)] dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-200">
+              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/95 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/85 dark:shadow-[0_40px_120px_-90px_rgba(15,23,42,0.85)]">
+                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-200/70 bg-emerald-50/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600 shadow-[0_16px_36px_-28px_rgba(16,185,129,0.9)] dark:border-emerald-500/40 dark:bg-emerald-500/20 dark:text-emerald-100">
                   Use code
                   <code class="rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white shadow-[0_20px_50px_-34px_rgba(14,116,144,1)]">LAUNCH20</code>
                 </div>
-                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">20% off launch offer</p>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">20% off launch offer</p>
                 <p class="mt-5 text-6xl font-semibold text-slate-900 dark:text-white">$239</p>
-                <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Usually $299</p>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">Usually $299</p>
                 <div class="mt-8 flex flex-col gap-3">
                   <a
                     href="/checkout"
@@ -410,11 +410,11 @@
                   >
                     Buy now
                   </a>
-                  <a href="#experience" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">See what&apos;s included</a>
+                  <a href="#experience" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-100 dark:hover:text-white">See what&apos;s included</a>
                 </div>
-                <div class="mt-8 rounded-3xl border border-slate-200/60 bg-slate-50/80 p-6 text-left text-xs leading-relaxed text-slate-500 dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300">
-                  <p class="font-semibold uppercase tracking-[0.35em] text-slate-400 dark:text-slate-500">Bundle includes</p>
-                  <ul class="mt-4 grid gap-2 text-slate-600 dark:text-slate-200">
+                <div class="mt-8 rounded-3xl border border-slate-200/60 bg-slate-50/80 p-6 text-left text-xs leading-relaxed text-slate-500 dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-300">
+                  <p class="font-semibold uppercase tracking-[0.35em] text-slate-400 dark:text-slate-400">Bundle includes</p>
+                  <ul class="mt-4 grid gap-2 text-slate-600 dark:text-slate-100">
                     <li>Kopva PulsePro smartwatch</li>
                     <li>Valve controller + mounting kit</li>
                     <li>Freeze Guard sensors</li>
@@ -428,7 +428,7 @@
       </section>
 
       <section class="mx-auto max-w-4xl px-6 pb-28 pt-12" data-animate="fade">
-        <div class="rounded-[40px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-sky-100/60 p-16 text-center shadow-[0_60px_160px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.75)]">
+        <div class="rounded-[40px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-sky-100/60 p-16 text-center shadow-[0_60px_160px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/95 dark:to-slate-900/80 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.9)]">
           <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Ready when you are</p>
           <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Get 10% off on your first PulsePro bundle</h2>
           <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">Join thousands of proactive homeowners using Kopva to monitor, detect, and shut off leaks automatically.</p>
@@ -436,7 +436,7 @@
             <a href="/checkout" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-900">
               Buy now
             </a>
-            <a href="#mosaic" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">Explore features</a>
+            <a href="#mosaic" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-100 dark:hover:text-white">Explore features</a>
           </div>
         </div>
       </section>

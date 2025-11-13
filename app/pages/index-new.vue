@@ -571,9 +571,11 @@ const mosaicCards = [
 
 const lightHeroBackgroundStyle = {
   background:
-    'radial-gradient(120% 120% at 0% 0%, rgba(191, 219, 254, 0.55), rgba(247, 248, 252, 0) 58%), ' +
-    'radial-gradient(110% 110% at 95% 5%, rgba(254, 215, 170, 0.45), rgba(247, 248, 252, 0) 62%), ' +
-    'radial-gradient(120% 120% at 50% 100%, rgba(221, 214, 254, 0.5), rgba(247, 248, 252, 0) 70%)',
+    'linear-gradient(180deg, rgba(247, 248, 252, 0.92) 0%, rgba(255, 255, 255, 0.8) 35%, rgba(236, 241, 255, 0.85) 100%), ' +
+    'radial-gradient(120% 120% at 15% 15%, rgba(56, 189, 248, 0.38), rgba(247, 248, 252, 0) 60%), ' +
+    'radial-gradient(110% 110% at 85% 10%, rgba(251, 191, 36, 0.42), rgba(247, 248, 252, 0) 64%), ' +
+    'radial-gradient(130% 130% at 65% 120%, rgba(129, 140, 248, 0.45), rgba(247, 248, 252, 0) 72%)',
+  backgroundBlendMode: 'screen',
 };
 
 const mobileOpen = ref(false);

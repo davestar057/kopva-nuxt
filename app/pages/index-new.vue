@@ -164,8 +164,20 @@
 
     <main>
       <section class="relative overflow-hidden px-6 pb-24 pt-24" aria-labelledby="hero-title">
-        <div class="absolute -left-24 top-[-140px] h-96 w-96 rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100 blur-3xl"></div>
-        <div class="absolute -right-32 top-16 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100 blur-3xl"></div>
+        <div
+          class="absolute -left-24 top-[-140px] h-72 w-72 opacity-40 blur-3xl sm:h-96 sm:w-96 sm:opacity-100"
+          :class="[
+            'rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100',
+            theme === 'dark' ? 'opacity-30 sm:opacity-90' : ''
+          ]"
+        ></div>
+        <div
+          class="absolute -right-32 top-16 h-80 w-80 opacity-40 blur-3xl sm:h-[420px] sm:w-[420px] sm:opacity-100"
+          :class="[
+            'rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100',
+            theme === 'dark' ? 'opacity-25 sm:opacity-90' : ''
+          ]"
+        ></div>
         <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-16 text-center">
           <div class="space-y-8" data-animate="fade">
             <p class="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-300">

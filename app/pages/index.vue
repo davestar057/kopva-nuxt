@@ -1,16 +1,14 @@
 <template>
   <main class="relative overflow-hidden">
-    <!-- HEADER (dark) -->
-    <header class="bg-secondary text-white sticky top-0 z-50" >
-      <div class="container mx-auto px-4 h-14 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <!--          <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center font-black">K</div>-->
-          <!--          <span class="font-semibold tracking-tight">KOPVA</span>-->
-          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 140px;">
-        </div>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 border-b border-secondary/5 bg-white/80 backdrop-blur-xl">
+      <div class="container mx-auto flex h-16 items-center justify-between px-4">
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="/kopva-logo-dark.svg" alt="Kopva" class="h-6 w-auto md:h-7">
+        </a>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-7">
+        <nav class="hidden items-center gap-7 text-sm font-semibold md:flex">
           <a href="#how-it-works" class="nav-link">How it works</a>
           <a href="#features" class="nav-link">Features</a>
           <a href="#pricing" class="nav-link">Pricing</a>
@@ -19,23 +17,23 @@
         </nav>
 
         <!-- Mobile -->
-        <div class="md:hidden flex items-center gap-3">
+        <div class="flex items-center gap-3 md:hidden">
           <a href="/checkout" class="btn-header btn-header--primary btn-header--sm">Buy</a>
-          <button @click="mobileOpen = !mobileOpen" class="h-9 w-9 grid place-items-center rounded-lg bg-white/10">
-            <span class="sr-only">Open menu</span>
+          <button @click="mobileOpen = !mobileOpen" class="grid h-10 w-10 place-items-center rounded-lg border border-secondary/10 bg-white text-secondary shadow-sm">
+            <span class="sr-only">Toggle navigation</span>
             <svg v-if="!mobileOpen" width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
             <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M6 6l12 12M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
           </button>
         </div>
       </div>
 
       <!-- Mobile drawer -->
-      <div v-show="mobileOpen" class="md:hidden bg-secondary/95 backdrop-blur-sm border-t border-white/10">
-        <nav class="container mx-auto px-4 py-4 grid gap-3 text-base">
+      <div v-show="mobileOpen" class="border-t border-secondary/5 bg-white/95 text-secondary backdrop-blur md:hidden">
+        <nav class="container mx-auto grid gap-3 px-4 py-4 text-base">
           <a @click="mobileOpen=false" href="#how-it-works" class="nav-link">How it works</a>
           <a @click="mobileOpen=false" href="#features" class="nav-link">Features</a>
           <a @click="mobileOpen=false" href="#pricing" class="nav-link">Pricing</a>
@@ -46,22 +44,76 @@
     </header>
 
     <!-- HERO -->
-    <section class="relative overflow-hidden">
-      <!-- background stays inside hero -->
-      <div class="hero-bg hero-bg--ice" aria-hidden="true" v-parallax="{ speed: -0.25, max: 80 }" ></div>
+    <section id="hero" class="relative overflow-hidden">
+      <div class="hero-bg hero-bg--ice" aria-hidden="true" v-parallax="{ speed: -0.25, max: 80 }"></div>
+      <div class="hero-blob hero-blob--left" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob--right" aria-hidden="true"></div>
 
-      <div class="container mx-auto px-4 relative">
-        <div class="grid lg:grid-cols-2 gap-10 items-center pt-10 md:pt-14 pb-10">
-          <!-- LEFT: product -->
-          <div class="grid place-items-center order-2 lg:order-1">
+      <div class="relative container mx-auto px-4">
+        <div class="grid items-center gap-14 pt-14 pb-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
+          <!-- Copy -->
+          <div class="order-2 space-y-8 lg:order-1">
+            <div v-reveal class="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/80 px-4 py-2 text-sm font-semibold text-secondary/80 shadow-sm backdrop-blur">
+              <span class="h-2.5 w-2.5 rounded-full bg-primary"></span>
+              Smart protection for every home
+            </div>
+
+            <div v-reveal class="space-y-5 reveal-up">
+              <h1 class="headline text-secondary">
+                Never pay for leaks again.
+              </h1>
+              <p class="text-lg text-secondary/60 sm:text-xl">
+                Automatic shut-off · Freeze Guard · App control
+              </p>
+              <p class="max-w-xl text-lg leading-relaxed text-secondary/80 sm:text-xl">
+                Kopva sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a disaster.
+              </p>
+            </div>
+
+            <div v-reveal class="flex flex-wrap items-center gap-3 reveal-up" :style="{ '--delay': '120ms' }">
+              <a id="buy" href="/checkout" class="btn-primary">Get Pipebudi</a>
+              <a href="#how-it-works" class="btn-ghost">How it works</a>
+            </div>
+
+            <div v-reveal class="flex flex-wrap items-center gap-4 text-sm text-secondary/60 reveal-up" :style="{ '--delay': '240ms' }">
+              <span class="inline-flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
+                24/7 monitoring
+              </span>
+              <span class="hidden sm:inline">•</span>
+              <NuxtImg src="/google-store.png" class="h-9 w-auto" alt="Google Play" />
+              <span class="hidden sm:inline">•</span>
+              <NuxtImg src="/apple-store.png" class="h-9 w-auto" alt="Apple App Store" />
+              <span class="hidden sm:inline">•</span>
+              Easy install
+            </div>
+
+            <DisclaimerNote :text="`*Kopva reduces risk but cannot prevent all leaks or damage in all scenarios. Performance depends on correct installation, valve/pipeline compatibility, power and Wi-Fi availability, and user settings. Not a substitute for home insurance.`" />
+
+            <div v-reveal class="grid gap-3 pt-4 sm:grid-cols-3 reveal-up" :style="{ '--delay': '360ms' }">
+              <div class="info-chip">
+                <p class="text-xs uppercase tracking-wide text-secondary/60">Auto shut-off</p>
+                <p class="text-sm font-semibold text-secondary">Stops major leaks fast</p>
+              </div>
+              <div class="info-chip">
+                <p class="text-xs uppercase tracking-wide text-secondary/60">Install</p>
+                <p class="text-sm font-semibold text-secondary">≈10 minute setup</p>
+              </div>
+              <div class="info-chip">
+                <p class="text-xs uppercase tracking-wide text-secondary/60">Control</p>
+                <p class="text-sm font-semibold text-secondary">App + manual override</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product -->
+          <div class="order-1 lg:order-2" v-reveal>
             <div class="stage" @click.self="openId=null">
               <div class="bg-circles" v-parallax="{ speed: -0.08, max: 80 }"></div>
-
-              <img src="/kopva-raw.png" alt="Kopva smart leak & freeze protection valve"
-                   class="product-image" draggable="false" v-parallax="{ speed: -0.05, max: 14 }" />
+              <img src="/kopva-raw.png" alt="Kopva smart leak &amp; freeze protection valve" class="product-image" draggable="false" v-parallax="{ speed: -0.05, max: 14 }" />
               <div class="glow"></div>
 
-              <!-- Desktop/Tablet pills (absolute around product) -->
+              <!-- Desktop/Tablet pills -->
               <button
                   v-for="(f, i) in placedPct"
                   :key="f.id"
@@ -70,13 +122,10 @@
                   :style="{ left: f.xPct + '%', top: f.yPct + '%', '--delay': (i * 90) + 'ms' }"
               >
                 <span class="dot"></span>
-
                 <span class="pill">
                   <span class="title text-secondary">{{ f.title }}</span>
                   <span class="desc text-secondary/70">{{ f.desc }}</span>
                 </span>
-
-                <!-- Popover -->
                 <span
                     class="feature-card"
                     :id="`card-${f.id}`"
@@ -84,276 +133,177 @@
                     :class="{ 'feature-card--open': isOpen(f.id) || hoverId === f.id }"
                 >
                   <span class="font-semibold text-secondary">{{ f.title }}</span>
-                  <span class="block text-sm text-secondary/80 mt-1">{{ f.long }}</span>
+                  <span class="mt-1 block text-sm text-secondary/80">{{ f.long }}</span>
                 </span>
               </button>
             </div>
 
-            <!-- Mobile pills: 2 above, 2 below -->
-            <div class="w-full sm:hidden mt-4 grid grid-cols-1 gap-2">
-              <button
-                  v-for="f in mobileTop"
-                  :key="'mt-' + f.id"
-                  class="mobile-pill"
-                  @click="toggleFeature(f.id)"
-              >
-                <span class="mobile-dot"></span>
-                <span class="pill">
-                  <span class="title text-secondary">{{ f.title }}</span>
-                  <span class="desc text-secondary/70">{{ f.desc }}</span>
-                </span>
-                <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
-              </button>
-            </div>
-            <div class="w-full sm:hidden mt-2 grid grid-cols-1 gap-2">
-              <button
-                  v-for="f in mobileBottom"
-                  :key="'mb-' + f.id"
-                  class="mobile-pill"
-                  @click="toggleFeature(f.id)"
-              >
-                <span class="mobile-dot"></span>
-                <span class="pill">
-                  <span class="title text-secondary">{{ f.title }}</span>
-                  <span class="desc text-secondary/70">{{ f.desc }}</span>
-                </span>
-                <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
-              </button>
-            </div>
-          </div>
-
-          <!-- RIGHT: copy -->
-          <div class="order-1 lg:order-2">
-            <h1 class="headline text-secondary">Never pay for leaks again.</h1>
-            <p class="kicker text-secondary/55">Automatic shut-off • Freeze Guard • App control</p>
-
-            <p class="mt-5 text-lg md:text-xl text-secondary/80 leading-relaxed max-w-prose">
-              Kopva sits on your main water valve and watches for abnormal flow and freezing conditions.
-              If something’s wrong, it alerts you and can automatically close the valve to preventing a large scale disaster.
-            </p>
-
-            <div class="mt-8 flex flex-wrap items-center gap-3">
-              <a id="buy" href="/checkout" class="btn-primary">Get Pipebudi</a>
-              <a href="#how-it-works" class="btn-ghost">How it works</a>
-            </div>
-            <!-- HERO DISCLAIMER -->
-            <DisclaimerNote
-                :text="`*Kopva reduces risk but cannot prevent all leaks or damage in all scenarios. Performance depends on correct installation, valve/pipeline compatibility, power and Wi-Fi availability, and user settings. Not a substitute for home insurance.`"
-            />
-            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-secondary/60">
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span> 24/7 monitoring
-              </span>
-              <span class="hidden sm:inline">•</span>
-              <span><NuxtImg src="/google-store.png" class="max-w-[120px]"/></span>
-              <span class="hidden sm:inline">•</span>
-              <span><NuxtImg src="/apple-store.png" class="max-w-[120px]"/></span>
-              <span class="hidden sm:inline">•</span>
-              <span>Easy install</span>
+            <!-- Mobile pills -->
+            <div class="mt-6 grid w-full gap-3 sm:hidden">
+              <div class="grid gap-2">
+                <button
+                    v-for="f in mobileTop"
+                    :key="'mt-' + f.id"
+                    class="mobile-pill"
+                    @click="toggleFeature(f.id)"
+                >
+                  <span class="mobile-dot"></span>
+                  <span class="pill">
+                    <span class="title text-secondary">{{ f.title }}</span>
+                    <span class="desc text-secondary/70">{{ f.desc }}</span>
+                  </span>
+                  <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
+                </button>
+              </div>
+              <div class="grid gap-2">
+                <button
+                    v-for="f in mobileBottom"
+                    :key="'mb-' + f.id"
+                    class="mobile-pill"
+                    @click="toggleFeature(f.id)"
+                >
+                  <span class="mobile-dot"></span>
+                  <span class="pill">
+                    <span class="title text-secondary">{{ f.title }}</span>
+                    <span class="desc text-secondary/70">{{ f.desc }}</span>
+                  </span>
+                  <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Brand stat bar overlapping the bend -->
-      <div class="relative z-[2] -mt-6 md:-mt-8">
+      <!-- Trusted -->
+      <div class="trusted-bar">
         <div class="container mx-auto px-4">
-          <div class="mx-auto max-w-5xl bg-primary/10 backdrop-blur-sm border border-primary/25 rounded-2xl shadow-[0_20px_50px_-28px_rgba(0,16,17,.35)] px-4 py-3 md:px-6 md:py-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">Auto shut-off</span> within seconds</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">10-minute install</span> on common valves</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">App control</span> anywhere</p>
+          <div class="trusted-card" v-reveal>
+            <p class="text-xs uppercase tracking-[0.24em] text-secondary/50">Trusted by smart homeowners</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-secondary/60 md:gap-10">
+              <span>Fast response alerts</span>
+              <span class="hidden md:inline">•</span>
+              <span>Insurance ready logs</span>
+              <span class="hidden md:inline">•</span>
+              <span>Works with standard UK valves</span>
             </div>
           </div>
           <div class="text-center">
-          <DisclaimerNote
-              :text="`Auto shut-off and install times are typical under test conditions and may vary. Remote control and notifications require power and connectivity.`"
-          />
+            <DisclaimerNote :text="`Auto shut-off and install times are typical under test conditions and may vary. Remote control and notifications require power and connectivity.`" />
           </div>
         </div>
-      </div>
-
-      <!-- prominent dual wave with primary accent -->
-      <div class="relative">
-        <svg class="block w-full h-[110px] md:h-[140px]" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,30 C240,110 480,140 720,140 C960,140 1200,110 1440,30 L1440,140 L0,140 Z" fill="#ffffff"/>
-          <path d="M0,0 C220,80 520,110 720,110 C980,110 1180,70 1440,0 L1440,140 L0,140 Z" class="fill-primary/20"/>
-        </svg>
       </div>
     </section>
 
     <!-- BODY / BENEFITS -->
     <!-- BODY / BENEFITS -->
-    <section id="how-it-works" class="bg-[#f7fbff] py-16 md:py-24">
+    <section id="how-it-works" class="relative overflow-hidden bg-[#f7fbff] py-20">
       <div class="container mx-auto px-4">
 
         <!-- Intro -->
-        <div class="text-center max-w-2xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-secondary">
+        <div v-reveal class="mx-auto max-w-2xl text-center reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/50">How it works</p>
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-secondary sm:text-4xl">
             Meet <span class="text-primary">Pipebudi</span>
           </h2>
-          <p class="mt-3 text-secondary/70">
-            The smart valve that protects your home from leaks and frozen pipes—automatically.
+          <p class="mt-4 text-secondary/70">
+            The smart valve that protects your home from leaks and frozen pipes — automatically.
           </p>
         </div>
 
-        <!-- Timeline / Pipe -->
-        <div class="relative mt-12 md:mt-16">
-          <!-- central pipe (desktop) -->
-          <div class="pointer-events-none hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[3px] bg-secondary/10"></div>
+        <!-- Timeline -->
+        <div class="timeline-wrapper">
+          <div class="timeline-line" aria-hidden="true"></div>
 
           <div class="space-y-12 md:space-y-16">
-            <!-- 1. Auto shut-off (text left, image right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <!-- node on the pipe -->
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
+            <article v-reveal class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
 
-              <div class="lg:pr-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Automatically shuts off</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Automatically shuts off your water when a catastrophic leak is detected. Get peace of mind. Pipebudi closes your water supply when a leak is heard.
+              <div class="timeline-copy">
+                <h3>Automatically shuts off</h3>
+                <p>
+                  Automatically shuts off your water when a catastrophic leak is detected. Pipebudi closes your water supply when a leak is heard so you can get on with your day.
                 </p>
               </div>
-
-              <div class="lg:pl-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/pipbudi-wall.jpg"
-                      alt="Automatic water shut-off"
-                      loading="lazy"
-                  />
+              <div class="timeline-media">
+                <div v-parallax="{ speed: -0.12, max: 40 }" class="timeline-frame">
+                  <img class="aspect-[4/3] h-full w-full object-cover" src="/pipbudi-wall.jpg" alt="Automatic water shut-off" loading="lazy" />
                 </div>
               </div>
             </article>
 
-            <!-- 2. 24/7 Monitoring (image left, text right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
+            <article v-reveal class="timeline-item timeline-item--reverse">
+              <div class="timeline-dot" aria-hidden="true"></div>
 
-              <div class="order-2 lg:order-1 lg:pr-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/kopva-ipad-prod.jpg"
-                      alt="24/7 monitoring"
-                      loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="order-1 lg:order-2 lg:pl-16">
-                <h3 class="text-2xl font-extrabold text-secondary">24/7 Monitoring</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Pipebudi is working to protect you even when you are asleep. Simply connect Pipebudi to your water pipes,
-                  download the app, connect to Wi-Fi, and get started.
+              <div class="timeline-copy">
+                <h3>24/7 Monitoring</h3>
+                <p>
+                  Pipebudi is protecting you even when you are asleep. Connect Pipebudi to your water pipes, download the app, connect to Wi-Fi, and get started.
                 </p>
               </div>
-            </article>
-
-            <!-- 3. Winter protection (text left, image right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
-
-              <div class="lg:pr-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Protects your pipes in winter</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature
-                  reaches <span class="font-semibold">close to freezing</span>,Pipebudi will notify you and
-                  can automatically turn off your water supply to
-                  further protect your property.
-                </p>
-              </div>
-
-              <div class="lg:pl-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/frozen-pipe.jpg"
-                      alt="Winter frost protection"
-                      loading="lazy"
-                  />
+              <div class="timeline-media">
+                <div v-parallax="{ speed: -0.12, max: 40 }" class="timeline-frame">
+                  <img class="aspect-[4/3] h-full w-full object-cover" src="/kopva-ipad-prod.jpg" alt="24/7 monitoring" loading="lazy" />
                 </div>
               </div>
             </article>
 
-            <!-- 4. Remote control (image left, text right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
+            <article v-reveal class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
 
-              <div class="order-2 lg:order-1 lg:pr-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/away-from-home.jpg"
-                      alt="Remote control from the app"
-                      loading="lazy"
-                  />
+              <div class="timeline-copy">
+                <h3>Protects your pipes in winter</h3>
+                <p>
+                  Frozen pipes can be serious in winter. With built-in frost protection, if temperature reaches <span class="font-semibold">close to freezing</span>, Pipebudi will notify you and can automatically turn off your water supply.
+                </p>
+              </div>
+              <div class="timeline-media">
+                <div v-parallax="{ speed: -0.12, max: 40 }" class="timeline-frame">
+                  <img class="aspect-[4/3] h-full w-full object-cover" src="/frozen-pipe.jpg" alt="Winter frost protection" loading="lazy" />
                 </div>
               </div>
+            </article>
 
-              <div class="order-1 lg:order-2 lg:pl-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Away from home?</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Whether you’re on holiday or staying away a little
-                  longer, you can remotely instruct Pipebudi to turn
-                  off the water supply or switch to Away mode —
-                  so you can relax knowing you are protected.
+            <article v-reveal class="timeline-item timeline-item--reverse">
+              <div class="timeline-dot" aria-hidden="true"></div>
+
+              <div class="timeline-copy">
+                <h3>Away from home?</h3>
+                <p>
+                  Whether you’re on holiday or staying away a little longer, you can remotely instruct Pipebudi to turn off the water supply or switch to Away mode — so you can relax knowing you are protected.
                 </p>
+              </div>
+              <div class="timeline-media">
+                <div v-parallax="{ speed: -0.12, max: 40 }" class="timeline-frame">
+                  <img class="aspect-[4/3] h-full w-full object-cover" src="/away-from-home.jpg" alt="Remote control from the app" loading="lazy" />
+                </div>
               </div>
             </article>
           </div>
         </div>
 
         <!-- Discount callout -->
-        <div class="mt-12">
-          <div
-              class="relative overflow-hidden rounded-2xl border border-primary/25 bg-white/80 backdrop-blur-sm p-6 md:p-8 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]"
-          >
-            <!-- decorative wash -->
-            <div class="pointer-events-none absolute -top-20 -left-24 h-64 w-64 rounded-full bg-primary/15 blur-3xl"></div>
+        <div v-reveal class="mt-16 reveal-up">
+          <div class="discount-card">
+            <div class="discount-glow" aria-hidden="true"></div>
 
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div class="flex items-start gap-4">
-                <div class="h-11 w-11 shrink-0 rounded-xl grid place-items-center text-white bg-gradient-to-br from-primary to-theme-third shadow-[0_10px_24px_-12px_rgba(84,177,107,.5)]">
+                <div class="discount-icon">
                   <Icon name="heroicons-solid:tag" class="h-6 w-6" />
                 </div>
                 <div>
-                  <p class="text-sm font-semibold text-primary uppercase tracking-wide">Don’t miss out</p>
-                  <h3 class="text-xl md:text-2xl font-extrabold text-secondary mt-0.5">
-                    20% off Launch Offer
-                  </h3>
-                  <p class="text-secondary/70 mt-1">
-                    Enter this code on the checkout page to claim your discount:
-                  </p>
+                  <p class="text-sm font-semibold uppercase tracking-wide text-primary">Don’t miss out</p>
+                  <h3 class="mt-1 text-xl font-extrabold text-secondary md:text-2xl">20% off Launch Offer</h3>
+                  <p class="mt-2 text-secondary/70">Enter this code on the checkout page to claim your discount:</p>
                 </div>
               </div>
 
-              <!-- code + copy -->
-              <div class="flex items-center gap-2">
-                <code
-                    class="select-all font-mono text-base md:text-lg tracking-wider bg-secondary/95 text-white rounded-xl px-4 py-2"
-                >
-                  LAUNCH20
-                </code>
+              <div class="flex items-center gap-3">
+                <code class="discount-code">LAUNCH20</code>
                 <button
                     @click="copyLaunch()"
-                    class="inline-flex items-center gap-2 rounded-xl border border-secondary/10 bg-white px-3 py-2 text-sm font-semibold text-secondary hover:bg-white/90 active:translate-y-px"
+                    class="discount-copy"
                     aria-label="Copy discount code"
                 >
                   <Icon name="heroicons-outline:clipboard-document" class="h-5 w-5" />
@@ -365,37 +315,145 @@
         </div>
 
         <!-- CTA banner -->
-        <section class="mt-12 md:mt-16">
-          <div
-              class="relative overflow-hidden rounded-3xl bg-secondary text-white px-6 py-8 md:px-10 md:py-12"
-          >
-            <!-- subtle brand glow -->
-            <div class="pointer-events-none absolute -right-24 -top-16 h-64 w-64 rounded-full bg-primary/25 blur-3xl"></div>
-
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div>
-                <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  Ready to protect your home?
-                </h3>
-                <p class="mt-1 text-white/80">
-                  Get Pipebudi with 20% off today and protect your home from costly leaks.
-                </p>
+        <section v-reveal class="mt-16 reveal-up">
+          <div class="cta-band">
+            <div class="cta-glow" aria-hidden="true"></div>
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div class="space-y-2">
+                <h3 class="text-2xl font-extrabold tracking-tight text-white md:text-3xl">Ready to protect your home?</h3>
+                <p class="text-white/80">Get Pipebudi with 20% off today and shield your home from costly leaks.</p>
               </div>
-
               <div class="flex flex-wrap items-center gap-3">
-                <a href="/checkout" class="inline-flex items-center justify-center rounded-xl bg-primary text-secondary font-bold px-5 py-3 shadow-[0_12px_30px_-12px_rgba(84,177,107,.55)] hover:brightness-95 active:translate-y-px">
-                  Buy now
-                </a>
-                <a href="#features" class="inline-flex items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-bold px-5 py-3 backdrop-blur-sm hover:bg-white/15 active:translate-y-px">
-                  Learn more
-                </a>
+                <a href="/checkout" class="cta-primary">Buy now</a>
+                <a href="#features" class="cta-secondary">Learn more</a>
               </div>
             </div>
           </div>
         </section>
       </div>
     </section>
-    <PricingBox
+
+    <!-- Feature grid -->
+    <section id="features" class="py-20">
+      <div class="container mx-auto px-4">
+        <div v-reveal class="mx-auto max-w-3xl text-center reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/50">Why homeowners choose Kopva</p>
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-secondary sm:text-4xl">Designed for real-world leaks</h2>
+          <p class="mt-4 text-secondary/70">Every feature focuses on giving you time back, insight into your home, and confidence that water is handled.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article v-reveal class="feature-panel">
+            <div class="feature-icon">
+              <Icon name="heroicons-solid:bolt" class="h-6 w-6" />
+            </div>
+            <h3>Instant alerts</h3>
+            <p>Hear about unusual flow the moment it happens. Push notifications, email, and audible alarms keep you informed.</p>
+          </article>
+
+          <article v-reveal class="feature-panel">
+            <div class="feature-icon">
+              <Icon name="heroicons-solid:shield-check" class="h-6 w-6" />
+            </div>
+            <h3>Freeze Guard</h3>
+            <p>Temperature sensors track frost risk, sending early warnings and shutting the valve before pipes burst.</p>
+          </article>
+
+          <article v-reveal class="feature-panel">
+            <div class="feature-icon">
+              <Icon name="heroicons-solid:device-mobile" class="h-6 w-6" />
+            </div>
+            <h3>Anywhere control</h3>
+            <p>Switch your water off, enable Away mode, and see live status directly from the Kopva app no matter where you are.</p>
+          </article>
+
+          <article v-reveal class="feature-panel">
+            <div class="feature-icon">
+              <Icon name="heroicons-solid:sparkles" class="h-6 w-6" />
+            </div>
+            <h3>Quick install</h3>
+            <p>Compact hardware mounts to common valves in minutes with guided setup and optional pro support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- App experience -->
+    <section class="relative overflow-hidden py-20">
+      <div class="app-bg" aria-hidden="true"></div>
+      <div class="container relative mx-auto grid gap-12 px-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center">
+        <div v-reveal class="space-y-5 reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/50">Control centre</p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-secondary sm:text-4xl">Your water command centre in one app</h2>
+          <p class="text-secondary/70">Get a real-time view of flow, temperature, and valve status. Trigger manual shut-offs, schedule protection modes, and share access with family members.</p>
+
+          <ul class="grid gap-3 text-secondary/75">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary"><Icon name="heroicons-mini:check" class="h-3.5 w-3.5" /></span>
+              <span>Timeline of alerts and actions for easy insurance reporting.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary"><Icon name="heroicons-mini:check" class="h-3.5 w-3.5" /></span>
+              <span>Customisable leak thresholds and freeze temperatures.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary"><Icon name="heroicons-mini:check" class="h-3.5 w-3.5" /></span>
+              <span>Works alongside voice assistants and smart home routines (beta).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div v-reveal class="reveal-up">
+          <div class="app-frame">
+            <div class="app-glow" aria-hidden="true"></div>
+            <img src="/kopva-app-ipad.png" alt="Kopva app interface" class="app-image" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
+          <div v-reveal class="space-y-5 reveal-up">
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/50">Always-on support</p>
+            <h2 class="text-3xl font-extrabold tracking-tight text-secondary sm:text-4xl">Protection with people behind it</h2>
+            <p class="text-secondary/70">Our team helps you install, monitor, and act fast when something isn’t right.</p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div v-reveal class="support-card">
+              <h3>Rapid help</h3>
+              <p>Guided onboarding, chat support, and a knowledge base cover every scenario.</p>
+            </div>
+            <div v-reveal class="support-card">
+              <h3>12-month warranty</h3>
+              <p>Hardware backed by a full year warranty and optional extended protection.</p>
+            </div>
+            <div v-reveal class="support-card">
+              <h3>30-day returns</h3>
+              <p>Install Kopva at home and if it’s not right for you, send it back within 30 days.</p>
+            </div>
+            <div v-reveal class="support-card">
+              <h3>Compliance ready</h3>
+              <p>WRAS, UKCA, and CE certifications underway so you can meet insurance requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="relative overflow-hidden bg-gradient-to-b from-[#f2f9ff] via-white to-white py-20">
+      <div class="pricing-glow" aria-hidden="true"></div>
+      <div class="container mx-auto px-4">
+        <div v-reveal class="mx-auto max-w-2xl text-center reveal-up">
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-secondary/50">Launch pricing</p>
+          <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-secondary sm:text-4xl">Protect your home from £239</h2>
+          <p class="mt-4 text-secondary/70">Everything you need to monitor, alert, and shut off is in the box.</p>
+        </div>
+        <div class="mt-12">
+          <PricingBox
         product-name="Kopva Smart Water Valve"
         subtitle="Leak & freeze protection with automatic shut-off"
         image-src="/boxed-product.jpg"
@@ -422,7 +480,10 @@
         learn-href="/#how-it-works"
         :in-stock="true"
         badge-text="Launch pricing"
-    />
+        />
+        </div>
+      </div>
+    </section>
 
 
 <!--    <section class="bg-[#f7fbff] py-14">-->
@@ -512,21 +573,24 @@
     <LeakCostVisual :average-cost="4200" currency="£" />
 
     <!-- FOOTER -->
-    <footer id="support" class="bg-secondary text-white">
-      <div class="container mx-auto px-4 py-10">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <div class="h-9 w-9 rounded-xl bg-white/10 grid place-items-center font-black">K</div>
-            <span class="font-semibold tracking-tight">KOPVA</span>
+    <footer id="footer" class="bg-secondary text-white">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+          <div class="space-y-3">
+            <img src="/kopva-logo-full-white.png" alt="Kopva" class="h-7 w-auto" />
+            <p class="max-w-md text-sm text-white/70">Smart leak and freeze protection that gives you confidence in every season.</p>
           </div>
-          <nav class="flex gap-6 text-white/80 text-sm">
+          <nav class="flex flex-wrap items-center gap-4 text-sm text-white/70">
+            <a href="#how-it-works" class="hover:text-white">How it works</a>
+            <a href="#features" class="hover:text-white">Features</a>
+            <a href="#pricing" class="hover:text-white">Pricing</a>
+            <a href="/support" class="hover:text-white">Support</a>
             <a href="/privacy" class="hover:text-white">Privacy</a>
             <a href="/terms" class="hover:text-white">Terms</a>
-            <a href="/support" class="hover:text-white">Support</a>
           </nav>
         </div>
         <ClientOnly>
-          <p class="mt-6 text-white/60 text-sm">© {{ new Date().getFullYear() }} Kopva. All rights reserved.</p>
+          <p class="mt-8 text-xs text-white/50">© {{ new Date().getFullYear() }} Kopva. All rights reserved.</p>
         </ClientOnly>
       </div>
     </footer>
@@ -536,7 +600,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount} from 'vue'
 import StickyBar from "~/components/StickyBar.vue";
-import Privacy from "~/pages/privacy.vue";
 
 const mobileOpen = ref(false)
 
@@ -752,34 +815,24 @@ useHead({
 
 <style scoped>
 /* Header */
-.nav-link{ color: #fff; opacity: .9; transition: opacity .15s ease }
-.nav-link:hover{ opacity: 1 }
-.btn-header{ @apply inline-flex items-center justify-center font-bold rounded-lg px-3.5 py-2; }
-.btn-header--primary{ @apply bg-primary text-white; }
-.btn-header--sm{ @apply px-3 py-1.5 rounded-md font-extrabold; }
+.nav-link{
+  position: relative;
+  color: rgba(0,16,17,0.65);
+  transition: color .18s ease, transform .18s ease;
+}
+.nav-link:hover{
+  color: #001011;
+  transform: translateY(-1px);
+}
+.btn-header{ @apply inline-flex items-center justify-center font-semibold rounded-lg px-3.5 py-2; }
+.btn-header--primary{
+  @apply bg-primary text-white shadow-sm;
+  box-shadow: 0 12px 24px -14px rgba(84,177,107,.7);
+}
+.btn-header--primary:hover{ filter: brightness(.95); }
+.btn-header--sm{ @apply px-3 py-1.5 rounded-md font-semibold; }
 
 /* Hero background — stays inside hero */
-.hero-bg{
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: clamp(760px, 95vh, 1000px);   /* make sure it has a body */
-  z-index: 0;
-  pointer-events: none;
-
-  /* Stronger colour hotspots + a gentle base gradient */
-  background:
-    /* blue highlight (theme-third) pulled into top-left */
-      radial-gradient(75% 50% at 14% 16%, rgba(151,200,235,0.46), rgba(151,200,235,0) 60%),
-        /* green highlight (primary) pulled into top-right */
-      radial-gradient(65% 45% at 86% 6%,  rgba(84,177,107,0.42),  rgba(84,177,107,0) 60%),
-        /* soft green bloom behind product area */
-      radial-gradient(120% 80% at 50% -20%, rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
-        /* base vertical gradient so the whole hero isn’t flat white */
-      linear-gradient(180deg, #E9F6FF 0%, #FFFFFF 65%);
-}
-
-/* Add subtle texture so the colour feels intentional (optional) */
-/* Base layer (size/position/texture) */
 .hero-bg{
   position: absolute;
   left: 0; right: 0; top: 0;
@@ -789,9 +842,25 @@ useHead({
 
   /* Variant-driven background: falls back to a soft sky if no variant class is present */
   background: var(--hero-bg,
-  linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%)
+    radial-gradient(75% 50% at 14% 16%, rgba(151,200,235,0.46), rgba(151,200,235,0) 60%),
+    radial-gradient(65% 45% at 86% 6%,  rgba(84,177,107,0.42),  rgba(84,177,107,0) 60%),
+    radial-gradient(120% 80% at 50% -20%, rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
+    linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%)
   );
 }
+
+.hero-blob{
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: .55;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-blob--left{ left: -12%; top: 18%; background: rgba(151,200,235,.45); }
+.hero-blob--right{ right: -8%; top: 12%; background: rgba(84,177,107,.28); }
 
 /* subtle grid texture */
 .hero-bg::after{
@@ -841,6 +910,27 @@ useHead({
   font-size: clamp(3rem, 6.8vw, 5.4rem);
 }
 .kicker{ margin-top: .75rem; font-size: clamp(.95rem, 1.4vw, 1.1rem); }
+
+.info-chip{
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 18px 50px -32px rgba(0,16,17,.4);
+}
+
+.trusted-bar{ position: relative; margin-top: 3rem; margin-bottom: -4rem; z-index: 2; }
+.trusted-card{
+  margin: 0 auto;
+  max-width: 880px;
+  border-radius: 18px;
+  padding: 1.6rem 2rem;
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0,16,17,0.06);
+  box-shadow: 0 30px 60px -40px rgba(0,16,17,0.35);
+}
 
 /* Stage */
 .stage{ position: relative; width: min(100%, 601px); aspect-ratio: 1/1; z-index: 1 }
@@ -918,6 +1008,65 @@ useHead({
 .mobile-pill .pill{ transform:none; padding:.55rem .8rem; }
 .mobile-dot{ @apply inline-block h-2.5 w-2.5 rounded-full bg-primary mr-2 align-middle; }
 
+/* Timeline */
+.timeline-wrapper{ position: relative; margin-top: 3.5rem; }
+.timeline-line{
+  position: absolute;
+  inset: 0;
+  margin: 0 auto;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(0,16,17,0) 0%, rgba(84,177,107,0.45) 12%, rgba(84,177,107,0.65) 50%, rgba(84,177,107,0.25) 88%, rgba(0,16,17,0) 100%);
+  display: none;
+}
+.timeline-item{
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+}
+.timeline-copy{
+  background: rgba(255,255,255,0.86);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 24px 60px -36px rgba(0,16,17,0.35);
+  padding: 1.6rem 1.8rem;
+}
+.timeline-copy h3{ @apply text-2xl font-extrabold text-secondary; }
+.timeline-copy p{ @apply mt-3 text-secondary/75 leading-relaxed; }
+.timeline-media{ position: relative; }
+.timeline-frame{
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+  box-shadow: 0 24px 60px -36px rgba(0,16,17,0.25);
+}
+.timeline-dot{ display: none; }
+
+@media (min-width: 1024px){
+  .timeline-wrapper{ margin-top: 5rem; padding: 0 2.5rem; }
+  .timeline-line{ display: block; }
+  .timeline-item{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .timeline-copy{
+    box-shadow: 0 24px 70px -40px rgba(0,16,17,.28);
+    padding: 2.2rem 2.6rem;
+  }
+  .timeline-media{ padding: 0 3rem; }
+  .timeline-item.timeline-item--reverse .timeline-copy{ order: 2; }
+  .timeline-item.timeline-item--reverse .timeline-media{ order: 1; }
+  .timeline-dot{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px; height: 18px;
+    border-radius: 999px;
+    background: #54B16B;
+    box-shadow: 0 0 0 8px rgba(84,177,107,0.22);
+  }
+}
+
 /* Buttons */
 .btn-primary{ @apply inline-flex items-center justify-center font-bold text-white bg-primary rounded-[0.9rem] px-5 py-3; box-shadow: 0 12px 30px -12px rgba(84,177,107,.5); transition: transform .12s ease, filter .12s ease, box-shadow .2s ease; }
 .btn-primary:hover{ filter: brightness(.95); box-shadow: 0 16px 38px -14px rgba(84,177,107,.55) }
@@ -953,6 +1102,152 @@ useHead({
 .benefit-copy{ @apply mt-2 text-secondary/75 leading-relaxed; }
 
 
+/* Feature panels */
+.feature-panel{
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 2rem 1.8rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 28px 60px -38px rgba(0,16,17,0.3);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature-panel:hover{ transform: translateY(-4px); box-shadow: 0 34px 70px -34px rgba(0,16,17,0.28); }
+.feature-panel h3{ @apply text-xl font-extrabold text-secondary; margin-top: 1.1rem; }
+.feature-panel p{ @apply mt-3 text-secondary/70 leading-relaxed; }
+.feature-icon{
+  @apply h-12 w-12 grid place-items-center rounded-xl bg-primary/10 text-primary;
+  box-shadow: inset 0 0 0 1px rgba(84,177,107,0.15);
+}
+
+/* App section */
+.app-bg{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 10% 10%, rgba(151,200,235,0.22), transparent 60%),
+              radial-gradient(140% 120% at 90% 0%, rgba(84,177,107,0.18), transparent 70%),
+              linear-gradient(180deg, rgba(247,251,255,0.85) 0%, rgba(255,255,255,0.95) 100%);
+  z-index: -1;
+}
+.app-frame{
+  position: relative;
+  border-radius: 2.2rem;
+  background: linear-gradient(160deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 40px 80px -48px rgba(0,16,17,0.35);
+  padding: 2.2rem;
+  overflow: hidden;
+}
+.app-image{ display: block; width: 100%; height: auto; filter: drop-shadow(0 20px 35px rgba(0,16,17,0.25)); }
+.app-glow{
+  position: absolute;
+  inset: auto -20% -40% -20%;
+  height: 280px;
+  background: radial-gradient(90% 70% at 50% 0%, rgba(151,200,235,0.55), transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* Support */
+.support-card{
+  border-radius: 1.25rem;
+  padding: 1.6rem;
+  background: rgba(247,251,255,0.86);
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 20px 50px -36px rgba(0,16,17,0.25);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.support-card h3{ @apply text-lg font-extrabold text-secondary; }
+.support-card p{ @apply mt-2 text-secondary/70 leading-relaxed; }
+.support-card:hover{ transform: translateY(-4px); box-shadow: 0 28px 60px -34px rgba(0,16,17,0.28); }
+
+/* Discount */
+.discount-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  border: 1px solid rgba(84,177,107,0.18);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 32px 60px -32px rgba(0,16,17,0.3);
+  padding: 2rem;
+}
+.discount-glow{
+  position: absolute;
+  inset: -40% auto auto -10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(55% 55% at 50% 50%, rgba(84,177,107,0.18), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.discount-icon{
+  @apply h-12 w-12 rounded-xl grid place-items-center text-white;
+  background: linear-gradient(135deg, #54B16B, #3f8d54);
+  box-shadow: 0 18px 44px -26px rgba(84,177,107,0.6);
+}
+.discount-code{
+  @apply select-all rounded-xl border border-secondary/10 bg-secondary/95 px-4 py-2 font-mono text-base text-white tracking-widest;
+  letter-spacing: 0.28em;
+}
+.discount-copy{
+  @apply inline-flex items-center gap-2 rounded-xl border border-secondary/10 bg-white px-3 py-2 text-sm font-semibold text-secondary;
+  transition: transform .12s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow: 0 16px 30px -24px rgba(0,16,17,.35);
+}
+.discount-copy:hover{ background: rgba(255,255,255,0.9); }
+.discount-copy:active{ transform: translateY(1px); }
+
+/* CTA */
+.cta-band{
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.2rem;
+  padding: 2.4rem 2.8rem;
+  background: linear-gradient(135deg, #001011, #093A3E);
+  box-shadow: 0 38px 80px -40px rgba(0,16,17,0.45);
+}
+.cta-glow{
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(84,177,107,0.45), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.cta-primary{
+  @apply inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 font-bold text-secondary;
+  box-shadow: 0 18px 40px -20px rgba(84,177,107,0.6);
+  transition: transform .12s ease, filter .12s ease;
+}
+.cta-primary:hover{ filter: brightness(.95); }
+.cta-primary:active{ transform: translateY(1px); }
+.cta-secondary{
+  @apply inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold text-white backdrop-blur;
+  background: rgba(255,255,255,0.1);
+  transition: transform .12s ease, background .2s ease;
+}
+.cta-secondary:hover{ background: rgba(255,255,255,0.18); }
+.cta-secondary:active{ transform: translateY(1px); }
+
+/* Pricing */
+.pricing-glow{
+  position: absolute;
+  inset: auto;
+  top: -30%;
+  left: 50%;
+  width: 720px;
+  height: 720px;
+  transform: translateX(-50%);
+  background: radial-gradient(65% 65% at 50% 30%, rgba(151,200,235,0.2), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: .7;
+}
+
+
 /* ---- Pop-in reveal for feature labels ---- */
 .feature.reveal { opacity: 0; }
 
@@ -967,6 +1262,17 @@ useHead({
   animation-delay: var(--delay, 0ms); /* ✅ correct name */
   will-change: transform, opacity;
   opacity: 1;
+}
+
+.reveal-up{
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--delay,0ms);
+}
+.reveal-up.is-in{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 </style>

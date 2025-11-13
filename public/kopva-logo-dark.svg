@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="32" viewBox="0 0 144 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#54B16B" />
+  <path d="M20.94 8.8v14.4h-3.04v-4.96h-5.8v4.96H9.04V8.8h3.06v5.26h5.8V8.8h3.04Z" fill="white" />
+  <text x="40" y="22" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#001011" letter-spacing="0.02em">Kopva</text>
+</svg>

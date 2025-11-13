@@ -11,38 +11,94 @@
           <a href="#experience" class="transition-colors hover:text-slate-900">Experience</a>
           <a href="#pricing" class="transition-colors hover:text-slate-900">Pricing</a>
         </div>
-        <a
-          href="/checkout"
-          class="hidden rounded-full border border-slate-300 px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 sm:inline-flex"
-        >
-          Buy now
-        </a>
+        <div class="flex items-center gap-3">
+          <a
+            href="/checkout"
+            class="hidden rounded-full border border-slate-300 px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 sm:inline-flex"
+          >
+            Buy now
+          </a>
+          <button
+            type="button"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-slate-900 hover:text-slate-900 lg:hidden"
+            @click="mobileOpen = !mobileOpen"
+            :aria-expanded="mobileOpen"
+            aria-controls="mobile-navigation"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <svg
+              v-if="!mobileOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
       </nav>
+      <transition name="fade">
+        <div
+          v-if="mobileOpen"
+          id="mobile-navigation"
+          class="lg:hidden border-t border-white/60 bg-[#f7f8fc]/95 px-6 pb-6 pt-4 text-sm text-slate-600 backdrop-blur"
+        >
+          <nav class="flex flex-col gap-4">
+            <a href="#mosaic" class="transition-colors hover:text-slate-900" @click="closeMobile">Features</a>
+            <a href="#experience" class="transition-colors hover:text-slate-900" @click="closeMobile">Experience</a>
+            <a href="#pricing" class="transition-colors hover:text-slate-900" @click="closeMobile">Pricing</a>
+            <a
+              href="/checkout"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-2 font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+              @click="closeMobile"
+            >
+              Buy now
+            </a>
+          </nav>
+        </div>
+      </transition>
     </header>
 
     <main>
       <section class="relative overflow-hidden px-6 pb-24 pt-24" aria-labelledby="hero-title">
-        <div class="absolute -left-20 top-[-120px] h-80 w-80 rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100 blur-3xl"></div>
-        <div class="absolute -right-32 top-28 h-96 w-96 rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100 blur-3xl"></div>
-        <div class="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="absolute -left-24 top-[-140px] h-96 w-96 rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100 blur-3xl"></div>
+        <div class="absolute -right-32 top-16 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100 blur-3xl"></div>
+        <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-16 text-center">
           <div class="space-y-8" data-animate="fade">
-            <p class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
-              PulsePro • Series 3
+            <p class="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
+              Kopva • PulsePro
             </p>
-            <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-6xl">
+            <h1 id="hero-title" class="text-5xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-7xl">
               <span class="bg-gradient-to-r from-slate-900 via-sky-600 to-purple-500 bg-clip-text text-transparent">
-                Reshape your time with our smart watch
+                Never pay for leaks again.
               </span>
             </h1>
-            <p class="max-w-xl text-lg leading-relaxed text-slate-600">
-              Engineered with Kopva intelligence, PulsePro learns your rhythms, safeguards your home, and keeps you connected with a soft, breathable design that floats on the wrist.
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500">
+              Automatic shut-off • Freeze Guard • App control
             </p>
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
+              Kopva PulsePro sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a large-scale disaster.
+            </p>
+            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
               <a
                 href="/checkout"
                 class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)]"
               >
-                Pre-order now
+                Get PulsePro
               </a>
               <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm">
@@ -50,54 +106,33 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                   </svg>
                 </span>
-                Explore the lineup
+                How it works
               </a>
             </div>
-            <div class="flex flex-wrap items-center gap-6 text-sm text-slate-500">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-500">
               <span class="inline-flex items-center gap-2">
                 <span class="h-2 w-2 rounded-full bg-sky-400"></span>
-                Leak + freeze intelligence
+                24/7 monitoring
               </span>
               <span class="inline-flex items-center gap-2">
                 <span class="h-2 w-2 rounded-full bg-purple-400"></span>
-                10-minute install
+                Install in under 10 minutes
               </span>
               <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-amber-400"></span>
-                App control anywhere
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                Works with Kopva app
               </span>
             </div>
           </div>
 
-          <div class="relative" data-animate="slide-up">
-            <div class="absolute -right-6 -top-10 h-48 w-48 rounded-full bg-gradient-to-br from-sky-200 via-white to-slate-100 blur-3xl"></div>
-            <div class="relative overflow-hidden rounded-[42px] border border-white/70 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-10 shadow-[0_60px_140px_-80px_rgba(15,23,42,0.65)]">
-              <div class="relative aspect-[3/4] overflow-hidden rounded-[36px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-                <div class="absolute inset-6 rounded-[28px] bg-gradient-to-br from-purple-400/40 via-slate-900/40 to-sky-400/40 blur-3xl"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
-                  alt="PulsePro smartwatch render"
-                  class="relative z-10 mx-auto h-full w-auto object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
-                />
-              </div>
-              <div class="mt-6 grid gap-4">
-                <div class="flex items-start gap-3 rounded-3xl border border-white/80 bg-white/70 px-5 py-4 text-sm text-slate-600 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-5 w-5 text-slate-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l3 3" />
-                  </svg>
-                  <p>Adaptive scheduling anticipates spikes and pauses water flow automatically when risks appear.</p>
-                </div>
-                <div class="flex items-start gap-3 rounded-3xl border border-white/80 bg-white/70 px-5 py-4 text-sm text-slate-600 shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-5 w-5 text-slate-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75L4.5 15M4.5 15h4.125M4.5 15V10.875M14.25 9.75l5.25-5.25m0 0H15.375M19.5 4.5v4.125" />
-                  </svg>
-                  <p>Precision machining wraps the sensors in a seamless body that disappears into your home.</p>
-                </div>
-              </div>
-            </div>
-            <div class="absolute -bottom-10 left-6 w-40 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg" data-animate="slide-right">
-              <p>Floating render</p>
-              <p class="mt-1 text-[11px] text-slate-400">Soft pastel gradient</p>
+          <div class="relative w-full max-w-3xl" data-animate="slide-up">
+            <div class="absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
+            <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-12 shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)]">
+              <img
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
+                alt="PulsePro smartwatch render"
+                class="mx-auto h-[420px] w-auto max-w-full object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
+              />
             </div>
           </div>
         </div>
@@ -276,7 +311,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const mosaicCards = [
   {
@@ -318,6 +353,12 @@ const mosaicCards = [
     span: 'md:col-span-3 lg:col-span-2 xl:col-span-2',
   },
 ];
+
+const mobileOpen = ref(false);
+
+const closeMobile = () => {
+  mobileOpen.value = false;
+};
 
 let observer;
 
@@ -382,6 +423,16 @@ useHead({
   filter: blur(20px);
   transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
   transition-delay: var(--delay, 0ms);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 200ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 [data-animate='fade'].animate-element {

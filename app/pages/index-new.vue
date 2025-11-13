@@ -165,7 +165,7 @@
             Every block in PulsePro is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences.
           </p>
         </div>
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-6">
+        <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">
           <article
             v-for="(card, index) in mosaicCards"
             :key="card.title"
@@ -306,6 +306,54 @@
           </div>
         </div>
       </section>
+
+      <footer class="border-t border-white/70 bg-white/80 py-16">
+        <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-start md:justify-between" data-animate="fade">
+          <div class="space-y-4">
+            <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white">pp</span>
+              <span>pulsepro</span>
+            </NuxtLink>
+            <p class="max-w-sm text-sm text-slate-500">
+              PulsePro by Kopva keeps every valve protected with adaptive leak detection, freeze guard, and concierge support whenever you need it.
+            </p>
+          </div>
+          <div class="grid flex-1 grid-cols-2 gap-10 text-sm text-slate-500 sm:grid-cols-3">
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400">Explore</p>
+              <ul class="space-y-2">
+                <li><a href="#mosaic" class="transition hover:text-slate-900">Features</a></li>
+                <li><a href="#experience" class="transition hover:text-slate-900">Experience</a></li>
+                <li><a href="#pricing" class="transition hover:text-slate-900">Pricing</a></li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400">Support</p>
+              <ul class="space-y-2">
+                <li><a href="/support" class="transition hover:text-slate-900">Help center</a></li>
+                <li><a href="/installers" class="transition hover:text-slate-900">Find installers</a></li>
+                <li><a href="/contact" class="transition hover:text-slate-900">Contact</a></li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400">Stay in touch</p>
+              <ul class="space-y-2">
+                <li><a href="mailto:hello@kopva.com" class="transition hover:text-slate-900">hello@kopva.com</a></li>
+                <li><a href="https://instagram.com" class="transition hover:text-slate-900">Instagram</a></li>
+                <li><a href="https://twitter.com" class="transition hover:text-slate-900">Twitter</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto mt-12 flex max-w-6xl flex-col gap-4 px-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between" data-animate="fade" style="--delay: 120ms">
+          <p>&copy; {{ currentYear }} Kopva. All rights reserved.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/privacy" class="transition hover:text-slate-600">Privacy</a>
+            <a href="/terms" class="transition hover:text-slate-600">Terms</a>
+            <a href="/status" class="transition hover:text-slate-600">System status</a>
+          </div>
+        </div>
+      </footer>
     </main>
   </div>
 </template>
@@ -319,7 +367,7 @@ const mosaicCards = [
     title: 'Adaptive leak defense',
     copy: 'Smart sensors compare normal water patterns to new anomalies and trigger instant shut-off when something changes.',
     color: 'from-sky-100 via-white/90 to-blue-100',
-    span: 'md:col-span-3 lg:col-span-3',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
     image: 'https://images.unsplash.com/photo-1603791452906-9cd6f7b1df90?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -327,7 +375,7 @@ const mosaicCards = [
     title: 'Featherlight finish',
     copy: 'Sculpted aluminum edges and a breathable knit loop feel like modern jewelry while protecting your space.',
     color: 'from-rose-100 via-white/90 to-amber-100',
-    span: 'md:col-span-3 lg:col-span-3',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
     image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -342,7 +390,7 @@ const mosaicCards = [
     title: 'Always-on awareness',
     copy: 'Glance at the watch to see valve status, water usage, and freeze guard readiness with minimalist complications.',
     color: 'from-purple-100 via-white/90 to-blue-100',
-    span: 'md:col-span-4 lg:col-span-4 xl:col-span-3',
+    span: 'md:col-span-4 lg:col-span-4 xl:col-span-4',
     image: 'https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -350,11 +398,21 @@ const mosaicCards = [
     title: 'Concierge onboarding',
     copy: 'Schedule a remote walkthrough with Kopva experts to verify installation and set up automations in minutes.',
     color: 'from-slate-100 via-white/90 to-sky-100',
-    span: 'md:col-span-3 lg:col-span-2 xl:col-span-2',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+  },
+  {
+    tag: 'Coverage',
+    title: 'Whole-home command center',
+    copy: 'Pair the watch with the Kopva hub to orchestrate multiple valves, freeze guards, and leak sensors from a single tap.',
+    color: 'from-indigo-100 via-white/90 to-purple-100',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
   },
 ];
 
 const mobileOpen = ref(false);
+
+const currentYear = new Date().getFullYear();
 
 const closeMobile = () => {
   mobileOpen.value = false;

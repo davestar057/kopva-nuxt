@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
 export default {
-    darkMode: false,
+    darkMode: 'class',
     "content": {
         "files": [
             // all directories and extensions will correspond to your Nuxt config

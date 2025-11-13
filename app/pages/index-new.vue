@@ -165,6 +165,12 @@
     <main>
       <section class="relative overflow-hidden px-6 pb-24 pt-24" aria-labelledby="hero-title">
         <div
+          class="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-700"
+          :class="theme === 'light' ? 'opacity-100' : 'opacity-0'"
+          :style="theme === 'light' ? lightHeroBackgroundStyle : undefined"
+          aria-hidden="true"
+        ></div>
+        <div
           class="absolute -left-24 top-[-140px] h-72 w-72 opacity-40 blur-3xl sm:h-96 sm:w-96 sm:opacity-100"
           :class="[
             'rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100',
@@ -184,7 +190,14 @@
               Kopva • PulsePro
             </p>
             <h1 id="hero-title" class="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-7xl">
-              <span class="bg-gradient-to-r from-slate-900 via-sky-600 to-purple-500 bg-clip-text text-transparent">
+              <span
+                class="bg-clip-text text-transparent transition-colors duration-500"
+                :class="
+                  theme === 'dark'
+                    ? 'bg-gradient-to-r from-sky-200 via-indigo-300 to-purple-200'
+                    : 'bg-gradient-to-r from-slate-900 via-sky-600 to-purple-500'
+                "
+              >
                 Never pay for leaks again.
               </span>
             </h1>
@@ -555,6 +568,13 @@ const mosaicCards = [
     image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
   },
 ];
+
+const lightHeroBackgroundStyle = {
+  background:
+    'radial-gradient(120% 120% at 0% 0%, rgba(191, 219, 254, 0.55), rgba(247, 248, 252, 0) 58%), ' +
+    'radial-gradient(110% 110% at 95% 5%, rgba(254, 215, 170, 0.45), rgba(247, 248, 252, 0) 62%), ' +
+    'radial-gradient(120% 120% at 50% 100%, rgba(221, 214, 254, 0.5), rgba(247, 248, 252, 0) 70%)',
+};
 
 const mobileOpen = ref(false);
 const { theme, toggleTheme } = useTheme();

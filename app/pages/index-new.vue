@@ -271,6 +271,7 @@
             class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)]"
             data-animate="fade"
           >
+            <div class="pricing-pattern" aria-hidden="true"></div>
             <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl"></div>
             <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl"></div>
             <div class="relative grid gap-12 p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
@@ -301,10 +302,10 @@
                   </li>
                 </ul>
               </div>
-              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/85 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)]">
-                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
+              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/90 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)]">
+                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-200/70 bg-emerald-50/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600 shadow-[0_16px_36px_-28px_rgba(16,185,129,0.9)]">
                   Use code
-                  <code class="rounded-full bg-slate-900 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white">LAUNCH20</code>
+                  <code class="rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white shadow-[0_20px_50px_-34px_rgba(14,116,144,1)]">LAUNCH20</code>
                 </div>
                 <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">20% off launch offer</p>
                 <p class="mt-5 text-6xl font-semibold text-slate-900">$239</p>
@@ -312,7 +313,7 @@
                 <div class="mt-8 flex flex-col gap-3">
                   <a
                     href="/checkout"
-                    class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5"
+                    class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_28px_80px_-46px_rgba(14,116,144,0.85)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_100px_-50px_rgba(14,116,144,0.9)]"
                   >
                     Buy now
                   </a>
@@ -561,5 +562,30 @@ useHead({
   opacity: 1;
   transform: translate(0, 0);
   filter: blur(0);
+}
+
+.pricing-pattern {
+  position: absolute;
+  top: -140px;
+  right: -140px;
+  bottom: -140px;
+  left: -140px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27240%27%20viewBox%3D%270%200%20240%20240%27%3E%0A%20%20%3Cg%20fill%3D%27%2334a853%27%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2748%27%20cy%3D%2748%27%20r%3D%2728%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27192%27%20cy%3D%27192%27%20r%3D%2728%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M28%20176l32-32%2032%2032-32%2032z%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27148%27%20y%3D%27-12%27%20width%3D%2720%27%20height%3D%2796%27%20rx%3D%2710%27%20transform%3D%27rotate%2828%20148%20-12%29%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M188%2072l-30%2030%2030%2030%2014-14-16-16%2016-16z%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E");
+  background-size: 220px;
+  background-repeat: repeat;
+  opacity: 0.16;
+  filter: saturate(120%);
+  animation: pattern-drift 36s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes pattern-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-160px, -120px, 0);
+  }
 }
 </style>

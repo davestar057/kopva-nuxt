@@ -377,10 +377,10 @@
                   class="h-full w-full rounded-[28px] object-cover"
               />
             </div>
-            <div class="absolute -bottom-8 right-10 w-44 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300" data-animate="slide-left">
+<!--            <div class="absolute -bottom-8 right-10 w-44 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300" data-animate="slide-left">-->
 <!--              <p>Immediate notification if water leak is detected via an app</p>-->
 <!--              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">Lifestyle ready</p>-->
-            </div>
+<!--            </div>-->
           </div>
         </div>
       </section>

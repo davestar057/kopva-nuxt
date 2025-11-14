@@ -491,7 +491,7 @@
           <div class="space-y-4">
             <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
               <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
-              <NuxtImg src="/created-by-kopva-black.png" alt="Kopva Logo" class="object-contain max-w-38" />
+              <NuxtImg src="/created-by-kopva-black.png" alt="Kopva Logo" class="object-contain max-w-32" />
             </NuxtLink>
             <p class="max-w-sm text-sm text-slate-500 dark:text-slate-300">
               Pipebudi by Kopva keeps every valve protected with adaptive leak detection, freeze guard, and concierge support whenever you need it.

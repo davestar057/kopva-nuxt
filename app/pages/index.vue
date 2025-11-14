@@ -351,7 +351,7 @@
             <ul class="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span>
-                Precision acoustic sensing spots pinhole leaks across copper, plastic, or mixed pipework the second flow sounds change.
+                Precision acoustic sensing spots leaks across pipework in seconds.
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-purple-400"></span>
@@ -378,8 +378,8 @@
               />
             </div>
             <div class="absolute -bottom-8 right-10 w-44 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300" data-animate="slide-left">
-              <p>Everyday ease</p>
-              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">Lifestyle ready</p>
+<!--              <p>Immediate notification if water leak is detected via an app</p>-->
+<!--              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">Lifestyle ready</p>-->
             </div>
           </div>
         </div>
@@ -476,7 +476,7 @@
         <div class="rounded-[40px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-sky-100/60 p-16 text-center shadow-[0_60px_160px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/95 dark:to-slate-900/80 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.9)]">
           <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Ready when you are</p>
           <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Get 10% off on your Pipebudi</h2>
-          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">Join thousands of proactive homeowners using Kopva to monitor, detect, and shut off leaks automatically.</p>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">Join thousands of proactive homeowners using Pipebudi to monitor, detect, and shut off leaks automatically.</p>
           <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a href="/checkout" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-900">
               Buy now
@@ -557,7 +557,7 @@ const mosaicCards = [
   },
   {
     tag: 'Year round protection',
-    title: 'Quiet background checks',
+    title: 'Frozen pipes',
     copy: 'Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature reaches close to freezing,Pipebudi will notify you and can automatically turn off your water supply to further protect your property.',
     color: 'from-emerald-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-emerald-950/40 dark:to-sky-900/30',
     span: 'md:col-span-2 lg:col-span-2 xl:col-span-2',

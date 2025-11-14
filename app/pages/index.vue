@@ -1,972 +1,751 @@
 <template>
-  <main class="relative overflow-hidden">
-    <!-- HEADER (dark) -->
-    <header class="bg-secondary text-white sticky top-0 z-50" >
-      <div class="container mx-auto px-4 h-14 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <!--          <div class="h-8 w-8 rounded-lg bg-white/10 grid place-items-center font-black">K</div>-->
-          <!--          <span class="font-semibold tracking-tight">KOPVA</span>-->
-          <img src="/kopva-logo-full-white.png" alt="Kopva" style="max-width: 140px;">
+  <div
+      :class="[
+      'min-h-screen transition-colors duration-500',
+      theme === 'dark' ? 'dark bg-slate-950 text-slate-100' : 'bg-[#f7f8fc] text-slate-900'
+    ]"
+  >
+    <header class="sticky top-0 z-40 border-b border-white/70 bg-[#f7f8fc]/80 backdrop-blur dark:border-white/10 dark:bg-slate-950/75">
+      <!--      <div class="container mx-auto">-->
+      <!--        <NuxtImg src="/created_by_kopva.png" alt="Pipebudi Logo" class="object-contain max-w-32 ml-auto pt-2 pr-10" />-->
+      <!--      </div>-->
+
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+
+        <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
+          <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
+        </NuxtLink>
+        <div class="hidden items-center gap-10 text-sm text-slate-600 dark:text-slate-300 lg:flex">
+          <a href="#mosaic" class="transition-colors hover:text-slate-900 dark:hover:text-white">Features</a>
+          <a href="#pricing" class="transition-colors hover:text-slate-900 dark:hover:text-white">Launch Offer</a>
+          <a href="#" class="transition-colors hover:text-slate-900 dark:hover:text-white">Contact</a>
         </div>
-
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-7">
-          <a href="#how-it-works" class="nav-link">How it works</a>
-          <a href="#features" class="nav-link">Features</a>
-          <a href="#pricing" class="nav-link">Pricing</a>
-          <a href="#support" class="nav-link">Support</a>
-          <a href="/checkout" class="btn-header btn-header--primary">Buy now</a>
-        </nav>
-
-        <!-- Mobile -->
-        <div class="md:hidden flex items-center gap-3">
-          <a href="/checkout" class="btn-header btn-header--primary btn-header--sm">Buy</a>
-          <button @click="mobileOpen = !mobileOpen" class="h-9 w-9 grid place-items-center rounded-lg bg-white/10">
-            <span class="sr-only">Open menu</span>
-            <svg v-if="!mobileOpen" width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <div class="flex items-center gap-3">
+          <button
+              type="button"
+              class="relative hidden h-10 w-20 items-center rounded-full border border-slate-300/70 bg-white/80 p-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-white/10 dark:bg-slate-800/70 dark:text-slate-200 sm:inline-flex"
+              :class="{ 'translate-y-0 shadow-lg': theme === 'dark' }"
+              @click="toggleTheme"
+              :aria-pressed="theme === 'dark'"
+              aria-label="Toggle color mode"
+          >
+            <span
+                class="pointer-events-none absolute inset-1 rounded-full bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 opacity-0 transition-opacity duration-500 dark:opacity-100"
+            ></span>
+            <span
+                class="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition-transform duration-500 dark:translate-x-10 dark:bg-slate-950"
+            >
+              <svg
+                  v-if="theme === 'light'"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-4 w-4 text-slate-600"
+              >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                  v-else
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-4 w-4 text-slate-200"
+              >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                />
+              </svg>
+            </span>
+          </button>
+          <a
+              href="/checkout"
+              class="hidden rounded-full border border-slate-300 px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/20 dark:text-slate-100 dark:hover:border-white/40 dark:hover:text-white sm:inline-flex"
+          >
+            Buy now
+          </a>
+          <button
+              type="button"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/10 dark:text-slate-200 dark:hover:border-white/30 dark:hover:text-white lg:hidden"
+              @click="mobileOpen = !mobileOpen"
+              :aria-expanded="mobileOpen"
+              aria-controls="mobile-navigation"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <svg
+                v-if="!mobileOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-5 w-5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg v-else width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M6 6l12 12M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-5 w-5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6 6 18" />
             </svg>
           </button>
         </div>
-      </div>
-
-      <!-- Mobile drawer -->
-      <div v-show="mobileOpen" class="md:hidden bg-secondary/95 backdrop-blur-sm border-t border-white/10">
-        <nav class="container mx-auto px-4 py-4 grid gap-3 text-base">
-          <a @click="mobileOpen=false" href="#how-it-works" class="nav-link">How it works</a>
-          <a @click="mobileOpen=false" href="#features" class="nav-link">Features</a>
-          <a @click="mobileOpen=false" href="#pricing" class="nav-link">Pricing</a>
-          <a @click="mobileOpen=false" href="#support" class="nav-link">Support</a>
-          <a @click="mobileOpen=false" href="/checkout" class="btn-header btn-header--primary mt-2">Buy now</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="relative overflow-hidden">
-      <!-- background stays inside hero -->
-      <div class="hero-bg hero-bg--ice" aria-hidden="true" v-parallax="{ speed: -0.25, max: 80 }" ></div>
-
-      <div class="container mx-auto px-4 relative">
-        <div class="grid lg:grid-cols-2 gap-10 items-center pt-10 md:pt-14 pb-10">
-          <!-- LEFT: product -->
-          <div class="grid place-items-center order-2 lg:order-1">
-            <div class="stage" @click.self="openId=null">
-              <div class="bg-circles" v-parallax="{ speed: -0.08, max: 80 }"></div>
-
-              <img src="/kopva-raw.png" alt="Kopva smart leak & freeze protection valve"
-                   class="product-image" draggable="false" v-parallax="{ speed: -0.05, max: 14 }" />
-              <div class="glow"></div>
-
-              <!-- Desktop/Tablet pills (absolute around product) -->
-              <button
-                  v-for="(f, i) in placedPct"
-                  :key="f.id"
-                  class="feature reveal hidden sm:block"
-                  v-reveal
-                  :style="{ left: f.xPct + '%', top: f.yPct + '%', '--delay': (i * 90) + 'ms' }"
+      </nav>
+      <transition name="fade">
+        <div
+            v-if="mobileOpen"
+            id="mobile-navigation"
+            class="border-t border-white/60 bg-[#f7f8fc]/95 px-6 pb-6 pt-4 text-sm text-slate-600 backdrop-blur dark:border-white/10 dark:bg-slate-950/95 lg:hidden"
+        >
+          <nav class="flex flex-col gap-4">
+            <button
+                type="button"
+                class="inline-flex items-center justify-between rounded-full border border-slate-300/70 bg-white/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400/40 dark:border-white/10 dark:bg-slate-800/70 dark:text-slate-200"
+                @click="toggleTheme"
+                :aria-pressed="theme === 'dark'"
+            >
+              <span>{{ theme === 'dark' ? 'Dark' : 'Light' }}</span>
+              <span
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm dark:bg-slate-950 dark:text-slate-100"
               >
-                <span class="dot"></span>
-
-                <span class="pill">
-                  <span class="title text-secondary">{{ f.title }}</span>
-                  <span class="desc text-secondary/70">{{ f.desc }}</span>
-                </span>
-
-                <!-- Popover -->
-                <span
-                    class="feature-card"
-                    :id="`card-${f.id}`"
-                    role="tooltip"
-                    :class="{ 'feature-card--open': isOpen(f.id) || hoverId === f.id }"
+                <svg
+                    v-if="theme === 'light'"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    class="h-4 w-4"
                 >
-                  <span class="font-semibold text-secondary">{{ f.title }}</span>
-                  <span class="block text-sm text-secondary/80 mt-1">{{ f.long }}</span>
-                </span>
-              </button>
-            </div>
-
-            <!-- Mobile pills: 2 above, 2 below -->
-            <div class="w-full sm:hidden mt-4 grid grid-cols-1 gap-2">
-              <button
-                  v-for="f in mobileTop"
-                  :key="'mt-' + f.id"
-                  class="mobile-pill"
-                  @click="toggleFeature(f.id)"
-              >
-                <span class="mobile-dot"></span>
-                <span class="pill">
-                  <span class="title text-secondary">{{ f.title }}</span>
-                  <span class="desc text-secondary/70">{{ f.desc }}</span>
-                </span>
-                <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
-              </button>
-            </div>
-            <div class="w-full sm:hidden mt-2 grid grid-cols-1 gap-2">
-              <button
-                  v-for="f in mobileBottom"
-                  :key="'mb-' + f.id"
-                  class="mobile-pill"
-                  @click="toggleFeature(f.id)"
-              >
-                <span class="mobile-dot"></span>
-                <span class="pill">
-                  <span class="title text-secondary">{{ f.title }}</span>
-                  <span class="desc text-secondary/70">{{ f.desc }}</span>
-                </span>
-                <p v-if="isOpen(f.id)" class="mt-2 text-sm text-secondary/80">{{ f.long }}</p>
-              </button>
-            </div>
-          </div>
-
-          <!-- RIGHT: copy -->
-          <div class="order-1 lg:order-2">
-            <h1 class="headline text-secondary">Never pay for leaks again.</h1>
-            <p class="kicker text-secondary/55">Automatic shut-off • Freeze Guard • App control</p>
-
-            <p class="mt-5 text-lg md:text-xl text-secondary/80 leading-relaxed max-w-prose">
-              Kopva sits on your main water valve and watches for abnormal flow and freezing conditions.
-              If something’s wrong, it alerts you and can automatically close the valve to preventing a large scale disaster.
-            </p>
-
-            <div class="mt-8 flex flex-wrap items-center gap-3">
-              <a id="buy" href="/checkout" class="btn-primary">Get Pipebudi</a>
-              <a href="#how-it-works" class="btn-ghost">How it works</a>
-            </div>
-            <!-- HERO DISCLAIMER -->
-            <DisclaimerNote
-                :text="`*Kopva reduces risk but cannot prevent all leaks or damage in all scenarios. Performance depends on correct installation, valve/pipeline compatibility, power and Wi-Fi availability, and user settings. Not a substitute for home insurance.`"
-            />
-            <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-secondary/60">
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span> 24/7 monitoring
+                  <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                <svg
+                    v-else
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    class="h-4 w-4"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg>
               </span>
-              <span class="hidden sm:inline">•</span>
-              <span><NuxtImg src="/google-store.png" class="max-w-[120px]"/></span>
-              <span class="hidden sm:inline">•</span>
-              <span><NuxtImg src="/apple-store.png" class="max-w-[120px]"/></span>
-              <span class="hidden sm:inline">•</span>
-              <span>Easy install</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Brand stat bar overlapping the bend -->
-      <div class="relative z-[2] -mt-6 md:-mt-8">
-        <div class="container mx-auto px-4">
-          <div class="mx-auto max-w-5xl bg-primary/10 backdrop-blur-sm border border-primary/25 rounded-2xl shadow-[0_20px_50px_-28px_rgba(0,16,17,.35)] px-4 py-3 md:px-6 md:py-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">Auto shut-off</span> within seconds</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">10-minute install</span> on common valves</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="h-2.5 w-2.5 rounded-full bg-primary animate-pulse"></span>
-              <p class="text-secondary/80 text-sm md:text-base"><span class="font-semibold text-secondary">App control</span> anywhere</p>
-            </div>
-          </div>
-          <div class="text-center">
-          <DisclaimerNote
-              :text="`Auto shut-off and install times are typical under test conditions and may vary. Remote control and notifications require power and connectivity.`"
-          />
-          </div>
-        </div>
-      </div>
-
-      <!-- prominent dual wave with primary accent -->
-      <div class="relative">
-        <svg class="block w-full h-[110px] md:h-[140px]" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,30 C240,110 480,140 720,140 C960,140 1200,110 1440,30 L1440,140 L0,140 Z" fill="#ffffff"/>
-          <path d="M0,0 C220,80 520,110 720,110 C980,110 1180,70 1440,0 L1440,140 L0,140 Z" class="fill-primary/20"/>
-        </svg>
-      </div>
-    </section>
-
-    <!-- BODY / BENEFITS -->
-    <!-- BODY / BENEFITS -->
-    <section id="how-it-works" class="bg-[#f7fbff] py-16 md:py-24">
-      <div class="container mx-auto px-4">
-
-        <!-- Intro -->
-        <div class="text-center max-w-2xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-secondary">
-            Meet <span class="text-primary">Pipebudi</span>
-          </h2>
-          <p class="mt-3 text-secondary/70">
-            The smart valve that protects your home from leaks and frozen pipes—automatically.
-          </p>
-        </div>
-
-        <!-- Timeline / Pipe -->
-        <div class="relative mt-12 md:mt-16">
-          <!-- central pipe (desktop) -->
-          <div class="pointer-events-none hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-[3px] bg-secondary/10"></div>
-
-          <div class="space-y-12 md:space-y-16">
-            <!-- 1. Auto shut-off (text left, image right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <!-- node on the pipe -->
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
-
-              <div class="lg:pr-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Automatically shuts off</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Automatically shuts off your water when a catastrophic leak is detected. Get peace of mind. Pipebudi closes your water supply when a leak is heard.
-                </p>
-              </div>
-
-              <div class="lg:pl-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/pipbudi-wall.jpg"
-                      alt="Automatic water shut-off"
-                      loading="lazy"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <!-- 2. 24/7 Monitoring (image left, text right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
-
-              <div class="order-2 lg:order-1 lg:pr-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/kopva-ipad-prod.jpg"
-                      alt="24/7 monitoring"
-                      loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="order-1 lg:order-2 lg:pl-16">
-                <h3 class="text-2xl font-extrabold text-secondary">24/7 Monitoring</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Pipebudi is working to protect you even when you are asleep. Simply connect Pipebudi to your water pipes,
-                  download the app, connect to Wi-Fi, and get started.
-                </p>
-              </div>
-            </article>
-
-            <!-- 3. Winter protection (text left, image right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
-
-              <div class="lg:pr-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Protects your pipes in winter</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature
-                  reaches <span class="font-semibold">close to freezing</span>,Pipebudi will notify you and
-                  can automatically turn off your water supply to
-                  further protect your property.
-                </p>
-              </div>
-
-              <div class="lg:pl-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/frozen-pipe.jpg"
-                      alt="Winter frost protection"
-                      loading="lazy"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <!-- 4. Remote control (image left, text right) -->
-            <article class="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div class="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div class="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/25"></div>
-              </div>
-
-              <div class="order-2 lg:order-1 lg:pr-16">
-                <div v-parallax="{ speed: -0.12, max: 40 }" class="overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">
-                  <img
-                      class="w-full h-full object-cover aspect-[4/3]"
-                      src="/away-from-home.jpg"
-                      alt="Remote control from the app"
-                      loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="order-1 lg:order-2 lg:pl-16">
-                <h3 class="text-2xl font-extrabold text-secondary">Away from home?</h3>
-                <p class="mt-3 text-secondary/75 leading-relaxed">
-                  Whether you’re on holiday or staying away a little
-                  longer, you can remotely instruct Pipebudi to turn
-                  off the water supply or switch to Away mode —
-                  so you can relax knowing you are protected.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- Discount callout -->
-        <div class="mt-12">
-          <div
-              class="relative overflow-hidden rounded-2xl border border-primary/25 bg-white/80 backdrop-blur-sm p-6 md:p-8 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]"
-          >
-            <!-- decorative wash -->
-            <div class="pointer-events-none absolute -top-20 -left-24 h-64 w-64 rounded-full bg-primary/15 blur-3xl"></div>
-
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div class="flex items-start gap-4">
-                <div class="h-11 w-11 shrink-0 rounded-xl grid place-items-center text-white bg-gradient-to-br from-primary to-theme-third shadow-[0_10px_24px_-12px_rgba(84,177,107,.5)]">
-                  <Icon name="heroicons-solid:tag" class="h-6 w-6" />
-                </div>
-                <div>
-                  <p class="text-sm font-semibold text-primary uppercase tracking-wide">Don’t miss out</p>
-                  <h3 class="text-xl md:text-2xl font-extrabold text-secondary mt-0.5">
-                    20% off Launch Offer
-                  </h3>
-                  <p class="text-secondary/70 mt-1">
-                    Enter this code on the checkout page to claim your discount:
-                  </p>
-                </div>
-              </div>
-
-              <!-- code + copy -->
-              <div class="flex items-center gap-2">
-                <code
-                    class="select-all font-mono text-base md:text-lg tracking-wider bg-secondary/95 text-white rounded-xl px-4 py-2"
-                >
-                  LAUNCH20
-                </code>
-                <button
-                    @click="copyLaunch()"
-                    class="inline-flex items-center gap-2 rounded-xl border border-secondary/10 bg-white px-3 py-2 text-sm font-semibold text-secondary hover:bg-white/90 active:translate-y-px"
-                    aria-label="Copy discount code"
-                >
-                  <Icon name="heroicons-outline:clipboard-document" class="h-5 w-5" />
-                  <span>{{ copied ? 'Copied!' : 'Copy' }}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA banner -->
-        <section class="mt-12 md:mt-16">
-          <div
-              class="relative overflow-hidden rounded-3xl bg-secondary text-white px-6 py-8 md:px-10 md:py-12"
-          >
-            <!-- subtle brand glow -->
-            <div class="pointer-events-none absolute -right-24 -top-16 h-64 w-64 rounded-full bg-primary/25 blur-3xl"></div>
-
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div>
-                <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  Ready to protect your home?
-                </h3>
-                <p class="mt-1 text-white/80">
-                  Get Pipebudi with 20% off today and protect your home from costly leaks.
-                </p>
-              </div>
-
-              <div class="flex flex-wrap items-center gap-3">
-                <a href="/checkout" class="inline-flex items-center justify-center rounded-xl bg-primary text-secondary font-bold px-5 py-3 shadow-[0_12px_30px_-12px_rgba(84,177,107,.55)] hover:brightness-95 active:translate-y-px">
-                  Buy now
-                </a>
-                <a href="#features" class="inline-flex items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-bold px-5 py-3 backdrop-blur-sm hover:bg-white/15 active:translate-y-px">
-                  Learn more
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <PricingBox
-        product-name="Kopva Smart Water Valve"
-        subtitle="Leak & freeze protection with automatic shut-off"
-        image-src="/boxed-product.jpg"
-        :price="239"
-        :compare-at="299"
-        currency="£"
-        rating="4.9"
-        :reviews="124"
-        :bullets="[
-    'Auto shut-off within minutes of a leak',
-    'Freeze Guard closes when there is danger of frozen pipes',
-    'Control from the app anywhere',
-    'Easy install'
-  ]"
-        :includes="[
-    'Kopva Pipebudi smart valve',
-    'Mounting hardware',
-    'Power adaptor',
-    'Quick-start guide'
-  ]"
-        discount-code="LAUNCH20"
-        discount-label="Launch offer"
-        buy-href="/checkout"
-        learn-href="/#how-it-works"
-        :in-stock="true"
-        badge-text="Launch pricing"
-    />
-
-
-<!--    <section class="bg-[#f7fbff] py-14">-->
-<!--      <div class="container mx-auto px-4">-->
-<!--        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-secondary text-center">Trusted in real homes</h2>-->
-<!--        <div class="mt-8 grid md:grid-cols-3 gap-6">-->
-<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
-<!--            <div class="flex items-center gap-3">-->
-<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=68" alt=""/>-->
-<!--              <figcaption>-->
-<!--                <p class="font-semibold text-secondary">Ava M.</p>-->
-<!--                <p class="text-secondary/60 text-sm">Manchester</p>-->
-<!--              </figcaption>-->
-<!--            </div>-->
-<!--            <blockquote class="mt-3 text-secondary/80">“Kopva shut the water within seconds and saved our kitchen. App made it effortless.”</blockquote>-->
-<!--          </figure>-->
-
-<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
-<!--            <div class="flex items-center gap-3">-->
-<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=12" alt=""/>-->
-<!--              <figcaption>-->
-<!--                <p class="font-semibold text-secondary">Ben M.</p>-->
-<!--                <p class="text-secondary/60 text-sm">Bristol</p>-->
-<!--              </figcaption>-->
-<!--            </div>-->
-<!--            <blockquote class="mt-3 text-secondary/80">“Installed in 10 minutes. Peace of mind when we’re away.”</blockquote>-->
-<!--          </figure>-->
-
-<!--          <figure class="rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-[0_18px_50px_-28px_rgba(0,16,17,.25)]">-->
-<!--            <div class="flex items-center gap-3">-->
-<!--              <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=33" alt=""/>-->
-<!--              <figcaption>-->
-<!--                <p class="font-semibold text-secondary">Sophie K.</p>-->
-<!--                <p class="text-secondary/60 text-sm">Leeds</p>-->
-<!--              </figcaption>-->
-<!--            </div>-->
-<!--            <blockquote class="mt-3 text-secondary/80">“Freeze guard saved our rental during the cold snap. Worth it.”</blockquote>-->
-<!--          </figure>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-
-<!--    <section class="bg-white py-14">-->
-<!--      <div class="container mx-auto px-4">-->
-<!--        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-secondary text-center">Why Kopva?</h2>-->
-<!--        <div class="mt-8 overflow-x-auto rounded-2xl ring-1 ring-black/5">-->
-<!--          <table class="w-full text-left text-secondary/80 bg-white">-->
-<!--            <thead class="bg-[#f7fbff] text-secondary">-->
-<!--            <tr>-->
-<!--              <th class="p-4 font-semibold">Feature</th>-->
-<!--              <th class="p-4 font-semibold">Kopva</th>-->
-<!--              <th class="p-4 font-semibold">Other smart valves</th>-->
-<!--              <th class="p-4 font-semibold">Manual shut-off</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody class="divide-y divide-black/5">-->
-<!--            <tr><td class="p-4">Automatic leak shut-off</td><td class="p-4 font-semibold text-secondary">Yes</td><td class="p-4">Varies</td><td class="p-4">No</td></tr>-->
-<!--            <tr><td class="p-4">Freeze protection</td><td class="p-4 font-semibold text-secondary">Yes</td><td class="p-4">Some</td><td class="p-4">No</td></tr>-->
-<!--            <tr><td class="p-4">Install time</td><td class="p-4 font-semibold text-secondary">≈10 min</td><td class="p-4">30–60 min</td><td class="p-4">—</td></tr>-->
-<!--            <tr><td class="p-4">Remote control</td><td class="p-4 font-semibold text-secondary">App</td><td class="p-4">App</td><td class="p-4">No</td></tr>-->
-<!--            <tr><td class="p-4">Cost of inaction</td><td class="p-4 font-semibold text-secondary">££ saved</td><td class="p-4">££?</td><td class="p-4">Risk high</td></tr>-->
-<!--            </tbody>-->
-<!--          </table>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--    <section class="bg-white py-8">-->
-<!--      <div class="container mx-auto px-4">-->
-<!--        <div class="grid gap-4 sm:grid-cols-3 items-center text-center">-->
-<!--          <div class="rounded-xl border border-black/5 p-4">-->
-<!--            <p class="text-secondary font-semibold">12-month warranty</p>-->
-<!--          </div>-->
-<!--          <div class="rounded-xl border border-black/5 p-4">-->
-<!--            <p class="text-secondary font-semibold">30-day returns</p>-->
-<!--          </div>-->
-<!--          <div class="rounded-xl border border-black/5 p-4">-->
-<!--            <p class="text-secondary/70">WRAS / UKCA / CE <span class="text-secondary">(placeholder)</span></p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-
-<!--    <DamageCostCalculator class="mt-10" />-->
-    <!-- Sticky Buy Bar -->
-
-    <StickyBar></StickyBar>
-    <LeakCostVisual :average-cost="4200" currency="£" />
-
-    <!-- FOOTER -->
-    <footer id="support" class="bg-secondary text-white">
-      <div class="container mx-auto px-4 py-10">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <div class="h-9 w-9 rounded-xl bg-white/10 grid place-items-center font-black">K</div>
-            <span class="font-semibold tracking-tight">KOPVA</span>
-          </div>
-          <nav class="flex gap-6 text-white/80 text-sm">
-            <a href="/privacy" class="hover:text-white">Privacy</a>
-            <a href="/terms" class="hover:text-white">Terms</a>
-            <a href="/support" class="hover:text-white">Support</a>
+            </button>
+            <a href="#mosaic" class="transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" @click="closeMobile">Features</a>
+            <a href="#experience" class="transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" @click="closeMobile">Experience</a>
+            <a href="#pricing" class="transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" @click="closeMobile">Pricing</a>
+            <a
+                href="/checkout"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-2 font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/20 dark:text-slate-100 dark:hover:border-white/40 dark:hover:text-white"
+                @click="closeMobile"
+            >
+              Buy now
+            </a>
           </nav>
         </div>
-        <ClientOnly>
-          <p class="mt-6 text-white/60 text-sm">© {{ new Date().getFullYear() }} Kopva. All rights reserved.</p>
-        </ClientOnly>
-      </div>
-    </footer>
-  </main>
+      </transition>
+    </header>
+
+    <main>
+      <section class="relative overflow-hidden px-6 pb-24 pt-24" aria-labelledby="hero-title">
+
+        <div
+            class="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-700"
+            :class="theme === 'light' ? 'opacity-100' : 'opacity-0'"
+            :style="theme === 'light' ? lightHeroBackgroundStyle : undefined"
+            aria-hidden="true"
+        ></div>
+        <div
+            class="absolute -left-24 top-[-140px] h-72 w-72 opacity-40 blur-3xl sm:h-96 sm:w-96 sm:opacity-100"
+            :class="[
+            'rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100',
+            theme === 'dark' ? 'opacity-30 sm:opacity-90' : ''
+          ]"
+        ></div>
+        <div
+            class="absolute -right-32 top-16 h-80 w-80 opacity-40 blur-3xl sm:h-[420px] sm:w-[420px] sm:opacity-100"
+            :class="[
+            'rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100',
+            theme === 'dark' ? 'opacity-25 sm:opacity-90' : ''
+          ]"
+        ></div>
+        <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-16 text-center">
+          <div class="space-y-8" data-animate="fade">
+            <p class="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-300">
+              Pipebudi • from KOPVA
+            </p>
+            <h1 id="hero-title" class="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-7xl">
+              <span
+                  class="bg-clip-text text-transparent transition-colors duration-500"
+                  :class="
+                  theme === 'dark'
+                    ? 'bg-gradient-to-r from-sky-200 via-indigo-300 to-purple-200'
+                    : 'bg-gradient-to-r from-slate-900 via-sky-600 to-purple-500'
+                "
+              >
+                Never pay for leaks again.
+              </span>
+            </h1>
+
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">
+              Automatic shut-off • Freeze Guard • App control
+            </p>
+            <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+             Pipebudi sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a large-scale disaster.
+            </p>
+            <div class="relative w-full max-w-3xl" data-animate="slide-up">
+              <div class="absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+                <img
+                    src="/hero-budi-dark.jpg"
+                    alt="Pipebudi Example"
+                    class="mx-auto h-[420px] w-auto max-w-full object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <a
+                  href="/checkout"
+                  class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
+              >
+                Get Pipebudi
+              </a>
+            </div>
+            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+                For homeowners
+              </a>
+              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+                For landlords
+              </a>
+              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+                For holiday homes
+              </a>
+              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+                For commerical properties
+              </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <span class="inline-flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+                24/7 monitoring
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-purple-400"></span>
+                Install in under 10 minutes
+              </span>
+              <span class="inline-flex items-center gap-2">
+                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                Works with Kopva app
+              </span>
+            </div>
+            <!--            <div class="mt-6 flex flex-wrap items-center align-middle gap-4 text-sm text-secondary/60">-->
+            <!--             <span><NuxtImg src="/google-store.png"/></span>-->
+            <!--              <span class="hidden sm:inline">•</span>-->
+            <!--              <span><NuxtImg src="/apple-store.png" /></span>-->
+            <!--            </div>-->
+          </div>
+
+
+        </div>
+      </section>
+
+      <section class="border-y border-white/70 bg-white/70 py-12 dark:border-white/10 dark:bg-slate-900/70">
+        <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-6 px-6 text-sm text-slate-600 dark:text-slate-300">
+          <div class="inline-flex items-center gap-3" data-animate="fade">
+            <span class="h-2 w-2 rounded-full bg-sky-400"></span>
+            <p><span class="font-semibold text-slate-900 dark:text-white">Auto shut-off</span> in seconds</p>
+          </div>
+          <div class="inline-flex items-center gap-3" data-animate="fade" style="--delay: 120ms">
+            <span class="h-2 w-2 rounded-full bg-purple-400"></span>
+            <p><span class="font-semibold text-slate-900 dark:text-white">10-minute install</span> on any valve</p>
+          </div>
+          <div class="inline-flex items-center gap-3" data-animate="fade" style="--delay: 220ms">
+            <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+            <p><span class="font-semibold text-slate-900 dark:text-white">Remote app control</span> anywhere</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mosaic" class="mx-auto max-w-6xl px-6 py-24">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-animate="fade">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">The Pipebudi promise</p>
+            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## n asymmetrical rhythm of protection ##</h2>
+          </div>
+          <p class="max-w-xl text-base text-slate-600 dark:text-slate-300">
+           ## Every block in PulsePro is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences. ##
+          </p>
+        </div>
+        <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">
+          <article
+              v-for="(card, index) in mosaicCards"
+              :key="card.title"
+              class="group relative overflow-hidden rounded-[34px] border border-white/80 bg-white/80 p-6 shadow-[0_32px_80px_-60px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-950/70 dark:shadow-[0_32px_80px_-60px_rgba(15,23,42,0.7)] dark:hover:shadow-[0_36px_100px_-60px_rgba(15,23,42,0.75)]"
+              :class="card.span"
+              data-animate="fade"
+              :style="{ '--delay': `${index * 90}ms` }"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br opacity-80 transition-opacity duration-500 dark:opacity-95" :class="card.color"></div>
+            <div class="relative z-10 flex h-full flex-col gap-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-600/80 dark:text-slate-200/80">{{ card.tag }}</p>
+              <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">{{ card.title }}</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-200">{{ card.copy }}</p>
+              <div v-if="card.image" class="mt-auto overflow-hidden rounded-3xl border border-white/60 bg-white/60 p-2 dark:border-white/10 dark:bg-slate-950/70">
+                <img :src="card.image" :alt="`${card.title} visual`" class="h-full w-full rounded-2xl object-cover" />
+              </div>
+            </div>
+            <div class="pointer-events-none absolute inset-0 rounded-[34px] border border-white/60 dark:border-white/15"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="bg-white/80 py-24 dark:bg-slate-950/60">
+        <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div class="space-y-8" data-animate="fade">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">## Connected comfort ##</p>
+            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## Designed for quiet confidence## </h2>
+            <p class="text-lg text-slate-600 dark:text-slate-300">
+             ##  Slip PulsePro on and forget it&apos;s there. Soft pastel materials hug the wrist while Kopva intelligence watches over every valve and appliance in your home.##
+            </p>
+            <ul class="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span>
+              ##  Breathable knit loop with moisture-wicking threads inspired by athletic wear.##
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-purple-400"></span>
+               ## Water flow, freeze detection, and ambient alerts unified in a single glanceable view.##
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
+               ## Works seamlessly with the Kopva mobile app for remote shut-off and household sharing.##
+              </li>
+            </ul>
+            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-300">
+              <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 dark:border-white/10 dark:bg-slate-900/60">iOS + Android</span>
+              <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 dark:border-white/10 dark:bg-slate-900/60">Free App</span>
+              <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 dark:border-white/10 dark:bg-slate-900/60">Smart notifications</span>
+            </div>
+          </div>
+          <div class="relative" data-animate="slide-up">
+            <div class="absolute -left-6 -top-10 h-48 w-48 rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100 blur-3xl"></div>
+            <div class="relative overflow-hidden rounded-[40px] border border-white/70 bg-gradient-to-br from-sky-100 via-white to-amber-100 p-6 shadow-[0_40px_120px_-80px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_40px_120px_-80px_rgba(15,23,42,0.7)]">
+              <img
+                  src="/pipebudi-close.jpg"
+                  alt="Lifestyle with Pipebudi"
+                  class="h-full w-full rounded-[28px] object-cover"
+              />
+            </div>
+            <div class="absolute -bottom-8 right-10 w-44 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300" data-animate="slide-left">
+              <p>##Everyday ease##</p>
+              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">##Lifestyle ready##</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="pricing" class="relative overflow-hidden bg-white/80 py-24 dark:bg-slate-950">
+        <div
+            class="pricing-pattern"
+            :class="{ 'pricing-pattern--dark': theme === 'dark' }"
+            aria-hidden="true"
+        ></div>
+        <div class="relative z-10 mx-auto max-w-6xl px-6">
+          <div
+              class="relative overflow-hidden rounded-[44px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 shadow-[0_60px_160px_-90px_rgba(15,23,42,0.6)] dark:border-white/10 dark:from-slate-950 dark:via-slate-900/95 dark:to-slate-950 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.9)]"
+              data-animate="fade"
+          >
+            <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl dark:bg-sky-500/15"></div>
+            <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl dark:bg-violet-500/20"></div>
+            <div class="relative grid gap-12 p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-200">
+                  Launch pricing
+                </div>
+                <h3 class="text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl">Buy peace of mind</h3>
+                <p class="max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                  The Pipebudi Smart Water Leak Detector reduces the risk of catastrophic leaks within your home. It provides 24/7 peace of mind, for water leaks and burst pipes. In the event of a leak, you will receive an instant notification via an app and you can remotely instruct your Pipebudi to turn your water off, to prevent any further water damage.
+                </p>
+                <ul class="grid gap-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:grid-cols-1">
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                    Immediate notification if water leak is detected via an app
+
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                    Access anywhere...water can be remotely turned off, if leak detected while you are away from home
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                    Wi-Fi enabled
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                    24-hour monitoring
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                    Temperature detection for frozen pipes
+
+                  </li>  <li class="flex items-start gap-2">
+                    <span class="mt-1 h-2 w-2 rounded-full bg-slate-900/60 dark:bg-white/60"></span>
+                  Back up battery
+
+                </li>
+                </ul>
+              </div>
+              <div class="relative overflow-hidden rounded-[36px] border border-white/70 bg-white/95 p-10 text-center shadow-[0_40px_120px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/85 dark:shadow-[0_40px_120px_-90px_rgba(15,23,42,0.85)]">
+                <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-emerald-200/70 bg-emerald-50/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-600 shadow-[0_16px_36px_-28px_rgba(16,185,129,0.9)] dark:border-emerald-500/40 dark:bg-emerald-500/20 dark:text-emerald-100">
+                  Use code
+                  <code class="rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white shadow-[0_20px_50px_-34px_rgba(14,116,144,1)]">LAUNCH20</code>
+                </div>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">20% off launch offer</p>
+                <p class="mt-5 text-6xl font-semibold text-slate-900 dark:text-white">$239</p>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">Usually $299</p>
+                <div class="mt-8 flex flex-col gap-3">
+                  <a
+                      href="/checkout"
+                      class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_28px_80px_-46px_rgba(14,116,144,0.85)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_100px_-50px_rgba(14,116,144,0.9)]"
+                  >
+                    Buy now
+                  </a>
+                  <a href="#experience" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-100 dark:hover:text-white">See what&apos;s included</a>
+                </div>
+                <div class="mt-8 rounded-3xl border border-slate-200/60 bg-slate-50/80 p-6 text-left text-xs leading-relaxed text-slate-500 dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-300">
+                  <p class="font-semibold uppercase tracking-[0.35em] text-slate-400 dark:text-slate-400">Bundle includes</p>
+                  <ul class="mt-4 grid gap-2 text-slate-600 dark:text-slate-100">
+                    <li>Pipebudi unit</li>
+                    <li>WRAS approved 22mm ball isolation valve made up of the valve body, 2 olives, 2 compression nuts</li>
+                    <li>2x 22mm to 15mm copper pipe reducers (only required if you have 15mm pipes)</li>
+                    <li>15mm to 22mm plastic sleeve adapter (only required if you have 15mm pipes)</li>
+                    <li>3 pin UK, USB plug</li>
+                    <li>1.8m USB lead</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-4xl px-6 pb-28 pt-12" data-animate="fade">
+        <div class="rounded-[40px] border border-white/80 bg-gradient-to-br from-white via-slate-50 to-sky-100/60 p-16 text-center shadow-[0_60px_160px_-90px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/95 dark:to-slate-900/80 dark:shadow-[0_60px_160px_-90px_rgba(15,23,42,0.9)]">
+          <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Ready when you are</p>
+          <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Get 10% off on your Pipebudi</h2>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">Join thousands of proactive homeowners using Kopva to monitor, detect, and shut off leaks automatically.</p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="/checkout" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-900">
+              Buy now
+            </a>
+            <a href="#mosaic" class="text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-100 dark:hover:text-white">Explore features</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="border-t border-white/70 bg-white/80 py-16 dark:border-white/10 dark:bg-slate-950/70">
+        <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-start md:justify-between" data-animate="fade">
+          <div class="space-y-4">
+            <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
+              <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
+              <NuxtImg src="/created_by_kopva.png" alt="Pipebudi Logo" class="object-contain max-w-38" />
+            </NuxtLink>
+            <p class="max-w-sm text-sm text-slate-500 dark:text-slate-300">
+              Pipebudi by Kopva keeps every valve protected with adaptive leak detection, freeze guard, and concierge support whenever you need it.
+            </p>
+          </div>
+          <div class="grid flex-1 grid-cols-2 gap-10 text-sm text-slate-500 dark:text-slate-300 sm:grid-cols-3">
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Explore</p>
+              <ul class="space-y-2">
+                <li><a href="#mosaic" class="transition hover:text-slate-900 dark:hover:text-white">Features</a></li>
+                <li><a href="#pricing" class="transition hover:text-slate-900 dark:hover:text-white">Buy Now</a></li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Support</p>
+              <ul class="space-y-2">
+                <li><a href="/support" class="transition hover:text-slate-900 dark:hover:text-white">Help center</a></li>
+                <li><a href="/contact" class="transition hover:text-slate-900 dark:hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400 dark:text-slate-500">Stay in touch</p>
+              <ul class="space-y-2">
+                <li><a href="mailto:hello@kopva.com" class="transition hover:text-slate-900 dark:hover:text-white">hello@kopva.com</a></li>
+                <li><a href="https://instagram.com" class="transition hover:text-slate-900 dark:hover:text-white">Instagram</a></li>
+                <li><a href="https://twitter.com" class="transition hover:text-slate-900 dark:hover:text-white">Twitter</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto mt-12 flex max-w-6xl flex-col gap-4 px-6 text-xs text-slate-400 dark:text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p data-animate="fade" style="--delay: 120ms">&copy; {{ currentYear }} Kopva. All rights reserved.<br/>Pipebudi® is a registered trademark of Kopva Limited.
+            Kopva Limited is a company registered in England and Wales.<br/>Registered number: 13051363</p>
+          <div class="flex flex-wrap gap-4" data-animate="fade" style="--delay: 180ms">
+            <a href="/privacy" class="transition hover:text-slate-600 dark:hover:text-slate-300">Privacy</a>
+            <a href="/terms" class="transition hover:text-slate-600 dark:hover:text-slate-300">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
 </template>
 
-<script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount} from 'vue'
-import StickyBar from "~/components/StickyBar.vue";
-import Privacy from "~/pages/privacy.vue";
+<script setup>
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 
-const mobileOpen = ref(false)
-
-/** Hover/tap state for feature cards */
-const openId = ref<string|null>(null)
-const hoverId = ref<string|null>(null)
-const isOpen = (id: string) => openId.value === id
-const toggleFeature = (id: string) => { openId.value = openId.value === id ? null : id }
-
-function onKeydown(e: KeyboardEvent){ if (e.key === 'Escape') openId.value = null }
-function onDocClick(e: MouseEvent){
-  const target = e.target as HTMLElement
-  if (!target.closest('.feature') && !target.closest('.mobile-pill')) openId.value = null
-}
-onMounted(() => {
-  document.addEventListener('keydown', onKeydown)
-  document.addEventListener('click', onDocClick)
-})
-onBeforeUnmount(() => {
-  document.removeEventListener('keydown', onKeydown)
-  document.removeEventListener('click', onDocClick)
-})
-
-/** Feature data */
-type Feature = { id: string; title: string; desc: string; long: string; angleDeg: number; radius: number }
-const STAGE = 601, CX = STAGE / 2, CY = STAGE / 2
-
-const features = ref<Feature[]>([
-  { id: 'leak',   title: 'Leak Detection', desc: 'Instant alerts', long: 'Detects abnormal flow and can shut off water automatically. May not detect slow drips, intermittent use, or micro-leaks. Thresholds and schedules affect behaviour.', angleDeg: 18,  radius: 206 },
-  { id: 'freeze', title: 'Freeze Guard',   desc: 'Cold-snap safe',  long: 'Monitors pipe temperature and warns before freezing occurs. Action depends on sensor placement and ambient conditions; cannot guarantee prevention of all freeze events.', angleDeg: 128, radius: 198 },
-  { id: 'app',    title: 'App Control',    desc: 'Anywhere access', long: 'Control your water and get alerts from the Kopva mobile app. Requires reliable Wi-Fi and internet; mobile alerts depend on OS settings and connectivity.', angleDeg: 320, radius: 205 },
-  { id: 'install',title: 'Easy Install',   desc: 'Fits standard pipes sizes', long: 'Compact design mounts on common isolation valves in minutes. Compatibility varies by valve type/size/orientation; professional fitting may be required.', angleDeg: 210, radius: 202 }
-])
-
-/** Percent-based positions for responsive stage (desktop/tablet) */
-const placedPct = computed(() =>
-    features.value.map(f => {
-      const t = (f.angleDeg * Math.PI) / 180
-      const x = CX + f.radius * Math.cos(t)
-      const y = CY - f.radius * Math.sin(t)
-      return { ...f, xPct: (x / STAGE) * 100, yPct: (y / STAGE) * 100 }
-    })
-)
-
-/** Mobile layout: 2 pills above, 2 below */
-const mobileTop = computed(() => {
-  const order = ['freeze', 'leak']
-  return order.map(id => features.value.find(f => f.id === id)!).filter(Boolean)
-})
-const mobileBottom = computed(() => {
-  const order = ['install', 'app']
-  return order.map(id => features.value.find(f => f.id === id)!).filter(Boolean)
-})
-
-
-const copied = ref(false)
-const copyLaunch = async () => {
-  try {
-    await navigator.clipboard.writeText('LAUNCH20')
-    copied.value = true
-    setTimeout(() => (copied.value = false), 1400)
-  } catch (_) {
-    copied.value = false
-  }
-}
-
-const vParallax = {
-  mounted(el: HTMLElement, binding: any) {
-    const opts = { speed: 0.2, axis: 'y', max: 80, disabledBelow: 640, ...(binding?.value || {}) }
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
-
-    let inView = true
-    let rafId = 0
-
-    const io = new IntersectionObserver((entries) => {
-      const first = entries[0]
-      if (!first) return
-      inView = first.isIntersecting
-    })
-    io.observe(el)
-
-    const update = () => {
-      rafId = 0
-      const vw = window.innerWidth
-      if (vw < opts.disabledBelow) {
-        el.style.transform = ''
-        return
-      }
-      const r = el.getBoundingClientRect()
-      const center = window.innerHeight / 2
-      const delta = (r.top + r.height / 2) - center
-      const move = Math.max(-opts.max, Math.min(opts.max, delta * opts.speed))
-      const tx = opts.axis === 'x' ? move : 0
-      const ty = opts.axis === 'y' ? move : 0
-      el.style.willChange = 'transform'
-      el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`
-    }
-
-    const onScroll = () => {
-      if (!inView) return
-      if (rafId) return
-      rafId = requestAnimationFrame(update)
-    }
-    const onResize = () => { el.style.transform = ''; onScroll() }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onResize, { passive: true })
-    onScroll()
-
-    ;(el as any)._parallaxCleanup = () => {
-      io.disconnect()
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onResize)
-      if (rafId) cancelAnimationFrame(rafId)
-      el.style.willChange = ''
-    }
+const mosaicCards = [
+  {
+    tag: 'Intelligence',
+    title: 'Automatically shuts off',
+    copy: 'Automatically shuts off your water when a catastrophic leak is detected. Get peace of mind. Pipebudi closes your water supply when a leak is heard.',
+    color: 'from-sky-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-sky-950/40 dark:to-blue-900/40',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+    image: '/pipbudi-wall.jpg',
   },
-  unmounted(el: HTMLElement) {
-    (el as any)._parallaxCleanup?.()
-  }
-}
-const vReveal = {
-  mounted(el: HTMLElement, binding?: { value?: { delay?: number } }) {
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduce) { el.classList.add('is-in'); return }
+  {
+    tag: 'Peace of mind',
+    title: '24/7 Monitoring',
+    copy: 'Pipebudi is working to protect you even when you are asleep. Simply connect Pipebudi to your water pipes, download the app, connect to Wi-Fi, and get started.',
+    color: 'from-rose-100 via-white/90 to-amber-100 dark:from-slate-950 dark:via-rose-950/30 dark:to-amber-900/30',
+    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+    image: '/kopva-ipad-prod.jpg',
+  },
+  {
+    tag: 'Year round protection',
+    title: 'Quiet background checks',
+    copy: 'Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature reaches close to freezing,Pipebudi will notify you and can automatically turn off your water supply to further protect your property.',
+    color: 'from-emerald-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-emerald-950/40 dark:to-sky-900/30',
+    span: 'md:col-span-2 lg:col-span-2 xl:col-span-2',
+    image: '/frozen-pipe.jpg',
+  },
+  {
+    tag: 'Lifestyle',
+    title: 'Away from home?',
+    copy: 'Whether you’re on holiday or staying away a little longer, you can remotely instruct Pipebudi to turn off the water supply or switch to Away mode — so you can relax knowing you are protected.',
+    color: 'from-purple-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-purple-950/40 dark:to-blue-900/40',
+    span: 'md:col-span-4 lg:col-span-4 xl:col-span-4',
+    image: '/away-from-home.jpg',
+  },
+  // {
+  //   tag: 'Support',
+  //   title: 'Concierge onboarding',
+  //   copy: 'Schedule a remote walkthrough with Kopva experts to verify installation and set up automations in minutes.',
+  //   color: 'from-slate-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-slate-900/70 dark:to-sky-900/30',
+  //   span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+  // },
+  // {
+  //   tag: 'Coverage',
+  //   title: 'Whole-home command center',
+  //   copy: 'Pair the watch with the Kopva hub to orchestrate multiple valves, freeze guards, and leak sensors from a single tap.',
+  //   color: 'from-indigo-100 via-white/90 to-purple-100 dark:from-slate-950 dark:via-indigo-950/40 dark:to-purple-900/40',
+  //   span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+  // },
+];
 
-    const io = new IntersectionObserver((entries) => {
-      const first = entries[0]
-      if (!first) return
-      if (first.isIntersecting) {
-        el.classList.add('is-in')
-        io.unobserve(el)
-      }
-    }, { threshold: 0.15 })
+const lightHeroBackgroundStyle = {
+  backgroundImage: [
+    'radial-gradient(120% 120% at 8% 25%, rgba(59, 130, 246, 0.42), rgba(247, 248, 252, 0) 70%)',
+    'radial-gradient(120% 120% at 85% 5%, rgba(251, 191, 36, 0.52), rgba(247, 248, 252, 0) 72%)',
+    'radial-gradient(150% 150% at 55% 110%, rgba(165, 180, 252, 0.5), rgba(247, 248, 252, 0) 75%)',
+    'linear-gradient(185deg, rgba(247, 248, 252, 0.95) 0%, rgba(255, 255, 255, 0.88) 45%, rgba(236, 241, 255, 0.96) 100%)',
+  ].join(', '),
+  backgroundBlendMode: 'screen, screen, multiply, normal',
+};
 
-    // optional manual delay via data attr or style var
-    if (binding?.value?.delay) {
-      (el as HTMLElement).style.setProperty('--delay', `${binding.value.delay}ms`)
+const mobileOpen = ref(false);
+const { theme, toggleTheme } = useTheme();
+
+const currentYear = new Date().getFullYear();
+
+const closeMobile = () => {
+  mobileOpen.value = false;
+};
+
+let observer;
+
+const handleIntersect = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer?.unobserve(entry.target);
     }
+  });
+};
 
-    io.observe(el)
+onMounted(() => {
+  if (process.server) {
+    return;
   }
-}
 
-const url = useRequestURL()
-const canonical = `${url.origin}/` // adjust if homepage lives elsewhere
-const DisclaimerNote = (props: { text: string }) => h(
-    'p',
-    {
-      class:
-          'mt-2 text-[11px] leading-snug text-secondary/55 italic [&_a]:underline [&_a]:hover:no-underline'
-    },
-    props.text
-)
-// ==== SEO meta (Open Graph + Twitter) ====
-useSeoMeta({
-  title: 'Kopva — Smart Leak & Freeze Protection Valve',
-  description:
-      'Kopva automatically shuts off your water when a leak is detected and protects against frozen pipes. 24/7 monitoring, app control, and a quick ~10-minute install.',
-  // Open Graph
-  ogTitle: 'Kopva — Smart Leak & Freeze Protection Valve',
-  ogDescription:
-      'Stop water damage before it starts. Auto shut-off on leaks, Freeze Guard when near freezing , real-time alerts, and full app control.',
-  ogType: 'website',
-  ogUrl: canonical,
-  ogSiteName: 'Kopva',
-  ogImage: 'http://localhost:3000/pipbudi-wall.jpg',          // <-- point to your real OG image (1200×630)
-  // Twitter
-  twitterCard: 'summary_large_image',
-  twitterTitle: 'Kopva — Smart Leak & Freeze Protection Valve',
-  twitterDescription:
-      'Auto shut-off for leaks, Freeze Guard, and app control. Protect your home with Copva’s smart water valve.',
-  twitterImage: 'http://localhost:3000/pipbudi-wall.jpg',
-  // Misc
-  robots: 'index,follow,max-image-preview:large',
-  themeColor: '#54B16B',
-  // (optional) keywords aren’t used much anymore, but harmless:
-  keywords:
-      'smart water valve, leak detector, automatic shut off, frozen pipes, freeze protection, water leak alarm, Pipebudi, Kopva, UK'
-})
+  observer = new IntersectionObserver(handleIntersect, {
+    rootMargin: '0px 0px 0px 0px',
+    threshold: 0.1,
+  });
 
-// ==== Canonical + JSON-LD Product (edit placeholders) ====
+  const register = () => {
+    document.querySelectorAll('[data-animate]').forEach((element) => {
+      element.classList.add('animate-element');
+      observer?.observe(element);
+    });
+  };
+
+  if (typeof window !== 'undefined' && 'requestAnimationFrame' in window) {
+    window.requestAnimationFrame(register);
+  } else {
+    register();
+  }
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
+
 useHead({
+  title: 'PulsePro by Kopva',
   link: [
-    { rel: 'canonical', href: canonical }
-  ],
-  script: [
     {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name: 'Kopva Smart Water Valve',
-        brand: { '@type': 'Brand', name: 'Kopva' },
-        description:
-            'Smart water valve with automatic leak shut-off, Freeze Guard (near freezing), 24/7 monitoring, and app control.',
-        image: [`${url.origin}/og/kopva-og.jpg`], // or your transparent hero PNG
-        offers: {
-          '@type': 'Offer',
-          priceCurrency: 'GBP',
-          price: '299.00',                // <-- set your real price
-          url: `${url.origin}/checkout`,
-          availability: 'https://schema.org/InStock'
-        }
-        // If/when you have real review data, you can add:
-        // aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: 124 }
-      })
-    }
-  ]
-})
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossorigin: '',
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
+    },
+  ],
+});
 </script>
 
 <style scoped>
-/* Header */
-.nav-link{ color: #fff; opacity: .9; transition: opacity .15s ease }
-.nav-link:hover{ opacity: 1 }
-.btn-header{ @apply inline-flex items-center justify-center font-bold rounded-lg px-3.5 py-2; }
-.btn-header--primary{ @apply bg-primary text-white; }
-.btn-header--sm{ @apply px-3 py-1.5 rounded-md font-extrabold; }
-
-/* Hero background — stays inside hero */
-.hero-bg{
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: clamp(760px, 95vh, 1000px);   /* make sure it has a body */
-  z-index: 0;
-  pointer-events: none;
-
-  /* Stronger colour hotspots + a gentle base gradient */
-  background:
-    /* blue highlight (theme-third) pulled into top-left */
-      radial-gradient(75% 50% at 14% 16%, rgba(151,200,235,0.46), rgba(151,200,235,0) 60%),
-        /* green highlight (primary) pulled into top-right */
-      radial-gradient(65% 45% at 86% 6%,  rgba(84,177,107,0.42),  rgba(84,177,107,0) 60%),
-        /* soft green bloom behind product area */
-      radial-gradient(120% 80% at 50% -20%, rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
-        /* base vertical gradient so the whole hero isn’t flat white */
-      linear-gradient(180deg, #E9F6FF 0%, #FFFFFF 65%);
+:global(body) {
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f7f8fc;
+  color: #0f172a;
+  transition: background-color 400ms ease, color 400ms ease;
 }
 
-/* Add subtle texture so the colour feels intentional (optional) */
-/* Base layer (size/position/texture) */
-.hero-bg{
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: clamp(760px, 95vh, 1000px);
-  z-index: 0;
-  pointer-events: none;
-
-  /* Variant-driven background: falls back to a soft sky if no variant class is present */
-  background: var(--hero-bg,
-  linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%)
-  );
+:global(.dark body) {
+  background-color: #020617;
+  color: #e2e8f0;
 }
 
-/* subtle grid texture */
-.hero-bg::after{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  opacity:.18;
-  background:
-      repeating-linear-gradient(0deg,  rgba(0,16,17,0.03) 0 1px, transparent 1px 26px),
-      repeating-linear-gradient(90deg, rgba(0,16,17,0.03) 0 1px, transparent 1px 26px);
+.animate-element {
+  opacity: 0;
+  transform: translateY(48px);
+  filter: blur(20px);
+  transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+  transition-delay: var(--delay, 0ms);
 }
 
-@supports (mask-image: linear-gradient(black, transparent)){
-  .hero-bg{ mask-image: linear-gradient(#000 0%, #000 82%, transparent 100%); }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 200ms ease;
 }
 
-/* === Variants set the CSS custom property so they always win === */
-
-/* Ice Blue (your pick) */
-.hero-bg--ice{
-  --hero-bg:
-      radial-gradient(80% 55% at 14% 16%, rgba(151,200,235,0.48), rgba(151,200,235,0) 60%),
-      radial-gradient(70% 45% at 86% 6%,  rgba(151,200,235,0.26), rgba(151,200,235,0) 60%),
-      linear-gradient(180deg, #E7F4FF 0%, #FFFFFF 65%);
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
-/* (Optional) Other variants if you ever switch) */
-.hero-bg--emerald{
-  --hero-bg:
-      radial-gradient(80% 55% at 15% 12%, rgba(84,177,107,0.38), rgba(84,177,107,0) 60%),
-      radial-gradient(70% 45% at 85% 8%,  rgba(84,177,107,0.22), rgba(84,177,107,0) 60%),
-      linear-gradient(180deg, #F2FFF6 0%, #FFFFFF 65%);
+[data-animate='fade'].animate-element {
+  transform: translateY(36px);
 }
 
-.hero-bg--ink{
-  --hero-bg:
-      radial-gradient(110% 70% at 50% -25%, rgba(84,177,107,0.24), rgba(84,177,107,0) 60%),
-      radial-gradient(100% 80% at 50% 8%,   rgba(0,16,17,0.18),   rgba(0,16,17,0) 60%),
-      linear-gradient(180deg, #F8FBFC 0%, #FFFFFF 65%);
+[data-animate='slide-up'].animate-element {
+  transform: translateY(72px);
 }
 
-.dot{ background: #54B16B; }
-.hero-divider{ position:relative; z-index:1 }
-
-/* Headline & kicker */
-.headline{
-  font-family: "Inter", ui-sans-serif, system-ui;
-  font-weight: 900; letter-spacing: -0.02em; line-height: 1;
-  font-size: clamp(3rem, 6.8vw, 5.4rem);
-}
-.kicker{ margin-top: .75rem; font-size: clamp(.95rem, 1.4vw, 1.1rem); }
-
-/* Stage */
-.stage{ position: relative; width: min(100%, 601px); aspect-ratio: 1/1; z-index: 1 }
-.bg-circles{ position: absolute; inset: 0; background: url("/bg-circles.png") center/cover no-repeat; z-index: 1 }
-.product-image{
-  position: absolute; left: 50%; top: 50%; width: 60%; height: auto;
-  transform: translate(-50%, -50%); z-index: 3;
-  filter: drop-shadow(0 30px 40px rgba(2,6,23,.16)) drop-shadow(0 8px 18px rgba(2,6,23,.10));
-  animation: float 7s ease-in-out infinite;
-}
-@keyframes float{ 0%{ transform: translate(-50%, calc(-50% - 6px)) } 50%{ transform: translate(-50%, calc(-50% + 6px)) } 100%{ transform: translate(-50%, calc(-50% - 6px)) } }
-.glow{
-  position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%);
-  width: 46%; aspect-ratio: 1/0.24; background: radial-gradient(60% 120% at 50% 50%, rgba(0,16,17,.14), rgba(0,16,17,0));
-  filter: blur(12px); z-index: 2; pointer-events: none;
+[data-animate='slide-right'].animate-element {
+  transform: translateX(-48px);
 }
 
-/* === Feature pills === */
-.feature{ position: absolute; transform: translate(-50%, -50%); z-index: 4 }
-/* beefed-up pulse */
-.dot{
-  position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border-radius: 9999px;
-  background: #54B16B; /* primary */
-  box-shadow: 0 0 0 0 rgba(84,177,107,.35);
-  animation: dot-pulse 2s cubic-bezier(.22,.61,.36,1) infinite;
-}
-.dot::after, .dot::before{
-  content:""; position:absolute; inset:-6px; border-radius:inherit; border:2px solid rgba(84,177,107,.45);
-  animation: ring 1.8s ease-out infinite;
-}
-.dot::before{ animation-delay: .6s; opacity:.75 }
-@keyframes dot-pulse{
-  0%   { box-shadow: 0 0 0 0 rgba(84,177,107,.35) }
-  60%  { box-shadow: 0 0 0 16px rgba(84,177,107,0) }
-  100% { box-shadow: 0 0 0 0 rgba(84,177,107,0) }
-}
-@keyframes ring{
-  0%   { transform: scale(.6); opacity:.8 }
-  80%  { transform: scale(2.3); opacity:0 }
-  100% { opacity:0 }
-}
-@media (prefers-reduced-motion: reduce){
-  .dot,.dot::after,.dot::before{ animation: none }
+[data-animate='slide-left'].animate-element {
+  transform: translateX(48px);
 }
 
-.pill{
-  position: relative; display: inline-flex; align-items: center; gap: .5rem;
-  transform: translateY(-50%) translateX(14px);
-  padding: .6rem .9rem; border-radius: 9999px;
-  background: rgba(255,255,255,.96); backdrop-filter: blur(6px);
-  border: 1px solid rgba(0,0,0,.06); box-shadow: 0 16px 40px -22px rgba(0,0,0,.35);
-  white-space: nowrap; transition: box-shadow .2s ease, transform .2s ease;
-}
-.title{ font-weight: 800; font-size: .95rem; line-height: 1 }
-.desc { font-size: .78rem; opacity: .70; line-height: 1.1 }
-
-/* Popover */
-.feature-card{
-  position: absolute; inset: auto auto 100% 14px;
-  transform: translateY(8px) scale(.98);
-  min-width: 16rem; max-width: 18rem;
-  padding: .9rem .95rem;
-  border-radius: .9rem; background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 22px 44px -18px rgba(0,0,0,.30);
-  opacity: 0; pointer-events: none;
-  transition: opacity .16s ease, transform .2s ease;
-  z-index: 10;
-}
-.feature:hover .feature-card{ opacity: 1; transform: translateY(0) scale(1) }
-.feature-card--open{ opacity: 1 !important; transform: translateY(0) scale(1) !important; pointer-events: auto; }
-
-/* Mobile pills (stacked layout) */
-.mobile-pill{ @apply rounded-xl p-2.5 bg-white/90 border border-black/5 backdrop-blur-sm text-left shadow-[0_16px_40px_-22px_rgba(0,0,0,.35)]; }
-.mobile-pill .pill{ transform:none; padding:.55rem .8rem; }
-.mobile-dot{ @apply inline-block h-2.5 w-2.5 rounded-full bg-primary mr-2 align-middle; }
-
-/* Buttons */
-.btn-primary{ @apply inline-flex items-center justify-center font-bold text-white bg-primary rounded-[0.9rem] px-5 py-3; box-shadow: 0 12px 30px -12px rgba(84,177,107,.5); transition: transform .12s ease, filter .12s ease, box-shadow .2s ease; }
-.btn-primary:hover{ filter: brightness(.95); box-shadow: 0 16px 38px -14px rgba(84,177,107,.55) }
-.btn-primary:active{ transform: translateY(1px) }
-.btn-ghost{ @apply inline-flex items-center justify-center font-bold text-secondary rounded-[0.9rem] px-5 py-3 bg-white/70 border border-black/5 backdrop-blur-sm; transition: background .12s ease, transform .12s ease; }
-.btn-ghost:hover{ background: rgba(255,255,255,.9) }
-.btn-ghost:active{ transform: translateY(1px) }
-
-/* Body tiles (renamed from `.card` to avoid conflict) */
-.tile{ background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:1rem; padding:1.1rem 1rem 1.2rem; box-shadow:0 12px 30px -20px rgba(0,16,17,.25) }
-.tile .icon{ font-size: 1.4rem; line-height: 1 }
-.tile h3{ margin-top:.35rem; @apply font-extrabold text-secondary }
-.tile p{ margin-top:.3rem; @apply text-secondary/75 }
-
-/* Benefit cards */
-.benefit{
-  @apply relative overflow-hidden rounded-2xl bg-white p-6 ring-1 ring-black/5;
-  box-shadow: 0 18px 50px -28px rgba(0,16,17,.25);
-  transition: box-shadow .2s ease, transform .2s ease;
-}
-.benefit::after{
-  content:""; position:absolute; inset:-1px; border-radius:inherit;
-  background: radial-gradient(600px 180px at -10% 0%, rgba(84,177,107,.10), transparent 70%);
-  pointer-events:none;
-}
-.benefit:hover{ box-shadow: 0 24px 60px -30px rgba(0,16,17,.32); transform: translateY(-1px); }
-
-.benefit-icon{
-  @apply h-11 w-11 rounded-xl grid place-items-center text-white;
-  box-shadow: 0 10px 24px -12px rgba(84,177,107,.5);
-}
-.benefit-title{ @apply mt-4 font-extrabold text-secondary text-lg; }
-.benefit-copy{ @apply mt-2 text-secondary/75 leading-relaxed; }
-
-
-/* ---- Pop-in reveal for feature labels ---- */
-.feature.reveal { opacity: 0; }
-
-@keyframes feature-pop {
-  0%   { transform: translate(-50%, -50%) scale(.78); opacity: 0 }
-  60%  { transform: translate(-50%, -50%) scale(1.06); opacity: 1 }
-  100% { transform: translate(-50%, -50%) scale(1) }
-}
-
-.feature.reveal.is-in{
-  animation: feature-pop .58s cubic-bezier(.22,.61,.36,1) both;
-  animation-delay: var(--delay, 0ms); /* ✅ correct name */
-  will-change: transform, opacity;
+.animate-element.is-visible {
   opacity: 1;
+  transform: translate(0, 0);
+  filter: blur(0);
 }
 
+.pricing-pattern {
+  position: absolute;
+  top: -140px;
+  right: -140px;
+  bottom: -140px;
+  left: -140px;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27240%27%20viewBox%3D%270%200%20240%20240%27%3E%0A%20%20%3Cg%20fill%3D%27%2334a853%27%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2748%27%20cy%3D%2748%27%20r%3D%2728%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27192%27%20cy%3D%27192%27%20r%3D%2728%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M28%20176l32-32%2032%2032-32%2032z%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27148%27%20y%3D%27-12%27%20width%3D%2720%27%20height%3D%2796%27%20rx%3D%2710%27%20transform%3D%27rotate%2828%20148%20-12%29%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M188%2072l-30%2030%2030%2030%2014-14-16-16%2016-16z%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E");
+  background-size: 220px;
+  background-repeat: repeat;
+  opacity: 0.16;
+  filter: saturate(120%);
+  animation: pattern-drift 36s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.pricing-pattern--dark {
+  opacity: 0.12;
+  filter: hue-rotate(180deg) brightness(1.2) saturate(140%);
+}
+
+@keyframes pattern-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-160px, -120px, 0);
+  }
+}
 </style>

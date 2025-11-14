@@ -6,10 +6,14 @@
     ]"
   >
     <header class="sticky top-0 z-40 border-b border-white/70 bg-[#f7f8fc]/80 backdrop-blur dark:border-white/10 dark:bg-slate-950/75">
+<!--      <div class="container mx-auto">-->
+<!--        <NuxtImg src="/created_by_kopva.png" alt="Pipebudi Logo" class="object-contain max-w-32 ml-auto pt-2 pr-10" />-->
+<!--      </div>-->
+
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+
         <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
-          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900">pp</span>
-          <span>pulsepro</span>
+          <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
         </NuxtLink>
         <div class="hidden items-center gap-10 text-sm text-slate-600 dark:text-slate-300 lg:flex">
           <a href="#mosaic" class="transition-colors hover:text-slate-900 dark:hover:text-white">Features</a>
@@ -187,7 +191,7 @@
         <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-16 text-center">
           <div class="space-y-8" data-animate="fade">
             <p class="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-300">
-              Kopva • PulsePro
+              Pipebudi • from KOPVA
             </p>
             <h1 id="hero-title" class="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-7xl">
               <span
@@ -201,18 +205,29 @@
                 Never pay for leaks again.
               </span>
             </h1>
+
             <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">
               Automatic shut-off • Freeze Guard • App control
             </p>
             <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
               Kopva PulsePro sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a large-scale disaster.
             </p>
+            <div class="relative w-full max-w-3xl" data-animate="slide-up">
+              <div class="absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+                <img
+                    src="/hero-budi-dark.jpg"
+                    alt="PulsePro smartwatch render"
+                    class="mx-auto h-[420px] w-auto max-w-full object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
+                />
+              </div>
+            </div>
             <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
               <a
                 href="/checkout"
                 class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
               >
-                Get PulsePro
+                Get Pipebudi
               </a>
               <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
@@ -237,18 +252,14 @@
                 Works with Kopva app
               </span>
             </div>
+<!--            <div class="mt-6 flex flex-wrap items-center align-middle gap-4 text-sm text-secondary/60">-->
+<!--             <span><NuxtImg src="/google-store.png"/></span>-->
+<!--              <span class="hidden sm:inline">•</span>-->
+<!--              <span><NuxtImg src="/apple-store.png" /></span>-->
+<!--            </div>-->
           </div>
 
-          <div class="relative w-full max-w-3xl" data-animate="slide-up">
-            <div class="absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
-            <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-12 shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-              <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
-                alt="PulsePro smartwatch render"
-                class="mx-auto h-[420px] w-auto max-w-full object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
-              />
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -329,7 +340,7 @@
             <div class="absolute -left-6 -top-10 h-48 w-48 rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100 blur-3xl"></div>
             <div class="relative overflow-hidden rounded-[40px] border border-white/70 bg-gradient-to-br from-sky-100 via-white to-amber-100 p-6 shadow-[0_40px_120px_-80px_rgba(15,23,42,0.55)] dark:border-white/10 dark:bg-slate-900/60 dark:shadow-[0_40px_120px_-80px_rgba(15,23,42,0.7)]">
               <img
-                src="https://images.unsplash.com/photo-1519868264212-24c3676428d7?auto=format&fit=crop&w=900&q=80"
+                src="/pipebudi-close.jpg"
                 alt="Lifestyle with PulsePro"
                 class="h-full w-full rounded-[28px] object-cover"
               />
@@ -523,50 +534,50 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const mosaicCards = [
   {
     tag: 'Intelligence',
-    title: 'Adaptive leak defense',
-    copy: 'Smart sensors compare normal water patterns to new anomalies and trigger instant shut-off when something changes.',
+    title: 'Automatically shuts off',
+    copy: 'Automatically shuts off your water when a catastrophic leak is detected. Get peace of mind. Pipebudi closes your water supply when a leak is heard.',
     color: 'from-sky-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-sky-950/40 dark:to-blue-900/40',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
-    image: 'https://images.unsplash.com/photo-1603791452906-9cd6f7b1df90?auto=format&fit=crop&w=900&q=80',
+    image: '/pipbudi-wall.jpg',
   },
   {
-    tag: 'Design',
-    title: 'Featherlight finish',
-    copy: 'Sculpted aluminum edges and a breathable knit loop feel like modern jewelry while protecting your space.',
+    tag: 'Peace of mind',
+    title: '24/7 Monitoring',
+    copy: 'Pipebudi is working to protect you even when you are asleep. Simply connect Pipebudi to your water pipes, download the app, connect to Wi-Fi, and get started.',
     color: 'from-rose-100 via-white/90 to-amber-100 dark:from-slate-950 dark:via-rose-950/30 dark:to-amber-900/30',
     span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
-    image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=900&q=80',
+    image: '/kopva-ipad-prod.jpg',
   },
   {
-    tag: 'Automation',
+    tag: 'Year round protection',
     title: 'Quiet background checks',
-    copy: 'PulsePro surveys for freeze risks and hidden drips hourly, sending gentle taps and app alerts only when needed.',
+    copy: 'Frozen pipes can be a serious problem in winter. With built-in frost protection, if temperature reaches close to freezing,Pipebudi will notify you and can automatically turn off your water supply to further protect your property.',
     color: 'from-emerald-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-emerald-950/40 dark:to-sky-900/30',
     span: 'md:col-span-2 lg:col-span-2 xl:col-span-2',
+    image: '/frozen-pipe.jpg',
   },
   {
     tag: 'Lifestyle',
-    title: 'Always-on awareness',
-    copy: 'Glance at the watch to see valve status, water usage, and freeze guard readiness with minimalist complications.',
+    title: 'Away from home?',
+    copy: 'Whether you’re on holiday or staying away a little longer, you can remotely instruct Pipebudi to turn off the water supply or switch to Away mode — so you can relax knowing you are protected.',
     color: 'from-purple-100 via-white/90 to-blue-100 dark:from-slate-950 dark:via-purple-950/40 dark:to-blue-900/40',
     span: 'md:col-span-4 lg:col-span-4 xl:col-span-4',
-    image: 'https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=900&q=80',
+    image: '/away-from-home.jpg',
   },
-  {
-    tag: 'Support',
-    title: 'Concierge onboarding',
-    copy: 'Schedule a remote walkthrough with Kopva experts to verify installation and set up automations in minutes.',
-    color: 'from-slate-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-slate-900/70 dark:to-sky-900/30',
-    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
-  },
-  {
-    tag: 'Coverage',
-    title: 'Whole-home command center',
-    copy: 'Pair the watch with the Kopva hub to orchestrate multiple valves, freeze guards, and leak sensors from a single tap.',
-    color: 'from-indigo-100 via-white/90 to-purple-100 dark:from-slate-950 dark:via-indigo-950/40 dark:to-purple-900/40',
-    span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
-    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
-  },
+  // {
+  //   tag: 'Support',
+  //   title: 'Concierge onboarding',
+  //   copy: 'Schedule a remote walkthrough with Kopva experts to verify installation and set up automations in minutes.',
+  //   color: 'from-slate-100 via-white/90 to-sky-100 dark:from-slate-950 dark:via-slate-900/70 dark:to-sky-900/30',
+  //   span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+  // },
+  // {
+  //   tag: 'Coverage',
+  //   title: 'Whole-home command center',
+  //   copy: 'Pair the watch with the Kopva hub to orchestrate multiple valves, freeze guards, and leak sensors from a single tap.',
+  //   color: 'from-indigo-100 via-white/90 to-purple-100 dark:from-slate-950 dark:via-indigo-950/40 dark:to-purple-900/40',
+  //   span: 'md:col-span-3 lg:col-span-3 xl:col-span-3',
+  // },
 ];
 
 const lightHeroBackgroundStyle = {

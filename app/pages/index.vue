@@ -13,7 +13,7 @@
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
 
         <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
-          <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
+          <NuxtImg :src="pipbudiLogoSrc" alt="Pipebudi Logo" class="object-contain max-w-32" />
         </NuxtLink>
         <div class="hidden items-center gap-10 text-sm text-slate-600 dark:text-slate-300 lg:flex">
           <a href="#mosaic" class="transition-colors hover:text-slate-900 dark:hover:text-white">Features</a>
@@ -311,10 +311,10 @@
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-animate="fade">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">The Pipebudi promise</p>
-            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## n asymmetrical rhythm of protection ##</h2>
+            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">An asymmetrical rhythm of protection</h2>
           </div>
           <p class="max-w-xl text-base text-slate-600 dark:text-slate-300">
-           ## Every block in Pipebudi is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences. ##
+            Every module inside Pipebudi is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences while keeping plumbing threats in check.
           </p>
         </div>
         <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">
@@ -343,23 +343,23 @@
       <section id="experience" class="bg-white/80 py-24 dark:bg-slate-950/60">
         <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div class="space-y-8" data-animate="fade">
-            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">## C## ##</p>
-            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## #### </h2>
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Complete control</p>
+            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Your water system, orchestrated from one tap</h2>
             <p class="text-lg text-slate-600 dark:text-slate-300">
-             ## #####
+              Pipebudi listens for abnormal acoustics, tracks temperature swings, and syncs with the Kopva app so you can intervene—or let it shut off water automatically—before a leak spirals into a claim.
             </p>
             <ul class="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span>
-              ##  ####
+                Precision acoustic sensing spots pinhole leaks across copper, plastic, or mixed pipework the second flow sounds change.
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-purple-400"></span>
-               ## ####
+                Automated isolation valve reacts in seconds and can pause water while you are commuting, travelling, or renting your home out.
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
-               ## Works seamlessly with the Kopva mobile app for remote shut-off and household sharing.##
+                Works seamlessly with the Kopva mobile app for remote shut-off, freeze alerts, and household sharing.
               </li>
             </ul>
             <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-300">
@@ -378,8 +378,8 @@
               />
             </div>
             <div class="absolute -bottom-8 right-10 w-44 rounded-3xl border border-white/70 bg-white/80 p-4 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 shadow-lg dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300" data-animate="slide-left">
-              <p>##Everyday ease##</p>
-              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">##Lifestyle ready##</p>
+              <p>Everyday ease</p>
+              <p class="mt-1 text-[11px] text-slate-400 dark:text-slate-500">Lifestyle ready</p>
             </div>
           </div>
         </div>
@@ -490,8 +490,8 @@
         <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-start md:justify-between" data-animate="fade">
           <div class="space-y-4">
             <NuxtLink to="/" class="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-900 dark:text-white">
-              <NuxtImg src="/pipbudi-logo-black.png" alt="Pipebudi Logo" class="object-contain max-w-32" />
-              <NuxtImg src="/created-by-kopva-black.png" alt="Kopva Logo" class="object-contain max-w-32" />
+              <NuxtImg :src="pipbudiLogoSrc" alt="Pipebudi Logo" class="object-contain max-w-32" />
+              <NuxtImg :src="createdByLogoSrc" alt="Kopva Logo" class="object-contain max-w-32" />
             </NuxtLink>
             <p class="max-w-sm text-sm text-slate-500 dark:text-slate-300">
               Pipebudi by Kopva keeps every valve protected with adaptive leak detection, freeze guard, and concierge support whenever you need it.
@@ -536,7 +536,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 const mosaicCards = [
   {
@@ -600,6 +600,13 @@ const lightHeroBackgroundStyle = {
 const mobileOpen = ref(false);
 const { theme, toggleTheme } = useTheme();
 
+const pipbudiLogoSrc = computed(() =>
+  theme.value === 'dark' ? '/pipbudi-logo-white.png' : '/pipbudi-logo-black.png'
+);
+const createdByLogoSrc = computed(() =>
+  theme.value === 'dark' ? '/created-by-kopva-white.png' : '/created-by-kopva-black.png'
+);
+
 const currentYear = new Date().getFullYear();
 
 const closeMobile = () => {
@@ -646,7 +653,23 @@ onBeforeUnmount(() => {
 });
 
 useHead({
-  title: 'Pipbudi by Kopva',
+  title: 'Pipebudi | Smart Leak Detection & Automatic Shutoff by Kopva',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Protect every pipe with Pipebudi, the IoT leak detection valve that listens for trouble, alerts your phone instantly, and shuts water off before damage spreads.',
+    },
+    {
+      property: 'og:title',
+      content: 'Pipebudi | Smart Leak Detection & Automatic Shutoff by Kopva',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Install Pipebudi once to get 24/7 acoustic monitoring, freeze detection, and one-tap remote shutoff through the Kopva app.',
+    },
+  ],
   link: [
     {
       rel: 'preconnect',

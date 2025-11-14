@@ -314,7 +314,7 @@
             <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## n asymmetrical rhythm of protection ##</h2>
           </div>
           <p class="max-w-xl text-base text-slate-600 dark:text-slate-300">
-           ## Every block in PulsePro is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences. ##
+           ## Every block in Pipebudi is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences. ##
           </p>
         </div>
         <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">
@@ -343,19 +343,19 @@
       <section id="experience" class="bg-white/80 py-24 dark:bg-slate-950/60">
         <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div class="space-y-8" data-animate="fade">
-            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">## Connected comfort ##</p>
-            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## Designed for quiet confidence## </h2>
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">## C## ##</p>
+            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">## #### </h2>
             <p class="text-lg text-slate-600 dark:text-slate-300">
-             ##  Slip PulsePro on and forget it&apos;s there. Soft pastel materials hug the wrist while Kopva intelligence watches over every valve and appliance in your home.##
+             ## #####
             </p>
             <ul class="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span>
-              ##  Breathable knit loop with moisture-wicking threads inspired by athletic wear.##
+              ##  ####
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-purple-400"></span>
-               ## Water flow, freeze detection, and ambient alerts unified in a single glanceable view.##
+               ## ####
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
@@ -646,7 +646,7 @@ onBeforeUnmount(() => {
 });
 
 useHead({
-  title: 'PulsePro by Kopva',
+  title: 'Pipbudi by Kopva',
   link: [
     {
       rel: 'preconnect',

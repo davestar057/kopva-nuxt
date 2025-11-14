@@ -311,10 +311,10 @@
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-animate="fade">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">The Pipebudi promise</p>
-            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Always-on leak defense you can trust</h2>
+            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">The 'Always-on' leak defense you can trust</h2>
           </div>
           <p class="max-w-xl text-base text-slate-600 dark:text-slate-300">
-            Pipebudi blends pro-grade acoustic sensing, freeze awareness, and instant shutoff into one valve-mounted module, so homeowners catch drips when they start, keep pipes healthy through winter, and avoid costly insurance claims.
+            Pipebudi blends pro-grade acoustic sensing, freeze awareness, and instant shutoff into one valve-mounted device, so homeowners catch drips when they start, keep pipes healthy through winter, and avoid costly insurance claims.
           </p>
         </div>
         <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">
@@ -344,7 +344,7 @@
         <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div class="space-y-8" data-animate="fade">
             <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Complete control</p>
-            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Your water system, orchestrated from one tap</h2>
+            <h2 class="text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Full-home water control from Pipebudi</h2>
             <p class="text-lg text-slate-600 dark:text-slate-300">
               Pipebudi listens for abnormal acoustics, tracks temperature swings, and syncs with the Kopva app so you can intervene—or let it shut off water automatically—before a leak spirals into a claim.
             </p>

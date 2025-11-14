@@ -167,7 +167,7 @@
     </header>
 
     <main>
-      <section class="relative overflow-hidden px-6 pb-24 pt-24" aria-labelledby="hero-title">
+      <section class="relative overflow-hidden px-6 pb-24 pt-12 md:pt-24" aria-labelledby="hero-title">
 
         <div
             class="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-700"
@@ -214,12 +214,12 @@
              Pipebudi sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a large-scale disaster.
             </p>
             <div class="relative w-full max-w-3xl" data-animate="slide-up">
-              <div class="absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
+              <div class="absolute -top-20 left-1/2 h-0 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
               <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
                 <img
                     src="/hero-budi-dark.jpg"
                     alt="Pipebudi Example"
-                    class="mx-auto h-[420px] w-auto max-w-full object-contain drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
+                    class="mx-auto h-[420px] w-auto max-w-full object-cover drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
                 />
               </div>
             </div>
@@ -400,7 +400,7 @@
           >
             <div class="absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-sky-100/70 blur-3xl dark:bg-sky-500/15"></div>
             <div class="absolute -right-12 bottom-8 h-52 w-52 rounded-full bg-purple-100/70 blur-3xl dark:bg-violet-500/20"></div>
-            <div class="relative grid gap-12 p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div class="relative grid gap-12 p-6 md:p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
               <div class="space-y-8">
                 <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-200">
                   Launch pricing

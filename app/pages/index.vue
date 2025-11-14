@@ -311,10 +311,10 @@
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-animate="fade">
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">The Pipebudi promise</p>
-            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">An asymmetrical rhythm of protection</h2>
+            <h2 class="mt-4 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl">Always-on leak defense you can trust</h2>
           </div>
           <p class="max-w-xl text-base text-slate-600 dark:text-slate-300">
-            Every module inside Pipebudi is tuned to blend lifestyle, safety, and performance—borrowing the confident, airy layouts you expect from premium Apple experiences while keeping plumbing threats in check.
+            Pipebudi blends pro-grade acoustic sensing, freeze awareness, and instant shutoff into one valve-mounted module, so homeowners catch drips when they start, keep pipes healthy through winter, and avoid costly insurance claims.
           </p>
         </div>
         <div class="mt-12 grid grid-cols-1 gap-6 md:auto-rows-[minmax(260px,_auto)] md:grid-cols-6">

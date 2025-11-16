@@ -444,8 +444,8 @@
                   <code class="rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.35em] text-white shadow-[0_20px_50px_-34px_rgba(14,116,144,1)]">LAUNCH20</code>
                 </div>
                 <p class="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">20% off launch offer</p>
-                <p class="mt-5 text-6xl font-semibold text-slate-900 dark:text-white">$239</p>
-                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">Usually $299</p>
+                <p class="mt-5 text-6xl font-semibold text-slate-900 dark:text-white">£239</p>
+                <p class="mt-2 text-sm text-slate-500 dark:text-slate-300">Usually £299</p>
                 <div class="mt-8 flex flex-col gap-3">
                   <a
                       href="/checkout"

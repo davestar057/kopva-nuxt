@@ -174,7 +174,7 @@
           ]"
         ></div>
 
-        <div class="relative mx-auto grid max-w-6xl items-center gap-10 rounded-[36px] border border-white/60 bg-white/80 px-8 py-12 shadow-[0_30px_140px_-80px_rgba(15,23,42,0.35)] backdrop-blur-lg dark:border-white/10 dark:bg-slate-950/60 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="relative mx-auto grid max-w-6xl items-start gap-10 rounded-[36px] border border-white/60 bg-white/80 px-8 py-12 shadow-[0_30px_140px_-80px_rgba(15,23,42,0.35)] backdrop-blur-lg dark:border-white/10 dark:bg-slate-950/60 lg:grid-cols-[1.05fr_0.95fr]">
           <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_26%,rgba(56,189,248,0.18),transparent_32%),radial-gradient(circle_at_86%_10%,rgba(94,234,212,0.14),transparent_35%),radial-gradient(circle_at_80%_82%,rgba(94,129,244,0.16),transparent_40%)]"></div>
           <div class="space-y-6 lg:space-y-8" data-animate="fade">
             <p class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-200">
@@ -234,8 +234,8 @@
             </div>
           </div>
 
-          <div class="relative" data-animate="fade" style="--delay: 160ms">
-            <div class="group relative h-full overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+          <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 sm:aspect-[5/6]">
               <div class="absolute inset-4 rounded-[22px] bg-gradient-to-br from-white/15 via-white/5 to-white/15 blur-3xl"></div>
               <div class="relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 shadow-lg dark:border-white/10">
                 <NuxtImg

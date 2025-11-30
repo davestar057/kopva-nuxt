@@ -166,147 +166,152 @@
       </transition>
     </header>
 
+    
     <main>
-      <section class="relative overflow-hidden px-6 pb-24 pt-12 md:pt-24" aria-labelledby="hero-title">
+  <section class="relative overflow-hidden px-6 pb-24 pt-12 md:pt-24" aria-labelledby="hero-title">
 
-        <div
-            class="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-700"
-            :class="theme === 'light' ? 'opacity-100' : 'opacity-0'"
-            :style="theme === 'light' ? lightHeroBackgroundStyle : undefined"
-            aria-hidden="true"
-        ></div>
-        <div
-            class="absolute -left-24 top-[-140px] h-72 w-72 opacity-40 blur-3xl sm:h-96 sm:w-96 sm:opacity-100"
-            :class="[
-            'rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100',
-            theme === 'dark' ? 'opacity-30 sm:opacity-90' : ''
-          ]"
-        ></div>
-        <div
-            class="absolute -right-32 top-16 h-80 w-80 opacity-40 blur-3xl sm:h-[420px] sm:w-[420px] sm:opacity-100"
-            :class="[
-            'rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100',
-            theme === 'dark' ? 'opacity-25 sm:opacity-90' : ''
-          ]"
-        ></div>
-        <div class="relative mx-auto flex max-w-5xl flex-col items-center gap-16 text-center">
-          <div class="space-y-8" data-animate="fade">
-            <p class="inline-flex items-center justify-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-300">
-              Pipebudi • from KOPVA
-            </p>
-            <h1 id="hero-title" class="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-7xl">
-              <span
-                  class="bg-clip-text text-transparent transition-colors duration-500"
-                  :class="
-                  theme === 'dark'
-                    ? 'bg-gradient-to-r from-sky-200 via-indigo-300 to-purple-200'
-                    : 'bg-gradient-to-r from-slate-900 via-sky-600 to-purple-500'
-                "
-              >
-                Never pay for leaks again.
-              </span>
-            </h1>
+    <div
+        class="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-700"
+        :class="theme === 'light' ? 'opacity-100' : 'opacity-0'"
+        :style="theme === 'light' ? lightHeroBackgroundStyle : undefined"
+        aria-hidden="true"
+    ></div>
+    <div
+        class="absolute -left-24 top-[-140px] h-72 w-72 opacity-40 blur-3xl sm:h-96 sm:w-96 sm:opacity-100"
+        :class="[
+        'rounded-full bg-gradient-to-br from-sky-100 via-white to-purple-100',
+        theme === 'dark' ? 'opacity-30 sm:opacity-90' : ''
+      ]"
+    ></div>
+    <div
+        class="absolute -right-32 top-16 h-80 w-80 opacity-40 blur-3xl sm:h-[420px] sm:w-[420px] sm:opacity-100"
+        :class="[
+        'rounded-full bg-gradient-to-br from-amber-100 via-white to-sky-100',
+        theme === 'dark' ? 'opacity-25 sm:opacity-90' : ''
+      ]"
+    ></div>
 
-            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">
-              Automatic shut-off • Freeze Guard • App control
+    <div class="relative mx-auto grid max-w-6xl items-center gap-16 rounded-[36px] border border-white/60 bg-white/80 px-8 py-12 shadow-[0_30px_140px_-80px_rgba(15,23,42,0.35)] backdrop-blur-lg dark:border-white/10 dark:bg-slate-950/60">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.18),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(94,234,212,0.16),transparent_32%),radial-gradient(circle_at_80%_80%,rgba(94,129,244,0.18),transparent_42%)]"></div>
+      <div class="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-gradient-to-br from-white/40 via-sky-200/50 to-indigo-200/40 blur-3xl dark:from-white/5 dark:via-slate-800/60 dark:to-indigo-900/40"></div>
+      <div class="absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-gradient-to-br from-emerald-100/70 via-white/50 to-sky-100/60 blur-3xl dark:from-emerald-900/40 dark:via-slate-900/60 dark:to-sky-900/50"></div>
+
+      <div class="space-y-6 lg:space-y-8" data-animate="fade">
+        <p class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-200">
+          Pipebudi • For landlords
+        </p>
+        <div class="space-y-4">
+          <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+            Prevent water leaks across every rental you manage.
+          </h1>
+          <p class="max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            Did you know that water leaks in a rental property are typically the landlord’s responsibility to fix under the Landlord and Tenant Act 1985? Pipebudi gives you modern, remote control over those risks before they become claims.
+          </p>
+          <div class="grid gap-3 text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            <p>
+              A catastrophic leak doesn’t just cause stress—it can trigger repair bills, lost rent, and rehousing costs. Comprehensive insurance may help, but proactive monitoring is the fastest way to protect your portfolio.
             </p>
-            <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-             Pipebudi sits on your main water valve and watches for abnormal flow and freezing conditions. If something’s wrong, it alerts you and can automatically close the valve to prevent a large-scale disaster.
+            <p>
+              Pipebudi watches flow during unoccupied periods, lets you and tenants turn water off from anywhere, and helps mitigate frozen pipes when temperatures drop. Join the landlords already keeping their properties calm, dry, and rentable.
             </p>
-            <div class="relative w-full max-w-3xl" data-animate="slide-up">
-              <div class="absolute -top-20 left-1/2 h-0 w-64 -translate-x-1/2 rounded-full bg-gradient-to-br from-sky-200 via-white to-purple-200 blur-3xl"></div>
-              <div class="relative overflow-hidden rounded-[48px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  shadow-[0_60px_140px_-80px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-                <img
-                    src="/hero-budi-dark.jpg"
-                    alt="Pipebudi Example"
-                    class="mx-auto h-[420px] w-auto max-w-full object-cover drop-shadow-[0_35px_45px_rgba(15,23,42,0.35)]"
-                />
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
+          <a
+              href="/checkout"
+              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
+          >
+            Protect my rentals
+          </a>
+          <a
+              href="#pricing"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/20 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:border-white/40 dark:hover:text-white"
+          >
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm dark:bg-white dark:text-slate-900">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </span>
+            View launch offer
+          </a>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="flex items-start gap-3 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-200">
+            <span class="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 text-white shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16M9 20V4m6 16V4" />
+              </svg>
+            </span>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">Landlord & Tenant Act 1985</p>
+              <p class="text-base font-semibold text-slate-900 dark:text-white">Leaks fall under structural responsibility.</p>
+              <p>Stay ahead with remote shutoff, frost protection, and automated alerts before damage spreads.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-200">
+            <span class="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2.25 2.25L15 9.75m-7.5 9.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 005.25 9.75v9A2.25 2.25 0 007.5 19.5z" />
+              </svg>
+            </span>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">Portfolio-ready</p>
+              <p class="text-base font-semibold text-slate-900 dark:text-white">Monitor unoccupied units in real time.</p>
+              <p>Switch water off remotely, automate away modes, and keep tenants protected during cold snaps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-[32px] border border-slate-200/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-1 shadow-[0_30px_120px_-60px_rgba(15,23,42,0.7)] dark:border-white/10 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" data-animate="slide-left">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(94,234,212,0.12),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(125,211,252,0.14),transparent_40%)]"></div>
+        <div class="relative h-full rounded-[28px] bg-gradient-to-br from-white/6 via-slate-900/60 to-slate-900/80 p-6 backdrop-blur">
+          <div class="absolute -left-10 bottom-6 h-48 w-48 rounded-full bg-gradient-to-br from-sky-400/30 via-white/0 to-purple-400/30 blur-3xl"></div>
+          <div class="absolute -right-16 -top-10 h-52 w-52 rounded-full bg-gradient-to-br from-white/10 via-slate-700/40 to-sky-500/30 blur-3xl"></div>
+
+          <div class="relative overflow-hidden rounded-2xl border border-white/20 bg-white/5 p-4">
+            <NuxtImg
+                src="/close-up-pipebudi.jpg"
+                alt="Pipebudi installed on a valve"
+                class="h-[320px] w-full rounded-xl object-cover shadow-[0_30px_70px_-40px_rgba(15,23,42,0.9)]"
+            />
+            <div class="pointer-events-none absolute inset-x-6 top-6 h-32 rounded-full bg-gradient-to-r from-white/40 via-white/5 to-white/0 blur-3xl"></div>
+          </div>
+
+          <div class="relative mt-6 grid gap-3 rounded-2xl border border-white/15 bg-white/5 p-4 text-slate-100 shadow-inner">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5l16.5 0M3.75 12h9.75m-9.75 4.5h6" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.28em] text-slate-300">Live water flow</p>
+                  <p class="text-base font-semibold text-white">Unoccupied mode: monitoring</p>
+                </div>
               </div>
+              <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs font-semibold text-emerald-200">Armed</span>
             </div>
-            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <a
-                  href="/checkout"
-                  class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
-              >
-                Get Pipebudi
-              </a>
+            <div class="flex items-center justify-between text-sm text-slate-200">
+              <span>Auto-shutoff threshold</span>
+              <span class="font-semibold">Rapid flow detected</span>
             </div>
-            <div class="flex flex-col justify-center gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-                For homeowners
-              </a>
-              <NuxtLink to="/for-landlords" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-                For landlords
-              </NuxtLink>
-              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-                For holiday homes
-              </a>
-              <a href="#experience" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
-                <span class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-                For commerical properties
-              </a>
+            <div class="relative h-2 overflow-hidden rounded-full bg-white/10">
+              <span class="absolute inset-y-0 left-0 w-3/5 rounded-full bg-gradient-to-r from-emerald-400 via-sky-400 to-indigo-400"></span>
             </div>
-            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-500 dark:text-slate-400">
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-sky-400"></span>
-                24/7 monitoring
-              </span>
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-purple-400"></span>
-                Install in under 10 minutes
-              </span>
-              <span class="inline-flex items-center gap-2">
+            <div class="flex items-center justify-between text-sm text-slate-200">
+              <span>Remote control</span>
+              <span class="flex items-center gap-2">
                 <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                Works with Kopva app
+                Online
               </span>
             </div>
-            <!--            <div class="mt-6 flex flex-wrap items-center align-middle gap-4 text-sm text-secondary/60">-->
-            <!--             <span><NuxtImg src="/google-store.png"/></span>-->
-            <!--              <span class="hidden sm:inline">•</span>-->
-            <!--              <span><NuxtImg src="/apple-store.png" /></span>-->
-            <!--            </div>-->
-          </div>
-
-
-        </div>
-      </section>
-
-      <section class="border-y border-white/70 bg-white/70 py-12 dark:border-white/10 dark:bg-slate-900/70">
-        <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-6 px-6 text-sm text-slate-600 dark:text-slate-300">
-          <div class="inline-flex items-center gap-3" data-animate="fade">
-            <span class="h-2 w-2 rounded-full bg-sky-400"></span>
-            <p><span class="font-semibold text-slate-900 dark:text-white">Auto shut-off</span> in seconds</p>
-          </div>
-          <div class="inline-flex items-center gap-3" data-animate="fade" style="--delay: 120ms">
-            <span class="h-2 w-2 rounded-full bg-purple-400"></span>
-            <p><span class="font-semibold text-slate-900 dark:text-white">10-minute install</span> on any valve</p>
-          </div>
-          <div class="inline-flex items-center gap-3" data-animate="fade" style="--delay: 220ms">
-            <span class="h-2 w-2 rounded-full bg-amber-400"></span>
-            <p><span class="font-semibold text-slate-900 dark:text-white">Remote app control</span> anywhere</p>
           </div>
         </div>
-      </section>
-
+      </div>
+    </div>
+  </section>
       <section id="mosaic" class="mx-auto max-w-6xl px-6 py-24">
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-animate="fade">
           <div>
@@ -653,21 +658,21 @@ onBeforeUnmount(() => {
 });
 
 useHead({
-  title: 'Pipebudi | Smart Leak Detection & Automatic Shutoff by Kopva',
+  title: 'Pipebudi for Landlords | Remote leak prevention for rental portfolios',
   meta: [
     {
       name: 'description',
       content:
-        'Protect every pipe with Pipebudi, the IoT leak detection valve that listens for trouble, alerts your phone instantly, and shuts water off before damage spreads.',
+        'Keep rental properties protected with remote shutoff, freeze protection, and continuous flow monitoring so leaks are stopped before they impact tenants or rent.',
     },
     {
       property: 'og:title',
-      content: 'Pipebudi | Smart Leak Detection & Automatic Shutoff by Kopva',
+      content: 'Pipebudi for Landlords | Remote leak prevention for rental portfolios',
     },
     {
       property: 'og:description',
       content:
-        'Install Pipebudi once to get 24/7 acoustic monitoring, freeze detection, and one-tap remote shutoff through the Kopva app.',
+        'Landlord-first leak protection with smart monitoring during vacant periods, tenant-friendly remote controls, and instant alerts to prevent catastrophic damage.',
     },
   ],
   link: [

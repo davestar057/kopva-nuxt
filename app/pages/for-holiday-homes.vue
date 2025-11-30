@@ -180,7 +180,7 @@
             <NuxtImg
               src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
               alt="Peaceful holiday home interior"
-              class="absolute inset-0 h-full w-full object-cover object-right opacity-70 mix-blend-screen"
+              class="hero-bg-image absolute -right-10 -top-10 h-[70%] w-[72%] object-cover object-right-top opacity-70 mix-blend-screen"
             />
             <div class="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-white/10 transition-colors duration-500 dark:from-slate-950 dark:via-slate-950/85 dark:to-slate-950/30"></div>
             <div class="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent dark:from-white/5"></div>
@@ -465,5 +465,11 @@ useHead({
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
+}
+
+.hero-bg-image {
+  -webkit-mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0));
+  mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0));
+  filter: saturate(1.05) contrast(1.02);
 }
 </style>

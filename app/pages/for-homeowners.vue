@@ -231,7 +231,12 @@
             </div>
           </div>
 
-          <div class="relative lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+        </div>
+      </section>
+
+      <section id="why" class="px-6 pb-12">
+        <div class="mx-auto max-w-6xl space-y-10 rounded-[32px] border border-slate-200/70 bg-white/70 p-10 shadow-[0_28px_120px_-90px_rgba(15,23,42,0.55)] backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
+          <div class="relative lg:col-span-2" data-animate="fade" style="--delay: 120ms">
             <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
               <p class="mb-6 break-inside-avoid">
                 Did you know that escape of water is the biggest single area of home insurance
@@ -258,10 +263,10 @@
             </div>
           </div>
 
-          <div class="lg:col-span-2" data-animate="slide-up" style="--delay: 320ms">
+          <div class="lg:col-span-2" data-animate="slide-up" style="--delay: 220ms">
             <div class="flex flex-col gap-6">
               <h2 id="steps" class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-300">Practical steps</h2>
-              <ul class="grid gap-3 rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-base leading-relaxed text-slate-700 shadow-sm md:grid-cols-2 dark:border-white/10 dark:bg-slate-900/50 dark:text-slate-200">
+              <ul class="grid gap-3 rounded-3xl border border-slate-200/70 bg-white/80 p-6 text-base leading-relaxed text-slate-700 shadow-sm md:grid-cols-2 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200">
                 <li class="break-inside-avoid">1. Know where your stopcock is and test it regularly</li>
                 <li class="break-inside-avoid">2. Know where your water pipes before you start any DIY / drilling</li>
                 <li class="break-inside-avoid">3. Fit a leak detection device, like Pipebudi, that can turn off the water if there is a leak</li>
@@ -271,31 +276,6 @@
                 <li class="break-inside-avoid">7. Try to use appliances whilst you are in the home</li>
                 <li class="break-inside-avoid">8. If you leave your property unoccupied for any length of time, make sure it is adequately heated to prevent frozen pipes and check your insurance for exclusions if your property is empty</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="why" class="border-t border-white/70 bg-white/60 px-6 py-16 backdrop-blur dark:border-white/10 dark:bg-slate-950/60">
-        <div class="mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-          <div class="space-y-4 lg:w-1/3" data-animate="fade">
-            <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Why this matters</h2>
-            <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
-              Escape of water losses are expensive and emotional. Pipebudi keeps your home protected in light or dark mode, blending seamlessly with your routine.
-            </p>
-          </div>
-          <div class="grid flex-1 gap-6 md:grid-cols-2" data-animate="fade" style="--delay: 120ms">
-            <div class="rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-slate-900/60">
-              <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Financial protection</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                According to the ABI, insurers now pay out over £1.8m every day for domestic property Escape of Water claims.
-              </p>
-            </div>
-            <div class="rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-slate-900/60">
-              <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Emotional peace of mind</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                The damage of a major water leak doesn't only have a huge financial impact, it can be devastating emotionally when precious, sentimental possessions become irreparably damaged.
-              </p>
             </div>
           </div>
         </div>

@@ -231,7 +231,12 @@
             </div>
           </div>
 
-          <div class="relative lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+        </div>
+      </section>
+
+      <section id="why" class="px-6 pb-12">
+        <div class="mx-auto max-w-6xl space-y-10 rounded-[32px] border border-slate-200/70 bg-white/70 p-10 shadow-[0_28px_120px_-90px_rgba(15,23,42,0.55)] backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
+          <div class="relative" data-animate="fade" style="--delay: 120ms">
             <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
               <p class="mb-6 break-inside-avoid">
                 With conservative estimates ranging from 200,000 to 800,000 holiday homes in the
@@ -262,31 +267,6 @@
                 occupants. With new guests arriving at the property regularly, it is important to
                 ensure these are provided with clear guidance on what to do if there is a leak, where
                 the stop tap is and emergency contact numbers in case of a major issue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="why" class="border-t border-white/70 bg-white/60 px-6 py-16 backdrop-blur dark:border-white/10 dark:bg-slate-950/60">
-        <div class="mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-          <div class="space-y-4 lg:w-1/3" data-animate="fade">
-            <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Why this matters</h2>
-            <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
-              Holiday homes stay empty more often, raising the risk of leaks going unnoticed. Pipebudi keeps watch so every arrival feels as calm as the last.
-            </p>
-          </div>
-          <div class="grid flex-1 gap-6 md:grid-cols-2" data-animate="fade" style="--delay: 120ms">
-            <div class="rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-slate-900/60">
-              <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Higher winter risk</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                As they often remain empty for longer in the winter months frozen pipes and the water leak risks these pose are considerably higher than a normal domestic property.
-              </p>
-            </div>
-            <div class="rounded-3xl border border-slate-200/80 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-slate-900/60">
-              <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Guest-ready guidance</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                With new guests arriving regularly, clear guidance on stop taps, what to do if there is a leak, and emergency contacts keeps everyone prepared.
               </p>
             </div>
           </div>

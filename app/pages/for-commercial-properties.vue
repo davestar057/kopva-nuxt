@@ -174,58 +174,64 @@
           ]"
         ></div>
 
-        <div class="relative mx-auto grid max-w-6xl items-start gap-10 rounded-[36px] border border-white/60 bg-white/80 px-8 py-12 shadow-[0_30px_140px_-80px_rgba(15,23,42,0.35)] backdrop-blur-lg dark:border-white/10 dark:bg-slate-950/60 lg:grid-cols-[1.05fr_0.95fr]">
+        <div class="relative mx-auto max-w-6xl overflow-hidden rounded-[36px] border border-white/60 bg-white/80 px-8 py-12 shadow-[0_30px_140px_-80px_rgba(15,23,42,0.35)] backdrop-blur-lg dark:border-white/10 dark:bg-slate-950/60">
           <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_26%,rgba(56,189,248,0.18),transparent_32%),radial-gradient(circle_at_86%_10%,rgba(94,234,212,0.14),transparent_35%),radial-gradient(circle_at_80%_82%,rgba(94,129,244,0.16),transparent_40%)]"></div>
-          <div class="space-y-6 lg:space-y-8" data-animate="fade">
-            <p class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-200">
-              Pipebudi • For Commercial Properties
-            </p>
-            <div class="space-y-5">
-              <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-                Protect your business space from disruptive leaks.
-              </h1>
+          <div class="absolute inset-0 -z-20 overflow-hidden">
+            <NuxtImg
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80"
+              alt="Modern commercial interior"
+              class="absolute inset-0 h-full w-full object-cover object-right opacity-70 mix-blend-screen"
+            />
+            <div class="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-white/10 transition-colors duration-500 dark:from-slate-950 dark:via-slate-950/85 dark:to-slate-950/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent dark:from-white/5"></div>
+          </div>
+
+          <div class="relative grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]" data-animate="fade">
+            <div class="space-y-6 lg:space-y-8">
+              <p class="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-600 shadow-sm dark:border-white/10 dark:bg-slate-900/80 dark:text-slate-200">
+                Pipebudi • For Commercial Properties
+              </p>
+              <div class="space-y-5">
+                <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+                  Protect your business space from disruptive leaks.
+                </h1>
+              </div>
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
+                <a
+                  href="/checkout"
+                  class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
+                >
+                  Protect my business
+                </a>
+                <a
+                  href="#cta"
+                  class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/20 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:border-white/40 dark:hover:text-white"
+                >
+                  <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm dark:bg-white dark:text-slate-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                  </span>
+                  Learn more
+                </a>
+              </div>
             </div>
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
-              <a
-                href="/checkout"
-                class="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_24px_60px_-30px_rgba(15,23,42,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_36px_88px_-44px_rgba(15,23,42,0.6)] dark:bg-white dark:text-slate-900 dark:shadow-[0_28px_80px_-48px_rgba(255,255,255,0.25)] dark:hover:shadow-[0_36px_100px_-52px_rgba(255,255,255,0.3)]"
-              >
-                Protect my business
-              </a>
-              <a
-                href="#cta"
-                class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/20 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:border-white/40 dark:hover:text-white"
-              >
-                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-white shadow-sm dark:bg-white dark:text-slate-900">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                  </svg>
-                </span>
-                Learn more
-              </a>
+
+            <div class="space-y-4 rounded-3xl border border-white/60 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-slate-900/70">
+              <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Business ready, quietly</h2>
+              <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+                Every service space needs uptime. Pipebudi fades into the background so you can protect fit-outs, keep teams trading, and coordinate with smart-meter insights.
+              </p>
+              <ul class="grid gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-700 dark:text-slate-200 sm:grid-cols-2">
+                <li class="rounded-2xl border border-white/60 bg-white/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">Quiet always-on cover</li>
+                <li class="rounded-2xl border border-white/60 bg-white/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">Remote water control</li>
+                <li class="rounded-2xl border border-white/60 bg-white/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">Team-friendly access</li>
+                <li class="rounded-2xl border border-white/60 bg-white/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">Smart meter awareness</li>
+              </ul>
             </div>
           </div>
 
-          <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
-            <div class="relative h-full min-h-[340px] overflow-hidden rounded-[30px] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl dark:border-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
-              <div class="absolute inset-0">
-                <NuxtImg
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80"
-                  alt="Modern commercial interior"
-                  class="h-full w-full object-cover opacity-90 mix-blend-luminosity"
-                />
-                <div class="absolute inset-0 bg-gradient-to-l from-slate-900/75 via-slate-900/35 to-transparent dark:from-slate-950/80 dark:via-slate-950/50"></div>
-                <div class="absolute inset-0 opacity-60 mix-blend-screen" :class="theme === 'dark' ? 'bg-gradient-to-br from-white/10 via-slate-500/10 to-white/5' : 'bg-gradient-to-br from-sky-200/45 via-white/30 to-indigo-200/35'"></div>
-              </div>
-              <div class="relative flex h-full items-start justify-end p-6">
-                <div class="rounded-2xl border border-white/20 bg-white/15 px-5 py-4 text-sm font-medium text-white backdrop-blur-md dark:border-white/10 dark:bg-white/10">
-                  Subtle commercial interior treatment blended into the card.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+          <div class="relative lg:col-span-2" data-animate="fade" style="--delay: 240ms">
             <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
               <p class="mb-6 break-inside-avoid">
                 From Hairdressers to Cafes and Barbers to Restaurants, the unique nature of

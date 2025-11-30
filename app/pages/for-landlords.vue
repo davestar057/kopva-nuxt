@@ -232,7 +232,7 @@
             <div class="absolute -right-12 bottom-6 h-56 w-56 rounded-full bg-gradient-to-br from-emerald-100/60 via-white/40 to-sky-200/40 blur-3xl dark:from-emerald-900/30 dark:via-slate-900/60 dark:to-sky-900/40"></div>
             <div class="relative overflow-hidden rounded-[28px] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-1 shadow-[0_32px_110px_-70px_rgba(15,23,42,0.7)] dark:border-white/10">
               <div class="relative h-full rounded-[24px] bg-gradient-to-br from-white/8 via-slate-900/70 to-slate-950/80 p-4 backdrop-blur">
-                <div class="absolute inset-x-6 top-6 h-28 rounded-full bg-gradient-to-r from-white/40 via-white/5 to-white/0 blur-3xl"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_32%),radial-gradient(circle_at_84%_16%,rgba(94,234,212,0.12),transparent_32%)]"></div>
                 <div class="overflow-hidden rounded-2xl border border-white/20 bg-white/5 shadow-inner">
                   <img
                       src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80"
@@ -240,24 +240,10 @@
                       class="h-[360px] w-full object-cover"
                   />
                 </div>
-                <div class="mt-4 rounded-2xl border border-white/15 bg-white/5 p-4 text-slate-100">
-                  <div class="flex items-center justify-between text-sm">
-                    <div class="space-y-1">
-                      <p class="text-xs uppercase tracking-[0.3em] text-slate-300">Remote control</p>
-                      <p class="text-base font-semibold text-white">Water set to unoccupied mode</p>
-                    </div>
-                    <span class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs font-semibold text-emerald-200">Armed</span>
-                  </div>
-                  <div class="mt-3 grid gap-2 text-sm text-slate-200">
-                    <div class="flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                      Monitoring for abnormal flow
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <span class="h-2 w-2 rounded-full bg-sky-300"></span>
-                      Frost guard ready for cold snaps
-                    </div>
-                  </div>
+                <div class="mt-4 flex flex-col gap-2 rounded-2xl border border-white/15 bg-white/5 p-4 text-slate-100">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-300">For modern portfolios</p>
+                  <p class="text-base font-semibold text-white">A calm, residential feel that blends with light or dark mode.</p>
+                  <p class="text-sm text-slate-200">Use Pipebudi to keep every property ready without standing on-site.</p>
                 </div>
               </div>
             </div>
@@ -277,10 +263,10 @@
         </div>
         <div class="mt-10 grid gap-5 md:grid-cols-3">
           <article class="group relative overflow-hidden rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-[0_28px_80px_-64px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_36px_100px_-64px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-950/70">
-            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">Unoccupied mode</p>
-            <h3 class="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">Watch over empty units</h3>
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">Vacancy ready</p>
+            <h3 class="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">Protect empty units</h3>
             <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Continuous flow monitoring during vacant periods spots issues before viewings, so you never discover damage alongside a new applicant.
+              Keep listings pristine between tenants with proactive alerts and remote water control that prevent surprises on viewing day.
             </p>
           </article>
           <article class="group relative overflow-hidden rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-[0_28px_80px_-64px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_36px_100px_-64px_rgba(15,23,42,0.6)] dark:border-white/10 dark:bg-slate-950/70">
@@ -329,7 +315,7 @@
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
-                24-hour monitoring keeps empty units safe between tenancies.
+                Always-on coverage keeps empty units safe between tenancies.
               </li>
               <li class="flex items-start gap-3">
                 <span class="mt-1 h-2 w-2 rounded-full bg-amber-400"></span>

@@ -184,40 +184,6 @@
               <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                 Keep your holiday home serene between every stay.
               </h1>
-              <div class="space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                <p>
-                  With conservative estimates ranging from 200,000 to 800,000 holiday homes in the
-                  UK, the nature of these properties and their occupation often leaves owners at risk of
-                  water damage.
-                </p>
-                <p>
-                  This is backed up by the most common home insurance claim in second homes
-                  being escape of water, with almost 50% of all claims reported being due to burst
-                  pipes.
-                </p>
-                <p>
-                  Given that second homes are visited less regularly than primary residences, a leak
-                  can go undetected for a long period of time and cause significant damage, running
-                  into untold damage.
-                </p>
-                <p>
-                  As they often remain empty for longer in the winter months frozen pipes and the
-                  water leak risks these pose are considerably higher than a normal domestic
-                  property.
-                </p>
-              </div>
-            </div>
-            <div class="space-y-4 rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-base leading-relaxed text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/50 dark:text-slate-200" data-animate="slide-up">
-              <p>
-                All the same precautions that can be taken in a standard domestic property can be
-                put in place in a holiday home to minimise the risk of a water leak.
-              </p>
-              <p>
-                In addition there is a further unique factor in holiday homes, which is the turnover of
-                occupants. With new guests arriving at the property regularly, it is important to
-                ensure these are provided with clear guidance on what to do if there is a leak, where
-                the stop tap is and emergency contact numbers in case of a major issue.
-              </p>
             </div>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
               <a
@@ -241,16 +207,56 @@
           </div>
 
           <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
-            <div class="group relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 sm:aspect-[5/6]">
-              <div class="absolute inset-4 rounded-[22px] bg-gradient-to-br from-white/15 via-white/5 to-white/15 blur-3xl"></div>
-              <div class="relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 shadow-lg dark:border-white/10">
+            <div class="relative h-full min-h-[340px] overflow-hidden rounded-[30px] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl dark:border-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+              <div class="absolute inset-0">
                 <NuxtImg
-                  src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80"
                   alt="Peaceful holiday home interior"
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover opacity-90 mix-blend-luminosity"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-l from-slate-900/75 via-slate-900/35 to-transparent dark:from-slate-950/80 dark:via-slate-950/50"></div>
+                <div class="absolute inset-0 opacity-60 mix-blend-screen" :class="theme === 'dark' ? 'bg-gradient-to-br from-white/10 via-slate-500/10 to-white/5' : 'bg-gradient-to-br from-sky-200/45 via-white/30 to-indigo-200/35'"></div>
               </div>
+              <div class="relative flex h-full items-start justify-end p-6">
+                <div class="rounded-2xl border border-white/20 bg-white/15 px-5 py-4 text-sm font-medium text-white backdrop-blur-md dark:border-white/10 dark:bg-white/10">
+                  Blended holiday interior detail to anchor the hero.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+            <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
+              <p class="mb-6 break-inside-avoid">
+                With conservative estimates ranging from 200,000 to 800,000 holiday homes in the
+                UK, the nature of these properties and their occupation often leaves owners at risk of
+                water damage.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                This is backed up by the most common home insurance claim in second homes
+                being escape of water, with almost 50% of all claims reported being due to burst
+                pipes.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                Given that second homes are visited less regularly than primary residences, a leak
+                can go undetected for a long period of time and cause significant damage, running
+                into untold damage.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                As they often remain empty for longer in the winter months frozen pipes and the
+                water leak risks these pose are considerably higher than a normal domestic
+                property.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                All the same precautions that can be taken in a standard domestic property can be
+                put in place in a holiday home to minimise the risk of a water leak.
+              </p>
+              <p class="break-inside-avoid">
+                In addition there is a further unique factor in holiday homes, which is the turnover of
+                occupants. With new guests arriving at the property regularly, it is important to
+                ensure these are provided with clear guidance on what to do if there is a leak, where
+                the stop tap is and emergency contact numbers in case of a major issue.
+              </p>
             </div>
           </div>
         </div>

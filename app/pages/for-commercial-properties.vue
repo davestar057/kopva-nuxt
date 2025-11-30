@@ -184,34 +184,6 @@
               <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                 Protect your business space from disruptive leaks.
               </h1>
-              <div class="space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                <p>
-                  From Hairdressers to Cafes and Barbers to Restaurants, the unique nature of
-                  commercial properties means each and every one carries a risk of water damage.
-                </p>
-                <p>
-                  Not only can this cause untold damage to the property, it can also be devastating to
-                  the business within, preventing them from trading and causing untold stress and
-                  upset.
-                </p>
-                <p>
-                  Over recent times there has been an increased focus by water companies to install
-                  more water meters, with Ofwat allocating £1.7bn to assist in the installation of smart
-                  meters to help detect continuous flows and leaks.
-                </p>
-                <p>
-                  Throughout Europe it is reported that 1 in 3 commercial buildings experience some
-                  sort of monthly water leak - which can have significant financial implications in terms
-                  of damage costs, rises in insurance premiums and excess costs.
-                </p>
-              </div>
-            </div>
-            <div class="space-y-4 rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-base leading-relaxed text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/50 dark:text-slate-200" data-animate="slide-up">
-              <p>
-                Mitigating against these risks is key to allow businesses to manage both their water
-                consumption along with the damage that a catastrophic water leak can cause to the
-                property and the ability to continue to trade.
-              </p>
             </div>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
               <a
@@ -235,16 +207,50 @@
           </div>
 
           <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
-            <div class="group relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 sm:aspect-[5/6]">
-              <div class="absolute inset-4 rounded-[22px] bg-gradient-to-br from-white/15 via-white/5 to-white/15 blur-3xl"></div>
-              <div class="relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 shadow-lg dark:border-white/10">
+            <div class="relative h-full min-h-[340px] overflow-hidden rounded-[30px] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl dark:border-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+              <div class="absolute inset-0">
                 <NuxtImg
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80"
                   alt="Modern commercial interior"
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover opacity-90 mix-blend-luminosity"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-l from-slate-900/75 via-slate-900/35 to-transparent dark:from-slate-950/80 dark:via-slate-950/50"></div>
+                <div class="absolute inset-0 opacity-60 mix-blend-screen" :class="theme === 'dark' ? 'bg-gradient-to-br from-white/10 via-slate-500/10 to-white/5' : 'bg-gradient-to-br from-sky-200/45 via-white/30 to-indigo-200/35'"></div>
               </div>
+              <div class="relative flex h-full items-start justify-end p-6">
+                <div class="rounded-2xl border border-white/20 bg-white/15 px-5 py-4 text-sm font-medium text-white backdrop-blur-md dark:border-white/10 dark:bg-white/10">
+                  Subtle commercial interior treatment blended into the card.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+            <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
+              <p class="mb-6 break-inside-avoid">
+                From Hairdressers to Cafes and Barbers to Restaurants, the unique nature of
+                commercial properties means each and every one carries a risk of water damage.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                Not only can this cause untold damage to the property, it can also be devastating to
+                the business within, preventing them from trading and causing untold stress and
+                upset.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                Over recent times there has been an increased focus by water companies to install
+                more water meters, with Ofwat allocating £1.7bn to assist in the installation of smart
+                meters to help detect continuous flows and leaks.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                Throughout Europe it is reported that 1 in 3 commercial buildings experience some
+                sort of monthly water leak - which can have significant financial implications in terms
+                of damage costs, rises in insurance premiums and excess costs.
+              </p>
+              <p class="break-inside-avoid">
+                Mitigating against these risks is key to allow businesses to manage both their water
+                consumption along with the damage that a catastrophic water leak can cause to the
+                property and the ability to continue to trade.
+              </p>
             </div>
           </div>
         </div>

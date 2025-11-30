@@ -184,43 +184,6 @@
               <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                 Keep your home calm, dry, and protected.
               </h1>
-              <div class="space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                <p>
-                  Did you know that escape of water is the biggest single area of home insurance
-                  claims in the UK, with almost one in three of all home insurance claims in 2024
-                  coming from Escape of Water, based on a report from GoCompare.
-                </p>
-                <p>
-                  According to the ABI, insurers now pay out over £1.8m every day for domestic
-                  property Escape of Water claims.
-                </p>
-                <p>
-                  A burst pipe can leak 30 litres of water a minute - which if left to flow can cause
-                  significant damage in a short period of time.
-                </p>
-                <p>
-                  The damage of a major water leak doesn't only have a huge financial impact, it can
-                  be devastating emotionally when precious, sentimental possessions become
-                  irreparably damaged.
-                </p>
-                <p>
-                  There are steps you can take to help reduce your risk of a major incident and reduce
-                  the impact if you do have a leak.
-                </p>
-              </div>
-            </div>
-            <div class="flex flex-col gap-6" data-animate="slide-up">
-              <h2 id="steps" class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-300">Practical steps</h2>
-              <ul class="space-y-3 rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-base leading-relaxed text-slate-700 shadow-sm dark:border-white/10 dark:bg-slate-900/50 dark:text-slate-200">
-                <li>1. Know where your stopcock is and test it regularly</li>
-                <li>2. Know where your water pipes before you start any DIY / drilling</li>
-                <li>3. Fit a leak detection device, like Pipebudi, that can turn off the water if there is a leak</li>
-                <li>4. Make sure a professional fits new plumbing appliances</li>
-                <li>5. Regularly check for small leaks and drips in hard to spot areas</li>
-                <li>6. Be careful what you put down the drains to prevent blockages</li>
-                <li>7. Try to use appliances whilst you are in the home</li>
-                <li>8. If you leave your property unoccupied for any length of time, make sure it is adequately heated to prevent frozen pipes and check your insurance for exclusions if your property is empty</li>
-              </ul>
             </div>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
               <a
@@ -244,16 +207,64 @@
           </div>
 
           <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
-            <div class="group relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 sm:aspect-[5/6]">
-              <div class="absolute inset-4 rounded-[22px] bg-gradient-to-br from-white/15 via-white/5 to-white/15 blur-3xl"></div>
-              <div class="relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 shadow-lg dark:border-white/10">
+            <div class="relative h-full min-h-[340px] overflow-hidden rounded-[30px] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl dark:border-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+              <div class="absolute inset-0">
                 <NuxtImg
-                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80"
                   alt="Calm modern home interior"
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover opacity-90 mix-blend-luminosity"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-l from-slate-900/75 via-slate-900/35 to-transparent dark:from-slate-950/80 dark:via-slate-950/50"></div>
+                <div class="absolute inset-0 opacity-60 mix-blend-screen" :class="theme === 'dark' ? 'bg-gradient-to-br from-white/10 via-slate-500/10 to-white/5' : 'bg-gradient-to-br from-sky-200/45 via-white/30 to-indigo-200/35'"></div>
               </div>
+              <div class="relative flex h-full items-start justify-end p-6">
+                <div class="rounded-2xl border border-white/20 bg-white/15 px-5 py-4 text-sm font-medium text-white backdrop-blur-md dark:border-white/10 dark:bg-white/10">
+                  A lived-in space softly blended into the hero.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+            <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
+              <p class="mb-6 break-inside-avoid">
+                Did you know that escape of water is the biggest single area of home insurance
+                claims in the UK, with almost one in three of all home insurance claims in 2024
+                coming from Escape of Water, based on a report from GoCompare.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                According to the ABI, insurers now pay out over £1.8m every day for domestic
+                property Escape of Water claims.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                A burst pipe can leak 30 litres of water a minute - which if left to flow can cause
+                significant damage in a short period of time.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                The damage of a major water leak doesn't only have a huge financial impact, it can
+                be devastating emotionally when precious, sentimental possessions become
+                irreparably damaged.
+              </p>
+              <p class="break-inside-avoid">
+                There are steps you can take to help reduce your risk of a major incident and reduce
+                the impact if you do have a leak.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2" data-animate="slide-up" style="--delay: 320ms">
+            <div class="flex flex-col gap-6">
+              <h2 id="steps" class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-300">Practical steps</h2>
+              <ul class="grid gap-3 rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-base leading-relaxed text-slate-700 shadow-sm md:grid-cols-2 dark:border-white/10 dark:bg-slate-900/50 dark:text-slate-200">
+                <li class="break-inside-avoid">1. Know where your stopcock is and test it regularly</li>
+                <li class="break-inside-avoid">2. Know where your water pipes before you start any DIY / drilling</li>
+                <li class="break-inside-avoid">3. Fit a leak detection device, like Pipebudi, that can turn off the water if there is a leak</li>
+                <li class="break-inside-avoid">4. Make sure a professional fits new plumbing appliances</li>
+                <li class="break-inside-avoid">5. Regularly check for small leaks and drips in hard to spot areas</li>
+                <li class="break-inside-avoid">6. Be careful what you put down the drains to prevent blockages</li>
+                <li class="break-inside-avoid">7. Try to use appliances whilst you are in the home</li>
+                <li class="break-inside-avoid">8. If you leave your property unoccupied for any length of time, make sure it is adequately heated to prevent frozen pipes and check your insurance for exclusions if your property is empty</li>
+              </ul>
             </div>
           </div>
         </div>

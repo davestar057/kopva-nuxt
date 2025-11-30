@@ -184,30 +184,6 @@
               <h1 id="hero-title" class="text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
                 Keep rentals protected and tenants reassured.
               </h1>
-              <div class="space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                <p>
-                  Did you know that water leaks in a rental property are typically the landlords
-                  responsibility to fix, coming under the property’s structure, exterior and plumbing
-                  systems as part of the Landlord and tenant Act 1985?
-                </p>
-                <p>
-                  In addition to the stress caused, a catastrophic water leak can lead to substantial
-                  financial losses related to repairs, potential loss of rent and possible alternative
-                  accommodation costs. Whilst some of these losses may be covered by a
-                  comprehensive landlord insurance policy, taking proactive measures to minimise the
-                  risk of these events occurring is key.
-                </p>
-                <p>
-                  Pipebudi can help reduce the risks Landlords face from water leaks via continuous
-                  water flow monitoring during unoccupied periods, allowing landlords and tenants to
-                  remotely turn water off when not at the property, and helping to mitigate the risk of
-                  frozen pipes when temperatures start to drop.
-                </p>
-                <p>
-                  Join our legion of Landlords that are already engaging with Pipebudi to help reduce
-                  their risks of catastrophic property leaks.
-                </p>
-              </div>
             </div>
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6" data-animate="slide-up">
               <a
@@ -231,16 +207,48 @@
           </div>
 
           <div class="relative self-start" data-animate="fade" style="--delay: 160ms">
-            <div class="group relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 sm:aspect-[5/6]">
-              <div class="absolute inset-4 rounded-[22px] bg-gradient-to-br from-white/15 via-white/5 to-white/15 blur-3xl"></div>
-              <div class="relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 shadow-lg dark:border-white/10">
+            <div class="relative h-full min-h-[340px] overflow-hidden rounded-[30px] border border-white/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl dark:border-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+              <div class="absolute inset-0">
                 <NuxtImg
-                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80"
                   alt="Modern rental living room"
-                  class="h-full w-full object-cover"
+                  class="h-full w-full object-cover opacity-90 mix-blend-luminosity"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-l from-slate-900/75 via-slate-900/35 to-transparent dark:from-slate-950/80 dark:via-slate-950/50"></div>
+                <div class="absolute inset-0 opacity-60 mix-blend-screen" :class="theme === 'dark' ? 'bg-gradient-to-br from-white/10 via-slate-500/10 to-white/5' : 'bg-gradient-to-br from-sky-200/45 via-white/30 to-indigo-200/35'"></div>
               </div>
+              <div class="relative flex h-full items-start justify-end p-6">
+                <div class="rounded-2xl border border-white/20 bg-white/15 px-5 py-4 text-sm font-medium text-white backdrop-blur-md dark:border-white/10 dark:bg-white/10">
+                  Calm, lived-in detail without overpowering the hero.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2" data-animate="fade" style="--delay: 240ms">
+            <div class="columns-1 gap-8 text-lg leading-relaxed text-slate-600 md:columns-2 md:text-[17px] md:leading-[1.8] dark:text-slate-300">
+              <p class="mb-6 break-inside-avoid">
+                Did you know that water leaks in a rental property are typically the landlords
+                responsibility to fix, coming under the property’s structure, exterior and plumbing
+                systems as part of the Landlord and tenant Act 1985?
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                In addition to the stress caused, a catastrophic water leak can lead to substantial
+                financial losses related to repairs, potential loss of rent and possible alternative
+                accommodation costs. Whilst some of these losses may be covered by a
+                comprehensive landlord insurance policy, taking proactive measures to minimise the
+                risk of these events occurring is key.
+              </p>
+              <p class="mb-6 break-inside-avoid">
+                Pipebudi can help reduce the risks Landlords face from water leaks via continuous
+                water flow monitoring during unoccupied periods, allowing landlords and tenants to
+                remotely turn water off when not at the property, and helping to mitigate the risk of
+                frozen pipes when temperatures start to drop.
+              </p>
+              <p class="break-inside-avoid">
+                Join our legion of Landlords that are already engaging with Pipebudi to help reduce
+                their risks of catastrophic property leaks.
+              </p>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@
         <div class="hidden items-center gap-10 text-sm text-slate-600 dark:text-slate-300 lg:flex">
           <a href="#mosaic" class="transition-colors hover:text-slate-900 dark:hover:text-white">Features</a>
           <a href="#pricing" class="transition-colors hover:text-slate-900 dark:hover:text-white">Launch Offer</a>
-          <a href="#" class="transition-colors hover:text-slate-900 dark:hover:text-white">Contact</a>
+          <a href="/contact" class="transition-colors hover:text-slate-900 dark:hover:text-white">Contact</a>
         </div>
         <div class="flex items-center gap-3">
           <button
